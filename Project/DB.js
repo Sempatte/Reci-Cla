@@ -54,14 +54,14 @@ module.exports = function () {
       ],
       Historial: [
         {
-          id:1,
+          HistoryID:1,
           idReciclador: {
             id: 1
           },
           busquedas: [
             {
               busquedaID: 1,
-              fecha: "2020-10-10",
+              fecha: "2022-10-09",
               hora: "10:00",
               contenido: "Botellas de plastico",
             }
@@ -69,7 +69,16 @@ module.exports = function () {
         }
       ],
       Tickets: [
-
+        {
+          ticketID: 1,
+          fecha: "2022-07-09",
+          hora: "10:00",
+          issueContent: "Mi historial no se actualizada con mis pedidos anteriores",
+          estado: "Abierto",
+          idRecolector: {
+            id: 1
+          },
+        }
       ],
       TipoDeProductos: [
         {
