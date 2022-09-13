@@ -93,6 +93,10 @@ nav.stroke ul li a:hover:after {
     width: 100%;
 }
 
+nav.stroke ul li a.active {
+    color: rgb(46 46 46);
+}
+
 nav.fill ul li a {
     transition: all 2s;
 }
@@ -141,7 +145,7 @@ nav.circle ul li a:after {
 }
 
 nav.circle ul li a:hover:after {
-    -webkit-animation: circle 1.5s ease-in forwards;
+    animation: circle 1.5s ease-in forwards;
 }
 
 /* SHIFT */
@@ -181,7 +185,7 @@ nav.shift ul li a:hover:after {
 
 
 /* Keyframes */
-@-webkit-keyframes fill {
+@keyframes fill {
     0% {
         width: 0%;
         height: 1px;
@@ -200,7 +204,7 @@ nav.shift ul li a:hover:after {
 }
 
 /* Keyframes */
-@-webkit-keyframes circle {
+@keyframes circle {
     0% {
         width: 1px;
         top: 0;
