@@ -12,12 +12,12 @@
 
 <!-- Name Column -->
 <ng-container matColumnDef="nombre">
-    <th mat-header-cell *matHeaderCellDef> Nombres de reciclador </th>
+    <th mat-header-cell *matHeaderCellDef> Nombres del Reciclador </th>
     <td mat-cell *matCellDef="let element"> {{element.nombre + " " + element.apellido}} </td>
 </ng-container>
 
 <ng-container matColumnDef="pedidosRealizados">
-    <th mat-header-cell *matHeaderCellDef> pedidos Realizados </th>
+    <th mat-header-cell *matHeaderCellDef> Pedidos Realizados </th>
     <td mat-cell *matCellDef="let element"> {{element['Scores'][0].pedidosRealizados}} </td>
 </ng-container>
 <!-- Weight Column -->
@@ -27,14 +27,14 @@
 </ng-container>
 
 <ng-container matColumnDef="pedidosCancelados">
-    <th mat-header-cell *matHeaderCellDef> pedidosCancelados </th>
+    <th mat-header-cell *matHeaderCellDef> Pedidos Cancelados </th>
     <td mat-cell *matCellDef="let element"> {{element['Scores'][0].pedidosCancelados}} </td>
 </ng-container>
 
 
 <ng-container matColumnDef="nEstrellas">
     <th mat-header-cell *matHeaderCellDef> <strong>N° Estrellas</strong> </th>
-    <td mat-cell *matCellDef="let element"> {{element['Scores'][0].nEstrellas }} </td>
+    <td mat-cell *matCellDef="let element"> {{element['Scores'][0].nEstrellas }} <mat-icon aria-hidden="false" inline={{true}} aria-label="Example home icon" class="icon-star" fontIcon="star"></mat-icon> </td>
 </ng-container>
 
 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

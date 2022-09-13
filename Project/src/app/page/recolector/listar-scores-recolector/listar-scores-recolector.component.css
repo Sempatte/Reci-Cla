@@ -45,7 +45,14 @@
     font-weight: bold;
 }
 
+#tabla-listarScores .icon-star {
+    font-size: 16px;
+    position: absolute;
+    color: #FFD700;
+}
+
 h2 {
     padding: 30px;
     margin: 10px;
 }
+
