@@ -10,7 +10,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
-import { ListarScoresRecolectorComponent } from './page/recolector/listar-scores-recolector/listar-scores-recolector.component';
+import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { ListarScoresRecolectorComponent } from './page/recolector/listar-scores
     NavbarComponent,
     HomeComponent,
     RecolectorComponent,
-    ListarScoresRecolectorComponent,
+    ListarScoresRecicladorComponent,
   ],
   imports: [
     BrowserModule,

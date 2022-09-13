@@ -1,14 +1,13 @@
-import { Score } from './../../../model/Score';
 import { Component, OnInit } from '@angular/core';
 import { UsuarioTsService } from 'src/app/service/usuario.service';
 import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
-  selector: 'app-listar-scores-recolector',
-  templateUrl: './listar-scores-recolector.component.html',
-  styleUrls: ['./listar-scores-recolector.component.css']
+  selector: 'app-listar-scores-reciclador',
+  templateUrl: './listar-scores-reciclador.component.html',
+  styleUrls: ['./listar-scores-reciclador.component.css']
 })
-export class ListarScoresRecolectorComponent implements OnInit {
+export class ListarScoresRecicladorComponent implements OnInit {
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
   displayedColumns: string[] = ['id','nombre' ,'pedidosRealizados' ,'pedidosEntregados', 'pedidosCancelados', 'nEstrellas'];
