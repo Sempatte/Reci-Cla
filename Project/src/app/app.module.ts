@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
-import{MatTableModule} from '@angular/material/table'
+import{MatTableModule} from '@angular/material/table';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './page/home/home.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecicladorComponent
+    RecicladorComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
