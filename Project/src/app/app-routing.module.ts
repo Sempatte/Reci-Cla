@@ -1,3 +1,4 @@
+import { ListarScoresRecolectorComponent } from './page/recolector/listar-scores-recolector/listar-scores-recolector.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
 import { NgModule, Component } from '@angular/core';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'Recicladores', component: RecicladorComponent },
   { path: 'Home', component: HomeComponent },
+  { path: 'Recicladores/ListarScores', component: ListarScoresRecolectorComponent }
 ];
 
 @NgModule({

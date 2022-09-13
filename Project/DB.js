@@ -52,6 +52,18 @@ module.exports = function () {
           dni: "70524847",
         }
       ],
+      Scores: [
+        {
+          ScoreID:1,
+          reciclador: {
+            id:1,
+          },
+          pedidosRealizados: 15,
+          pedidosEntregados: 10,
+          pedidosCancelados: 5,
+          nEstrellas: 4.5
+        }
+      ],
       Historial: [
         {
           HistoryID:1,

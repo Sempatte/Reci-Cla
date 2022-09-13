@@ -1,0 +1,42 @@
+<h2>Lista de scores de Recicladores</h2>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+
+<!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+<!-- Position Column -->
+<ng-container matColumnDef="ScoreID">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+</ng-container>
+
+<!-- Name Column -->
+<ng-container matColumnDef="reciclador">
+    <th mat-header-cell *matHeaderCellDef> Nombre de reciclador </th>
+    <td mat-cell *matCellDef="let element"> {{element.reciclador["nombre"]}} </td>
+</ng-container>
+
+<!-- Weight Column -->
+<ng-container matColumnDef="pedidosRealizados">
+    <th mat-header-cell *matHeaderCellDef> pedidos Realizados </th>
+    <td mat-cell *matCellDef="let element"> {{element.pedidosRealizados}} </td>
+</ng-container>
+
+<ng-container matColumnDef="pedidosEntregados">
+    <th mat-header-cell *matHeaderCellDef> pedidos Entregados </th>
+    <td mat-cell *matCellDef="let element"> {{element.pedidosEntregados}} </td>
+</ng-container>
+
+<ng-container matColumnDef="pedidosCancelados">
+    <th mat-header-cell *matHeaderCellDef> pedidos Cancelados </th>
+    <td mat-cell *matCellDef="let element"> {{element.pedidosCancelados}} </td>
+</ng-container>
+
+<ng-container matColumnDef="nEstrellas">
+    <th mat-header-cell *matHeaderCellDef> N° Estrellas </th>
+    <td mat-cell *matCellDef="let element"> {{element.nEstrellas}} </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
