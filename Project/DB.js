@@ -41,6 +41,27 @@ module.exports = function () {
           telefono: "123456789",
           dni: "12345678",
         }
+      ],
+      Recolectores: [
+
+      ],
+      Tickets: [
+
+      ],
+      TipoDeProductos: [
+        {
+          id: 10,
+          nombre: "Celular",
+        }
+      ],
+      Productos: [
+        {
+          id: 1,
+          name: "Telefono Xiami 120gb 6Gb RAM",
+          TipoProducto: {
+            id: 10
+          }
+        }
       ]
     
     }
