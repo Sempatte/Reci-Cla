@@ -1,45 +1,39 @@
 
-*,
-:after,
-:before {
-    box-sizing: border-box
-}
-
-.tabla-listar {
+#tabla-listarRecicladores {
     padding: 20px;
     margin: 20px;
     width: 70%;
     font-size: 20px;
 }
 
-.mat-column-id {
+#tabla-listarRecicladores .mat-column-id {
     width: 32px;
     border-right: 1px solid currentColor;
     padding-right: 24px;
     text-align: center;
 }
 
-.mat-column-nombre {
+#tabla-listarRecicladores .mat-column-nombre {
     padding-left: 6px;
 }
 
-.mat-column-apellido {
+#tabla-listarRecicladores .mat-column-apellido {
     font-style: italic;
 }
 
-.mat-column-telefono {
+#tabla-listarRecicladores .mat-column-telefono {
     width: 40px;
     text-align: center;
     font-weight: bold;
 }
 
-.mat-column-email {
+#tabla-listarRecicladores .mat-column-email {
     width: auto;
     text-align: center;
     font-weight: bold;
 }
 
-.mat-column-dni {
+#tabla-listarRecicladores .mat-column-dni {
     width: auto;
     text-align: center;
     font-weight: bold;

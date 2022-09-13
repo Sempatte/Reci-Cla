@@ -1,0 +1,51 @@
+
+#tabla-listarScores {
+    padding: 20px;
+    margin: 20px;
+    width: 70%;
+    font-size: 20px;
+    text-align: center;
+}
+
+#tabla-listarScores th {
+    text-align: center !important;
+}
+
+#tabla-listarScores .mat-column-id {
+    width: 10px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+
+#tabla-listarScores .mat-column-nombre {
+    width: auto;
+}
+
+#tabla-listarScores .mat-column-pedidosRealizados {
+    width: auto;
+    font-style: italic;
+}
+
+#tabla-listarScores .mat-column-telefono {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tabla-listarScores .mat-column-email {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tabla-listarScores .mat-column-dni {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    padding: 30px;
+    margin: 10px;
+}

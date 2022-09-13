@@ -1,7 +1,7 @@
-import { Usuario } from './Usuario';
+import { Recycler } from './Recycler';
 export class Score {
   ScoreID: number = 0;
-  reciclador: Usuario = new Usuario();
+  reciclador: Recycler = new Recycler();
   pedidosRealizados : number = 0;
   pedidosEntregados : number = 0;
   pedidosCancelados : number = 0;

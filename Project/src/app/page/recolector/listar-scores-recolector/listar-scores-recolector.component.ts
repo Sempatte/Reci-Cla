@@ -10,8 +10,8 @@ import { MatTableDataSource } from '@angular/material/table'
 })
 export class ListarScoresRecolectorComponent implements OnInit {
 
-  dataSource: MatTableDataSource<Score> = new MatTableDataSource();
-  displayedColumns: string[] = ['ScoreID','reciclador', 'pedidosRealizados' ,'pedidosEntregados', 'pedidosCancelados', 'nEstrellas'];
+  dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  displayedColumns: string[] = ['id','nombre' ,'pedidosRealizados' ,'pedidosEntregados', 'pedidosCancelados', 'nEstrellas'];
 
   constructor(private uS: UsuarioTsService) { }
 

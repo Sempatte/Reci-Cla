@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../model/Usuario';
+import { Recycler } from '../model/Recycler';
 import { Score } from '../model/Score';
 
 @Injectable({
@@ -8,13 +8,14 @@ import { Score } from '../model/Score';
 })
 export class UsuarioTsService {
 
+  url : string = 'http://localhost:5000/';
   constructor(private http: HttpClient) { }
 
   getListaRecicladores() {
-    return this.http.get<Usuario[]>('http://localhost:5000/Recicladores');
+    return this.http.get<Recycler[]>(`${this.url}recyclers`);
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>('http://localhost:5000/Scores');
+    return this.http.get<Score[]>(`${this.url}recyclers?_embed=Scores`);
   }
 }
