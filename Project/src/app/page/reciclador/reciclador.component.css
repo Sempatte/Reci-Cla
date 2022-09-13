@@ -4,7 +4,12 @@
     margin: 20px;
     width: 70%;
     font-size: 20px;
+    text-align: center
 }
+
+#tabla-listarRecicladores th {
+    text-align: center !important;
+} 
 
 #tabla-listarRecicladores .mat-column-id {
     width: 32px;
