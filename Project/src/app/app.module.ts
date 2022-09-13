@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
+import{MatTableModule} from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RecicladorComponent } from './page/reciclador/reciclador.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

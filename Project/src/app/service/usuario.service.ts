@@ -10,6 +10,6 @@ export class UsuarioTsService {
   constructor(private http: HttpClient) { }
 
   getListaRecicladores() {
-    return this.http.get<Usuario>('http://localhost:5000/Recicladores');
+    return this.http.get<Usuario[]>('http://localhost:5000/Recicladores');
   }
 }

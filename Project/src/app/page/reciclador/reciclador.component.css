@@ -1,0 +1,51 @@
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+.tabla-listar {
+    padding: 20px;
+    margin: 20px;
+    width: 70%;
+    font-size: 20px;
+}
+
+.mat-column-id {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+
+.mat-column-nombre {
+    padding-left: 6px;
+}
+
+.mat-column-apellido {
+    font-style: italic;
+}
+
+.mat-column-telefono {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mat-column-email {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mat-column-dni {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    padding: 30px;
+    margin: 10px;
+}
