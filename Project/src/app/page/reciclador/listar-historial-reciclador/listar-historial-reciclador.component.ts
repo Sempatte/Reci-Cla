@@ -9,8 +9,10 @@ import { MatTableDataSource } from '@angular/material/table'
 })
 export class ListarHistorialRecicladorComponent implements OnInit {
 
+  error : string = "";
   nombreReciclador : string = "";
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  _find : boolean = false;
   displayedColumns: string[] = ['busquedaID','fecha' ,'hora' ,'contenido'];
 
   constructor(private uS: UsuarioTsService) { }
@@ -20,10 +22,19 @@ export class ListarHistorialRecicladorComponent implements OnInit {
   }
 
   buscarHistorial(){
+
     this.uS.getHistorialXReciclador(this.nombreReciclador).subscribe(
       (data) => {
-        data = data[0].history[0].busquedas;
-        this.dataSource = new MatTableDataSource(data);
+
+        if (data.length > 0) {
+          data = data[0].history[0].busquedas;
+          this.dataSource = new MatTableDataSource(data);
+          this._find = true;
+        } else {
+          this._find = false;
+          console.log("NO")
+          this.error = "No se encontraron resultados";
+        }
 
       }
     )

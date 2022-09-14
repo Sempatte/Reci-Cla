@@ -6,9 +6,10 @@
       <input matInput placeholder="Jhon Doe" type="text" [(ngModel)]="nombreReciclador" />
     </mat-form-field><br>
     <button (click)= buscarHistorial() mat-raised-button color="primary">Buscar</button>
-
+    <pre style="color: red" *ngIf="_find === false" >{{error}}</pre>
 </div>
-<div class="container history_form" *ngIf="nombreReciclador">
+
+<div class="container history_form" *ngIf="_find">
   <table id="tabla-listarHistorial" mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
     <ng-container matColumnDef="busquedaID">
         <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -38,6 +39,7 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+  </table>
+
 
 </div>
