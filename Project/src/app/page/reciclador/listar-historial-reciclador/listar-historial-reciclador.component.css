@@ -1,0 +1,51 @@
+.history_form {
+  width: 90%;
+}
+
+#tabla-listarHistorial {
+  padding: 20px;
+  margin: 20px;
+  width: 60%;
+  font-size: 20px;
+  text-align: center;
+}
+
+#tabla-listarHistorial th {
+  text-align: center !important;
+}
+
+#tabla-listarHistorial .mat-column-id {
+  width: 10px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+#tabla-listarHistorial .mat-column-nombre {
+  width: auto;
+}
+
+#tabla-listarHistorial .mat-column-pedidosRealizados {
+  width: auto;
+  font-style: italic;
+}
+
+#tabla-listarHistorial .mat-column-telefono {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#tabla-listarHistorial .mat-column-email {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#tabla-listarHistorial .mat-column-dni {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+

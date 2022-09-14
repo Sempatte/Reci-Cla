@@ -18,4 +18,8 @@ export class UsuarioTsService {
   getScoresRecolectores() {
     return this.http.get<Score[]>(`${this.url}recyclers?_embed=Scores`);
   }
+
+  getHistorialXReciclador(nombre: string) {
+    return this.http.get<any>(`${this.url}recyclers?nombre=${nombre}&_embed=history`);
+  }
 }

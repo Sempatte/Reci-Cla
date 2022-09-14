@@ -89,18 +89,21 @@ module.exports = function () {
           'nEstrellas': 0
         },
       ],
-      'Historial': [
+      'history': [
         {
-          'HistoryID':1,
-          'idReciclador': {
-            'id': 1
-          },
+          "recyclerId": 1,
           'busquedas': [
             {
               'busquedaID': 1,
               'fecha': "2022-10-09",
               'hora': "10:00",
               'contenido': "Botellas de plastico",
+            },
+            {
+              'busquedaID': 2,
+              'fecha': "2022-10-10",
+              'hora': "11:00",
+              'contenido': "Botellas de vidrio",
             }
           ]
         }
@@ -112,9 +115,7 @@ module.exports = function () {
           'hora': "10:00",
           'issueContent': "Mi historial no se actualizada con mis pedidos anteriores",
           'estado': "Abierto",
-          'idRecolector': {
-            'id': 1
-          },
+          "recyclerId": 1,
         }
       ],
       'TipoDeProductos': [

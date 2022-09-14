@@ -7,11 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
 import { MatTableModule} from '@angular/material/table';
 import { MatIconModule} from '@angular/material/icon';
+import  {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
-
+import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-historial-reciclador/listar-historial-reciclador.component';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores
     HomeComponent,
     RecolectorComponent,
     ListarScoresRecicladorComponent,
+    ListarHistorialRecicladorComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,11 @@ import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
