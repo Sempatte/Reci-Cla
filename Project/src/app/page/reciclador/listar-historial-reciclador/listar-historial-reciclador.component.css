@@ -1,7 +1,9 @@
 .history_form {
   width: 90%;
 }
-
+.history_form h2 {
+  padding: 10px
+}
 #tabla-listarHistorial {
   padding: 20px;
   margin: 20px;
@@ -48,4 +50,7 @@
   font-weight: bold;
 }
 
+mat-form-field.search {
+  width: 350px !important;
+}
 
