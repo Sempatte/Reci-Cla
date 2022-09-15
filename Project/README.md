@@ -1,3 +1,3 @@
 # Project
 
-Correr `npm run server`, luego correr `ng serve --open`.
+Correr `npm run json-server`, luego correr `ng serve --open`.
