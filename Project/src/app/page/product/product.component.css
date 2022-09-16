@@ -1,0 +1,11 @@
+#tabla-listarProductos {
+    padding: 20px;
+    margin: 20px;
+    width: 60%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #tabla-listarProductos th {
+    text-align: center !important;
+  }

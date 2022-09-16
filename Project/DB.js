@@ -126,38 +126,50 @@ module.exports = function () {
           "recyclerId": 3,
         }
       ],
-      'TipoDeProductos': [
-        {
-          'id': 10,
-          'nombre': "Celular",
-          'description': "Celular",
-        },
-        {
-          'id': 11,
-          'nombre': "Cupón de descuento",
-          'description': "Cupón de descuento",
-        }
-      ],
-      'Productos': [
+      'Types': [
         {
           'id': 1,
-          'name': "Telefono Xiami 120gb 6Gb RAM",
-          'TipoDeProductosId': 10
+          'nameType': "Celular",
+          'description': "asdsadasdasd",
         },
         {
           'id': 2,
-          'name': "S/15 de descuento en Rappi",
-          'TipoDeProductosId': 11
+          'nameType': "Cupón de descuento",
+          'description': "asdsadasdas",
+        }
+      ],
+      'Rewards': [
+        { 
+            'id': 1,              
+            'StartDate': "2022-07-09",
+            'EndDate': "2022-07-09",
+            'NameReward': "Telefono Xiami 120gb 6Gb RAM",
+            'Description': "Telefono Xiami 120gb 6Gb RAM",
+            'Code': "123456789",
+            'TypeId': 1,
+          
         },
-        {
-          'id': 3,
-          'name': "S/25 de descuento en PedidosYA",
-          'TipoDeProductosId': {
-            'id': 11
-          }
+        { 
+            'id': 2,              
+            'StartDate': "2022-07-09",
+            'EndDate': "2022-07-09",
+            'NameReward': "Cupon de descuento 10% en supermercado",
+            'Description': "10% de dscto",
+            'Code': "nb320",
+            'TypeId': 2,
+          
+        },
+        { 
+            'id': 3,              
+            'StartDate': "2022-07-09",
+            'EndDate': "2022-07-09",
+            'NameReward': "Cupon de descuento 25% en Rappi",
+            'Description': "25% de dscto",
+            'Code': "87b21",
+            'TypeId': 2,
+          
         }
       ]
-
     }
 
     return Data

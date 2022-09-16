@@ -2,7 +2,7 @@
   
   <div class="container history_form" >
    
-    <table id="tabla-listarHistorial" mat-table [dataSource]="DataSource" class="mat-elevation-z8 ">
+    <table id="tabla-listarProductos" mat-table [dataSource]="DataSource" class="mat-elevation-z8 ">
       <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> id </th>
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -10,12 +10,12 @@
   
       <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Nombre </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.NameReward}} </td>
       </ng-container>
   
       <ng-container matColumnDef="TipoProducto">
           <th mat-header-cell *matHeaderCellDef> Tipo de Producto </th>
-          <td mat-cell *matCellDef="let element"> {{element.TipoProducto.id}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.Type.nameType}} </td>
       </ng-container>
   
   
