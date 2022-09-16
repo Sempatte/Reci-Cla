@@ -1,6 +1,6 @@
 module.exports = function () {
     var Data = {
-      'recyclers': [
+      'users': [
         {
           'id':1,
           'nombre': "Sebastian",
@@ -42,47 +42,37 @@ module.exports = function () {
           'dni': "72524847",
         }
       ],
-      'collectors': [
-        {
-          'id':1,
-          'nombre': "Esperanza",
-          'apellido': "Gutierrez",
-          'email': "esperanza_g@gmail.com",
-          'telefono': "985478254",
-          'dni': "70524847",
-        }
-      ],
       'Scores': [
         {
-          "recyclerId": 1,
+          "userId": 1,
           'pedidosRealizados': 15,
           'pedidosEntregados': 10,
           'pedidosCancelados': 5,
           'nEstrellas': 4.5
         },
         {
-          "recyclerId": 2,
+          "userId": 2,
           'pedidosRealizados': 0,
           'pedidosEntregados': 0,
           'pedidosCancelados': 0,
           'nEstrellas': 0
         },
         {
-          "recyclerId": 3,
+          "userId": 3,
           'pedidosRealizados': 0,
           'pedidosEntregados': 0,
           'pedidosCancelados': 0,
           'nEstrellas': 0
         },
         {
-          "recyclerId": 4,
+          "userId": 4,
           'pedidosRealizados': 0,
           'pedidosEntregados': 0,
           'pedidosCancelados': 0,
           'nEstrellas': 0
         },
         {
-          "recyclerId": 5,
+          "userId": 5,
           'pedidosRealizados': 0,
           'pedidosEntregados': 0,
           'pedidosCancelados': 0,
@@ -91,7 +81,7 @@ module.exports = function () {
       ],
       'history': [
         {
-          "recyclerId": 1,
+          "userId": 1,
           'busquedas': [
             {
               'busquedaID': 1,
@@ -115,7 +105,7 @@ module.exports = function () {
           'hora': "10:00",
           'issueContent': "Mi historial no se actualizada con mis pedidos anteriores",
           'estado': "Abierto",
-          "recyclerId": 1,
+          "userId": 1,
         },
         {
           'ticketID': 2,
@@ -123,7 +113,7 @@ module.exports = function () {
           'hora': "11:00",
           'issueContent': "Errores en la funcionalidad de la app",
           'estado': "Cerrado",
-          "recyclerId": 3,
+          "userId": 3,
         }
       ],
       'Types': [

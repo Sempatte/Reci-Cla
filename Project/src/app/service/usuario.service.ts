@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Recycler } from '../model/Recycler';
+import { User } from '../model/User';
 import { Score } from '../model/Score';
 import {Rewards} from '../model/Rewards'
 
@@ -13,15 +13,15 @@ export class UsuarioTsService {
   constructor(private http: HttpClient) { }
 
   getListaRecicladores() {
-    return this.http.get<Recycler[]>(`${this.url}recyclers`);
+    return this.http.get<User[]>(`${this.url}users`);
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>(`${this.url}recyclers?_embed=Scores`);
+    return this.http.get<Score[]>(`${this.url}users?_embed=Scores`);
   }
 
   getHistorialXReciclador(nombre: string) {
-    return this.http.get<any>(`${this.url}recyclers?nombre=${nombre}&_embed=history`);
+    return this.http.get<any>(`${this.url}users?nombre=${nombre}&_embed=history`);
   }
 
   getProducto(){
