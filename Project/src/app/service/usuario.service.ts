@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Recycler } from '../model/Recycler';
 import { Score } from '../model/Score';
-import {Product} from '../model/Product'
+import {Rewards} from '../model/Rewards'
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +25,11 @@ export class UsuarioTsService {
   }
 
   getProducto(){
-    return this.http.get<Product[]>(`${this.url}Rewards/?_expand=Type`);
+    return this.http.get<Rewards[]>(`${this.url}Rewards/?_expand=Type`);
   }
   
   getTiposDeProductos(){
-    return this.http.get<Product[]>(`${this.url}Types`);
+    return this.http.get<Rewards[]>(`${this.url}Types`);
   }
 
 }
