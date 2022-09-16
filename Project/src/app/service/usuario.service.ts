@@ -27,4 +27,9 @@ export class UsuarioTsService {
   getProducto(){
     return this.http.get<Product[]>(`${this.url}Rewards/?_expand=Type`);
   }
+  
+  getTiposDeProductos(){
+    return this.http.get<Product[]>(`${this.url}Types`);
+  }
+
 }
