@@ -132,23 +132,18 @@ module.exports = function () {
         {
           'id': 1,
           'name': "Telefono Xiami 120gb 6Gb RAM",
-          'TipoProducto': {
-            'id': 10
-          }
+          'TipoDeProductos': 10
         },
         {
           'id': 2,
           'name': "S/15 de descuento en Rappi",
-          'TipoProducto': {
-            'id': 11
-          }
+          'TipoDeProductos': 11
         },
         {
           'id': 3,
           'name': "S/25 de descuento en PedidosYA",
-          'TipoProducto': {
-            'id': 11
-          }
+          'TipoDeProductos': 11
+
         }
       ]
 

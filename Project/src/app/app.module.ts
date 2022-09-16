@@ -16,6 +16,8 @@ import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-his
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { ProductComponent } from './page/product/product.component';
+import { ListarTipoProductoComponent } from './page/product/listar-tipo-producto/listar-tipo-producto.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {MatCardModule} from '@angular/material/card';
     RecolectorComponent,
     ListarScoresRecicladorComponent,
     ListarHistorialRecicladorComponent,
+    ProductComponent,
+    ListarTipoProductoComponent,
   ],
   imports: [
     BrowserModule,
