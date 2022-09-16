@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../model/User';
 import { Score } from '../model/Score';
 import {Reward} from '../model/Reward'
+import { Rewards_Users } from '../model/Rewards_User';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,10 @@ export class UsuarioTsService {
   getTiposDeProductos(){
     return this.http.get<Reward[]>(`${this.url}Types`);
   }
+
+  getRewardsUser(){
+    return this.http.get<Rewards_Users[]>(`${this.url}users?_embed=Reward_Users`);
+  }
+
 
 }

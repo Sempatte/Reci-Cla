@@ -1,0 +1,11 @@
+#tabla-listarRewardsUsers {
+    padding: 20px;
+    margin: 20px;
+    width: 60%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #tabla-listarRewardsUsers th {
+    text-align: center !important;
+  }

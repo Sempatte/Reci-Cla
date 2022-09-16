@@ -159,6 +159,37 @@ module.exports = function () {
             'TypeId': 2,
           
         }
+      ],
+      'Reward_Users': [
+        { 
+            'userId': 1, 
+            'RewardId': 1,
+            'Claimed': false            
+          
+        },
+        { 
+          'userId': 2, 
+          'RewardId': 3,
+          'Claimed': true     
+          
+        },
+        { 
+          'userId': 3, 
+          'RewardId': 2,
+          'Claimed': true     
+        }
+        ,
+        { 
+          'userId': 4, 
+          'RewardId': 2,
+          'Claimed': true     
+        }
+        ,
+        { 
+          'userId': 5, 
+          'RewardId': 2,
+          'Claimed': true     
+        }
       ]
     }
 

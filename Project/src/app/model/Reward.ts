@@ -1,6 +1,6 @@
 import { Types } from "./Types";
 export class Reward {
-    IdReward : number = 0;
+    RewardId : number = 0;
     NameReward : string = "";
     IdType: Types = new Types();  
     StartDate: Date = new Date();

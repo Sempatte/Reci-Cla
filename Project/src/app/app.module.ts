@@ -18,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ProductComponent } from './page/product/product.component';
 import { ListarTipoProductoComponent } from './page/product/listar-tipo-producto/listar-tipo-producto.component';
+import { ListarRewardsUserComponent } from './page/product/listar-rewards-user/listar-rewards-user.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { ListarTipoProductoComponent } from './page/product/listar-tipo-producto
     ListarHistorialRecicladorComponent,
     ProductComponent,
     ListarTipoProductoComponent,
+    ListarRewardsUserComponent,
+
   ],
   imports: [
     BrowserModule,

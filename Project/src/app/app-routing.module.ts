@@ -1,3 +1,4 @@
+import { ListarRewardsUserComponent } from './page/product/listar-rewards-user/listar-rewards-user.component';
 import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'ListarScores', component: ListarScoresRecicladorComponent },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent},
   { path: 'ListarProductos', component: ProductComponent},
-  { path: 'ListarTipoProductos', component: ListarTipoProductoComponent}
+  { path: 'ListarTipoProductos', component: ListarTipoProductoComponent},
+  { path: 'ListarRewards_User', component: ListarRewardsUserComponent}
 ];
 
 @NgModule({
