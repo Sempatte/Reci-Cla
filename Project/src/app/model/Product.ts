@@ -1,7 +1,7 @@
-import { TipoProducto } from "./TipoProducto";
+import { Types } from "./Types";
 export class Product {
     id : number = 0;
     name : string = "";
-    TipoDeProducto: TipoProducto = new TipoProducto();   
+    TipoDeProducto: Types = new Types();   
   }
   
