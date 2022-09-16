@@ -152,8 +152,9 @@ module.exports = function () {
         {
           'id': 3,
           'name': "S/25 de descuento en PedidosYA",
-          'TipoDeProductosId': 11
-
+          'TipoDeProductosId': {
+            'id': 11
+          }
         }
       ]
 
