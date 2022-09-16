@@ -116,39 +116,44 @@ module.exports = function () {
           'issueContent': "Mi historial no se actualizada con mis pedidos anteriores",
           'estado': "Abierto",
           "recyclerId": 1,
+        },
+        {
+          'ticketID': 2,
+          'fecha': "2022-08-09",
+          'hora': "11:00",
+          'issueContent': "Errores en la funcionalidad de la app",
+          'estado': "Cerrado",
+          "recyclerId": 3,
         }
       ],
       'TipoDeProductos': [
         {
           'id': 10,
           'nombre': "Celular",
+          'description': "Celular",
         },
         {
           'id': 11,
           'nombre': "Cupón de descuento",
+          'description': "Cupón de descuento",
         }
       ],
       'Productos': [
         {
           'id': 1,
           'name': "Telefono Xiami 120gb 6Gb RAM",
-          'TipoProducto': {
-            'id': 10
-          }
+          'TipoDeProductosId': 10
         },
         {
           'id': 2,
           'name': "S/15 de descuento en Rappi",
-          'TipoProducto': {
-            'id': 11
-          }
+          'TipoDeProductosId': 11
         },
         {
           'id': 3,
           'name': "S/25 de descuento en PedidosYA",
-          'TipoProducto': {
-            'id': 11
-          }
+          'TipoDeProductosId': 11
+
         }
       ]
 
