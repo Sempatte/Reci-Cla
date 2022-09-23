@@ -1,0 +1,30 @@
+
+<div class="container">
+
+    <h1>Insertar ubicaciones</h1>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="Id" type="number" [(ngModel)]="ubication.id">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Distrito</mat-label>
+      <input matInput required placeholder="Name"  type="text" [(ngModel)]="ubication.Distrito">
+
+    </mat-form-field>
+  s
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input type="Description" matInput required placeholder="text" [(ngModel)]="ubication.Direccion">
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="primary" (click)="aceptarUbication()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/ListarUbicacion">Cancelar</button>
+    <p>{{mensaje}}</p>
+
+  </div>

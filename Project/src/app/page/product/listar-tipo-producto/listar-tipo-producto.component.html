@@ -10,12 +10,12 @@
 
       <ng-container matColumnDef="nameType">
           <th mat-header-cell *matHeaderCellDef> nombre </th>
-          <td mat-cell *matCellDef="let element"> {{element.nameType}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="description">
           <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
       </ng-container>
 
 
@@ -23,5 +23,12 @@
       <tr mat-row *matRowDef="let row; columns: DisplayedColumns;"></tr>
     </table>
 
+    <div id="add" class="example-button-container">
+
+      <button  mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+        routerLink="/InsertarTipoDeProductos">
+        <mat-icon  >add</mat-icon>
+      </button>
+    </div>
 
   </div>

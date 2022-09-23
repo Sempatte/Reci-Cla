@@ -5,12 +5,15 @@ import { Score } from '../model/Score';
 import {Reward} from '../model/Reward'
 import { Rewards_Users } from '../model/Rewards_User';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioTsService {
 
   url : string = 'http://localhost:5000/';
+
+
   constructor(private http: HttpClient) { }
 
   getListaRecicladores() {
@@ -36,6 +39,8 @@ export class UsuarioTsService {
   getRewardsUser(){
     return this.http.get<Rewards_Users[]>(`${this.url}users?_embed=Reward_Users`);
   }
+
+
 
 
 }

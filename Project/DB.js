@@ -119,76 +119,83 @@ module.exports = function () {
       'Types': [
         {
           'id': 1,
-          'nameType': "Celular",
-          'description': "asdsadasdasd",
+          'Name': "Celular",
+          'Description': "asdsadasdasd",
         },
         {
           'id': 2,
-          'nameType': "Cupón de descuento",
-          'description': "asdsadasdas",
+          'Name': "Cupón de descuento",
+          'Description': "asdsadasdas",
         }
       ],
       'Rewards': [
-        { 
-            'id': 1,              
+        {
+            'id': 1,
             'StartDate': "2022-07-09",
             'EndDate': "2022-07-09",
             'NameReward': "Telefono Xiami 120gb 6Gb RAM",
             'Description': "Telefono Xiami 120gb 6Gb RAM",
             'Code': "123456789",
             'TypeId': 1,
-          
+
         },
-        { 
-            'id': 2,              
+        {
+            'id': 2,
             'StartDate': "2022-07-09",
             'EndDate': "2022-07-09",
             'NameReward': "Cupon de descuento 10% en supermercado",
             'Description': "10% de dscto",
             'Code': "nb320",
             'TypeId': 2,
-          
+
         },
-        { 
-            'id': 3,              
+        {
+            'id': 3,
             'StartDate': "2022-07-09",
             'EndDate': "2022-07-09",
             'NameReward': "Cupon de descuento 25% en Rappi",
             'Description': "25% de dscto",
             'Code': "87b21",
             'TypeId': 2,
-          
+
         }
       ],
       'Reward_Users': [
-        { 
-            'userId': 1, 
+        {
+            'userId': 1,
             'RewardId': 1,
-            'Claimed': false            
-          
+            'Claimed': false
+
         },
-        { 
-          'userId': 2, 
+        {
+          'userId': 2,
           'RewardId': 3,
-          'Claimed': true     
-          
+          'Claimed': true
+
         },
-        { 
-          'userId': 3, 
+        {
+          'userId': 3,
           'RewardId': 2,
-          'Claimed': true     
+          'Claimed': true
         }
         ,
-        { 
-          'userId': 4, 
+        {
+          'userId': 4,
           'RewardId': 2,
-          'Claimed': true     
+          'Claimed': true
         }
         ,
-        { 
-          'userId': 5, 
+        {
+          'userId': 5,
           'RewardId': 2,
-          'Claimed': true     
+          'Claimed': true
+        }
+      ],
+      'Ubications': [
+        {
+          'id': 1,
+          'Distrito': "Miraflores",
+          'Direccion': "Av. Angamos 123"
         }
       ]
     }
