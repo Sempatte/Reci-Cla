@@ -4,6 +4,7 @@ import { User } from '../model/User';
 import { Score } from '../model/Score';
 import {Reward} from '../model/Reward'
 import { Rewards_Users } from '../model/Rewards_User';
+import { Ticket } from '../model/Ticket';
 
 
 @Injectable({
@@ -40,7 +41,9 @@ export class UsuarioTsService {
     return this.http.get<Rewards_Users[]>(`${this.url}users?_embed=Reward_Users`);
   }
 
-
+  getTicketRecicladores() {
+    return this.http.get<Ticket[]>(`${this.url}users?_embed=Tickets`);
+  }
 
 
 }
