@@ -27,6 +27,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -62,6 +63,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

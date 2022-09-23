@@ -5,6 +5,7 @@
     mat-table
     [dataSource]="dataSource"
     class="mat-elevation-z8"
+    *ngIf="!isLoading"
   >
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -38,4 +39,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+
+  <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center;">
+    <mat-progress-spinner color="primary" mode="indeterminate"> </mat-progress-spinner>
+  </div>
 </div>

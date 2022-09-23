@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/usuario.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
@@ -26,7 +26,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
   buscarHistorial(){
     this.nombreReciclador = this.nombreReciclador.charAt(0).toUpperCase() + this.nombreReciclador.slice(1);
     this.uS.getHistorialXReciclador(this.nombreReciclador).subscribe(
-      
+
       (data) => {
         if (data.length > 0) {
           this.data_apellidoReciclador = data[0].apellido;
@@ -40,7 +40,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
           this.error = "No se encontraron resultados";
         }
 
-      }, 
+      },
       (error) => {
         this._find = false;
         this.error = "Uknown error";

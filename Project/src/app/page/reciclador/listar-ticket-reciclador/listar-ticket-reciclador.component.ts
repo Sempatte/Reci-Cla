@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { UsuarioTsService } from 'src/app/service/usuario.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 
 @Component({
   selector: 'app-listar-ticket-reciclador',
@@ -11,6 +11,7 @@ export class ListarTicketRecicladorComponent implements OnInit {
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
   displayedColumns: string[] = ['id','descripcion' ,'nombre', 'email' ,'fecha'];
+  isLoading: boolean = true;
 
   constructor(private uS: UsuarioTsService) { }
 
@@ -18,7 +19,7 @@ export class ListarTicketRecicladorComponent implements OnInit {
     this.uS.getTicketRecicladores().subscribe(
       (data) => {
         this.dataSource = new MatTableDataSource(data);
-        console.log(data);
+        this.isLoading = false;
       }
     )
   }

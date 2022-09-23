@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/usuario.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Rewards_Users } from 'src/app/model/Rewards_User';
 
