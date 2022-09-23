@@ -22,7 +22,7 @@ export class UsuarioTsService {
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>(`${this.url}users?_embed=Scores`);
+    return this.http.get<Score[]>(`${this.url}Scores?_expand=user`);
   }
 
   getHistorialXReciclador(nombre: string) {
@@ -38,11 +38,11 @@ export class UsuarioTsService {
   }
 
   getRewardsUser(){
-    return this.http.get<Rewards_Users[]>(`${this.url}users?_embed=Reward_Users`);
+    return this.http.get<Rewards_Users[]>(`${this.url}Reward_Users?_expand=user&_expand=Reward`);
   }
 
   getTicketRecicladores() {
-    return this.http.get<Ticket[]>(`${this.url}users?_embed=Tickets`);
+    return this.http.get<Ticket[]>(`${this.url}Tickets?_expand=user`);
   }
 
 

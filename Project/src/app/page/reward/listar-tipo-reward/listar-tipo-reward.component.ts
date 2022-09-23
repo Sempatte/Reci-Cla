@@ -1,13 +1,12 @@
 import { TypeOfRewardService } from 'src/app/service/type-of-reward.service';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/usuario.service';
 import { MatTableDataSource } from '@angular/material/table';
 @Component({
-  selector: 'app-listar-tipo-producto',
-  templateUrl: './listar-tipo-producto.component.html',
-  styleUrls: ['./listar-tipo-producto.component.css']
+  selector: 'app-listar-tipo-reward',
+  templateUrl: './listar-tipo-reward.component.html',
+  styleUrls: ['./listar-tipo-reward.component.css']
 })
-export class ListarTipoProductoComponent implements OnInit {
+export class ListarTipoRewardComponent implements OnInit {
 
   DataSource : MatTableDataSource<any> = new MatTableDataSource ()
   DisplayedColumns : String[]=["id","nameType","description"]

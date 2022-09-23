@@ -1,0 +1,56 @@
+<div class="container history_form">
+  <table
+    id="tabla-listarRewardsUsers"
+    mat-table
+    [dataSource]="DataSource"
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="RewardId">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombres">
+      <th mat-header-cell *matHeaderCellDef>Nombres y apellidos</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.user.nombre + " " + element.user.apellido }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="StartDate">
+      <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
+      <td mat-cell *matCellDef="let element">{{ element.Reward.StartDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="EndDate">
+      <th mat-header-cell *matHeaderCellDef>Fecha de expiracion</th>
+      <td mat-cell *matCellDef="let element">{{ element.Reward.EndDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="NameReward">
+      <th mat-header-cell *matHeaderCellDef>Objeto</th>
+      <td mat-cell *matCellDef="let element">{{ element.Reward.NameReward }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Objeto</th>
+      <td mat-cell *matCellDef="let element">{{ element.Reward.Description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="CodeReward">
+      <th mat-header-cell *matHeaderCellDef>Codigo de Canjeado</th>
+      <td mat-cell *matCellDef="let element">{{ element.Reward.Code }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Claimed">
+      <th mat-header-cell *matHeaderCellDef>Canjeado</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Claimed ? "Si" : "No" }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="DisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: DisplayedColumns"></tr>
+  </table>
+</div>

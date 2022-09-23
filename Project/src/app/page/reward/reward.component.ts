@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioTsService } from 'src/app/service/usuario.service';
 import { MatTableDataSource } from '@angular/material/table';
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-reward',
+  templateUrl: './reward.component.html',
+  styleUrls: ['./reward.component.css']
 })
-export class ProductComponent implements OnInit { 
+export class RewardComponent implements OnInit { 
 
   DataSource : MatTableDataSource<any> = new MatTableDataSource ()
   DisplayedColumns : String[]=["id","name","TipoProducto"]

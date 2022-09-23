@@ -18,10 +18,10 @@ import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-his
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { ProductComponent } from './page/product/product.component';
-import { ListarTipoProductoComponent } from './page/product/listar-tipo-producto/listar-tipo-producto.component';
-import { ListarRewardsUserComponent } from './page/product/listar-rewards-user/listar-rewards-user.component';
-import { InsertarTipoDeRewardComponent } from './page/product/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
+import { RewardComponent } from './page/reward/reward.component';
+import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/listar-tipo-reward.component';
+import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
+import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
 import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -34,8 +34,8 @@ import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket
     RecolectorComponent,
     ListarScoresRecicladorComponent,
     ListarHistorialRecicladorComponent,
-    ProductComponent,
-    ListarTipoProductoComponent,
+    RewardComponent,
+    ListarTipoRewardComponent,
     ListarRewardsUserComponent,
     InsertarTipoDeRewardComponent,
     InsertarUbicationComponent,

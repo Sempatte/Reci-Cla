@@ -11,7 +11,7 @@ import { Rewards_Users } from 'src/app/model/Rewards_User';
 export class ListarRewardsUserComponent implements OnInit {
 
   DataSource : MatTableDataSource<Rewards_Users> = new MatTableDataSource() // Instancia de la clase
-  DisplayedColumns : String[]= ["nombre", "apellido", "RewardId", "Claimed"]
+  DisplayedColumns : String[]= ["RewardId", "nombres", "StartDate", "EndDate" , "NameReward", "Description", "CodeReward", "Claimed"]
   constructor(private uS: UsuarioTsService) { }
 
   ngOnInit(): void {

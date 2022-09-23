@@ -1,34 +1,45 @@
-#tabla-listarTickets{
+#tabla-listarTickets {
     padding: 20px;
     margin: 20px;
-    width: 70%;
+    width: 60%;
     font-size: 20px;
     text-align: center;
 }
-#tabla-listarTickets{
+
+#tabla-listarTickets th {
     text-align: center !important;
 }
+
 #tabla-listarTickets .mat-column-id {
     width: 10px;
     border-right: 1px solid currentColor;
     padding-right: 24px;
     text-align: center;
 }
-#tabla-listarScores .mat-column-descripcion {
+
+#tabla-listarTickets .mat-column-nombre {
     width: auto;
 }
 
-#tabla-listarScores .mat-column-nombre {
+#tabla-listarTickets .mat-column-pedidosRealizados {
     width: auto;
     font-style: italic;
 }
 
-#tabla-listarScores .mat-column-fecha {
+#tabla-listarTickets .mat-column-telefono {
     width: auto;
     text-align: center;
     font-weight: bold;
 }
-h2 {
-    padding: 30px;
-    margin: 10px;
+
+#tabla-listarTickets .mat-column-email {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tabla-listarTickets .mat-column-dni {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
 }
