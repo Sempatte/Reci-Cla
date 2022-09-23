@@ -100,21 +100,19 @@ module.exports = function () {
       ],
       'Tickets': [
         {
-          'ticketID': 1,
-          'fecha': "2022-07-09",
-          'hora': "10:00",
-          'issueContent': "Mi historial no se actualizada con mis pedidos anteriores",
-          'estado': "Abierto",
-          "userId": 1,
+          'idTicket': 1,
+          'DescriptionReclamo': "Mi historial no se actualizada con mis pedidos anteriores",
+          'recyclerId':1,
+          'fecha': "2022-07-09"
+          
         },
         {
-          'ticketID': 2,
-          'fecha': "2022-08-09",
-          'hora': "11:00",
-          'issueContent': "Errores en la funcionalidad de la app",
-          'estado': "Cerrado",
-          "userId": 3,
-        }
+          'idTicket': 2,
+          'DescriptionReclamo': "Mis recompensas se eliminaron antes de ser reclamadas",
+          'recyclerId':2,
+          'fecha': "2022-07-09"
+          
+        }       
       ],
       'Types': [
         {
