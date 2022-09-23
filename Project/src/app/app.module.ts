@@ -22,6 +22,7 @@ import { ProductComponent } from './page/product/product.component';
 import { ListarTipoProductoComponent } from './page/product/listar-tipo-producto/listar-tipo-producto.component';
 import { ListarRewardsUserComponent } from './page/product/listar-rewards-user/listar-rewards-user.component';
 import { InsertarTipoDeRewardComponent } from './page/product/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
+import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
 //import {MatLabelModule} from '@angular/material/label'
 
 @NgModule({
@@ -38,7 +39,8 @@ import { InsertarTipoDeRewardComponent } from './page/product/insertar-tipo-de-r
     ListarRewardsUserComponent,
     InsertarTipoDeRewardComponent,
     InsertarUbicationComponent,
-    UbicationComponent
+    UbicationComponent,
+    ListarTicketRecicladorComponent
   ],
   imports: [
     BrowserModule,
