@@ -42,7 +42,7 @@ export class UsuarioTsService {
   }
 
   getTicketRecicladores() {
-    return this.http.get<Ticket[]>(`${this.url}Tickets?_expand=user`);
+    return this.http.get<Ticket[]>(`${this.url}Tickets?_expand=user`);  
   }
 
 

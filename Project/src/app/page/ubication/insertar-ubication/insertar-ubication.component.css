@@ -1,0 +1,9 @@
+
+.form-insertar mat-form-field#_id{
+    width: 2rem;
+
+}
+
+.form-insertar .form-controls #button-action {
+    margin: 4px
+}

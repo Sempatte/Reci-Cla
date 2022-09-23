@@ -23,6 +23,11 @@ import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/list
 import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
 import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 //import {MatLabelModule} from '@angular/material/label'
 
 @NgModule({
@@ -40,7 +45,8 @@ import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket
     InsertarTipoDeRewardComponent,
     InsertarUbicationComponent,
     UbicationComponent,
-    ListarTicketRecicladorComponent
+    ListarTicketRecicladorComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +59,9 @@ import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket
     MatButtonModule,
     MatCardModule,
     FormsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

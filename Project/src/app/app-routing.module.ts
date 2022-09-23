@@ -16,6 +16,7 @@ import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
+  { path: '', redirectTo: '/Home', pathMatch: 'full'  },
   { path: 'Recicladores', component: RecicladorComponent },
   { path: 'Home', component: HomeComponent },
   { path: 'ListarScores', component: ListarScoresRecicladorComponent },
