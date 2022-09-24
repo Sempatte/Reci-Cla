@@ -13,11 +13,7 @@ export class UbicationComponent implements OnInit {
   DataSource: MatTableDataSource<Ubication> = new MatTableDataSource();
   listaUbication: Ubication[] = [];
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
-=======
-  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion', 'acciones' ];
->>>>>>> Stashed changes
 =======
   displayedColumns: string[] = ['idUbication','Distrito', 'Direccion', 'acciones' ];
 >>>>>>> Stashed changes
