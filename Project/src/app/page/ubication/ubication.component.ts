@@ -14,6 +14,13 @@ export class UbicationComponent implements OnInit {
   listaUbication: Ubication[] = [];
 <<<<<<< HEAD
   displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
+=======
+<<<<<<< Updated upstream
+  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
+=======
+  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion', 'acciones' ];
+>>>>>>> Stashed changes
+>>>>>>> parent of 50ecc1f (e)
 
   constructor(private ubS: UbicacionService) { }
 
