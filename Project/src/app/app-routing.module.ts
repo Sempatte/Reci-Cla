@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'ListarRewards_User', component: ListarRewardsUserComponent},
   { path: 'ListarUbicacion', component: UbicationComponent},
   { path: 'InsertarUbicacion', component: InsertarUbicationComponent},
-  { path: 'ListarTickets', component: ListarTicketRecicladorComponent}
+  { path: 'ListarTickets', component: ListarTicketRecicladorComponent},
+  { path: 'edicion/:id', component: InsertarUbicationComponent}
 ];
 
 @NgModule({

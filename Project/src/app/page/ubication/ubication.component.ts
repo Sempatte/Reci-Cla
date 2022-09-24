@@ -12,6 +12,7 @@ export class UbicationComponent implements OnInit {
 
   DataSource: MatTableDataSource<Ubication> = new MatTableDataSource();
   listaUbication: Ubication[] = [];
+<<<<<<< HEAD
   displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
 
   constructor(private ubS: UbicacionService) { }
