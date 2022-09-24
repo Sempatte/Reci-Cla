@@ -12,11 +12,7 @@ export class UbicationComponent implements OnInit {
 
   DataSource: MatTableDataSource<Ubication> = new MatTableDataSource();
   listaUbication: Ubication[] = [];
-<<<<<<< Updated upstream
   displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
-=======
-  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion', 'acciones' ];
->>>>>>> Stashed changes
 
   constructor(private ubS: UbicacionService) { }
 
@@ -33,8 +29,4 @@ export class UbicationComponent implements OnInit {
 
   }
 
-<<<<<<< Updated upstream
 }
-=======
-} 
->>>>>>> Stashed changes
