@@ -11,12 +11,20 @@ import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/list
 import { UbicationComponent } from './page/ubication/ubication.component';
 import { InsertarUbicationComponent } from './page/ubication/insertar-ubication/insertar-ubication.component';
 import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
+import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
 
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
-  { path: 'Recicladores', component: RecicladorComponent },
+  {
+    path: 'Recicladores',
+    component: RecicladorComponent,
+    children: [
+      { path: 'insertar', component: InsertarEditarRecicladorComponent },
+      { path: 'editar/:id', component: InsertarEditarRecicladorComponent },
+    ],
+  },
   { path: 'Home', component: HomeComponent },
   { path: 'ListarScores', component: ListarScoresRecicladorComponent },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },

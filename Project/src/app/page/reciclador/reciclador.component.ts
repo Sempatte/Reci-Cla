@@ -1,7 +1,8 @@
 import { MatTableDataSource } from '@angular/material/table'
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService} from 'src/app/service/lists.service';
+import { RecicladorService} from 'src/app/service/reciclador.service';
 import { User } from 'src/app/model/User';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-reciclador',
   templateUrl: './reciclador.component.html',
@@ -11,12 +12,18 @@ export class RecicladorComponent implements OnInit {
   isLoading : boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource();
   listaRecicladores: any = [];
-  displayedColumns: string[] = ['id','nombre', 'apellido' ,'email', 'telefono', 'dni'];
+  displayedColumns: string[] = ['id','nombre', 'apellido' ,'email', 'telefono', 'dni', 'acciones'];
 
-  constructor(private uS: UsuarioTsService) { }
+  constructor(private rS: RecicladorService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.uS.getListaRecicladores().subscribe(data => {
+    this.rS.getUsers().subscribe(data => {
+      this.isLoading = false;
+      this.dataSource= new MatTableDataSource(data);
+
+    })
+
+    this.rS.getListaUser().subscribe(data => {
       this.isLoading = false;
       this.dataSource= new MatTableDataSource(data);
 

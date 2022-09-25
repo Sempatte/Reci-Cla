@@ -17,9 +17,6 @@ export class UsuarioTsService {
 
   constructor(private http: HttpClient) { }
 
-  getListaRecicladores() {
-    return this.http.get<User[]>(`${this.url}users`);
-  }
 
   getScoresRecolectores() {
     return this.http.get<Score[]>(`${this.url}Scores?_expand=user`);

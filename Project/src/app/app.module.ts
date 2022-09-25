@@ -28,6 +28,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -48,6 +49,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     UbicationComponent,
     ListarTicketRecicladorComponent,
     SidenavComponent,
+    InsertarEditarRecicladorComponent,
   ],
   imports: [
     BrowserModule,
