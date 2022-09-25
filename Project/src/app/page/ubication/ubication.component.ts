@@ -2,6 +2,7 @@ import { MatTableDataSource } from '@angular/material/table'
 import { Component, OnInit } from '@angular/core';
 import { Ubication } from 'src/app/model/Ubication';
 import { UbicacionService } from 'src/app/service/ubicacion.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ubication',
@@ -13,9 +14,9 @@ export class UbicationComponent implements OnInit {
   DataSource: MatTableDataSource<Ubication> = new MatTableDataSource();
   listaUbication: Ubication[] = [];
 
-  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion' ];
+  displayedColumns: string[] = ['idUbication','Distrito', 'Direccion', 'acciones'];
 
-  constructor(private ubS: UbicacionService) { }
+  constructor(private ubS: UbicacionService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.ubS.getUbication().subscribe(data => {

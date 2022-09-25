@@ -32,4 +32,11 @@ export class UbicacionService {
     return this.listaUbication.asObservable();
   }
 
+  modifyUbication(ubication: Ubication) {
+    return this.http.put(this.url + '/' + ubication.id, ubication);
+  }
+
+  ListarIdUbication(id: number) {
+    return this.http.get<Ubication>(`${this.url}/${id}`);
+  }
 }

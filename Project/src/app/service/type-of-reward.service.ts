@@ -4,28 +4,35 @@ import { Types } from '../model/Types';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TypeOfRewardService {
+  url: string = 'http://localhost:5000/Types';
+  private listaCambio = new Subject<Types[]>();
 
-  url : string = 'http://localhost:5000/Types';
-  private listaCambio = new Subject<Types[]>()
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  listarTypeOfReward(){
+  listarTypeOfReward() {
     return this.http.get<Types[]>(this.url);
   }
 
-  insertarTypeOfReward(types: Types){
-    return this.http.post(this.url, types)
+  insertarTypeOfReward(types: Types) {
+    return this.http.post(this.url, types);
   }
 
-  setListaTypeOfReward(listaNueva : Types[]){
-    this.listaCambio.next(listaNueva)
+  setListaTypeOfReward(listaNueva: Types[]) {
+    this.listaCambio.next(listaNueva);
   }
 
-  getListaTypeOfReward(){
-    return this.listaCambio.asObservable()
+  getListaTypeOfReward() {
+    return this.listaCambio.asObservable();
+  }
+
+  modifyTypeOfReward(types: Types) {
+    return this.http.put(this.url + '/' + types.id, types);
+  }
+
+  ListarIdTypeOfReward(id: number) {
+    return this.http.get<Types>(`${this.url}/${id}`);
   }
 }
