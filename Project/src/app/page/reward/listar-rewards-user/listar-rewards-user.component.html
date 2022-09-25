@@ -45,7 +45,7 @@
 
     <ng-container matColumnDef="Claimed">
       <th mat-header-cell *matHeaderCellDef>Canjeado</th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell [ngStyle]="{'color': element.Claimed ? 'green' : 'red'}" *matCellDef="let element">
         {{ element.Claimed ? "Si" : "No" }}
       </td>
     </ng-container>
