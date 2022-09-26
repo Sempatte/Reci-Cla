@@ -15,7 +15,7 @@ import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
 import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-historial-reciclador/listar-historial-reciclador.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RewardComponent } from './page/reward/reward.component';
@@ -23,16 +23,20 @@ import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/list
 import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
 import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './page/reciclador/dialog/dialog.component';
 import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -73,7 +77,10 @@ import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/b
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule,
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

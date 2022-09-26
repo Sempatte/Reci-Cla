@@ -1,20 +1,22 @@
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { RecicladorService } from 'src/app/service/reciclador.service';
 import { User } from 'src/app/model/User';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-reciclador',
   templateUrl: './reciclador.component.html',
   styleUrls: ['./reciclador.component.css'],
 })
-export class RecicladorComponent implements OnInit {
+export class RecicladorComponent implements  OnInit {
   isLoading: boolean = true;
-  dataSource: MatTableDataSource<User> = new MatTableDataSource();
+  dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   listaRecicladores: any = [];
+
   private idMayor: number = 0;
   displayedColumns: string[] = [
     'id',
@@ -27,6 +29,8 @@ export class RecicladorComponent implements OnInit {
     'accionEliminar',
   ];
 
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+
   constructor(
     private rS: RecicladorService,
     public route: ActivatedRoute,
@@ -36,17 +40,21 @@ export class RecicladorComponent implements OnInit {
   ngOnInit(): void {
     this.rS.getUsers().subscribe((data) => {
       this.isLoading = false;
-      this.dataSource = new MatTableDataSource(data);
+      this.dataSource = new MatTableDataSource<User>(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.rS.getListaUser().subscribe((data) => {
       this.isLoading = false;
-      this.dataSource = new MatTableDataSource(data);
+      this.dataSource = new MatTableDataSource<User>(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.rS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
     });
+
+
   }
 
   confirmar(id: number) {

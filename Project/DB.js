@@ -39,8 +39,50 @@ module.exports = function () {
         apellido: "Gonzalez",
         email: "Brian@gmail.com",
         telefono: "941868604",
-        dni: "72524847",
+        dni: "78657812",
       },
+      {
+        id: 6,
+        nombre: "Ismael",
+        apellido: "Pardo",
+        email: "ismael@gmail.com",
+        telefono: "941868604",
+        dni: "78786565",
+      },
+      {
+        id: 7,
+        nombre: "Miguel",
+        apellido: "Alvarez",
+        email: "m.alvarez@gmail.com",
+        telefono: "987678123",
+        dni: "76859301",
+      },
+      {
+        id: 8,
+        nombre: "Miguel",
+        apellido: "Perez",
+        email: "m.perez@gmail.com",
+        telefono: "987641021",
+        dni: "07651821",
+      },
+      {
+        id: 9,
+        nombre: "Leonardo",
+        apellido: "Lopez",
+        email: "l.lopez@gmail.com",
+        telefono: "916393124",
+        dni: "23456789",
+      },
+      {
+        id: 10,
+        nombre: "Kevin",
+        apellido: "Ibañez",
+        email: "k.ibañez@gmail.com",
+        telefono: "987345678",
+        dni: "45789121",
+      },
+
+
     ],
     Scores: [
       {
