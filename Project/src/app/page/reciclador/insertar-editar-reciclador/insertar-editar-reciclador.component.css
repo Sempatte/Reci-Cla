@@ -1,16 +1,13 @@
-
-.form-insertar mat-form-field#_id{
-    width: 1.5rem;
-
-}
-
-.form-insertar mat-form-field#_email{
-    width: 16rem;
+.form-insertar mat-form-field#_id {
+  width: 3rem;
 
 }
 
+.form-insertar mat-form-field#_email {
+  width: 16rem;
 
+}
 
 .form-insertar .form-controls #button-action {
-    margin: 4px
+  margin: 4px
 }

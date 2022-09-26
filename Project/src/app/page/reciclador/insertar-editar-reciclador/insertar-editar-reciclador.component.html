@@ -1,7 +1,7 @@
 <div class="container">
     <div class="form-insertar">
-      <h1>Insertar o modificar reciclador</h1>
-  
+      <h1>{{edicion ? "Editar reciclador" : "Añadir reciclador"}} </h1>
+
       <mat-form-field id="_id">
         <mat-label>Id</mat-label>
         <input
@@ -9,11 +9,12 @@
           placeholder="Id"
           type="number"
           [(ngModel)]="user.id"
+          disabled="{{edicion}}"
         />
       </mat-form-field>
-  
+
       <br />
-  
+
       <mat-form-field>
         <mat-label>Nombres</mat-label>
         <input
@@ -24,7 +25,7 @@
           [(ngModel)]="user.nombre"
         />
       </mat-form-field>
-  
+
       <br />
       <mat-form-field>
         <mat-label>Apellidos</mat-label>
@@ -36,7 +37,7 @@
           [(ngModel)]="user.apellido"
         />
       </mat-form-field>
-      
+
       <br />
       <mat-form-field id="_email">
         <mat-label>Email</mat-label>
@@ -72,7 +73,7 @@
           [(ngModel)]="user.dni"
         />
       </mat-form-field>
-  
+
       <div class="form-controls">
         <button mat-raised-button id="button-action" color="primary" (click)="aceptarModInsUsuario()">
           Aceptar
@@ -84,4 +85,3 @@
       <p>{{ mensaje }}</p>
     </div>
   </div>
-  

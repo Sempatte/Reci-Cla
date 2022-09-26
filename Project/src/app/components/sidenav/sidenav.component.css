@@ -17,9 +17,6 @@
 
 }
 
-.toolbar {
-  background-color: rgb(99, 175, 152)
-}
 
 h1.app-name {
   margin-left: 8px;
@@ -39,4 +36,15 @@ h1.app-name {
 
 .toolbar-icon {
   margin-right: 15px;
+}
+
+.slide-button {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.mat-toolbar {
+  background: url('https://ledanddomotics.com/wp-content/uploads/importedmedia/importedmedia.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
 }

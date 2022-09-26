@@ -1,11 +1,11 @@
 
 <div class="container">
 
-  <h1>Insertar tipo de rewards</h1>
+  <h1>{{edicion ? "Editar tipo de rewards" : "Insertar tipo de rewards"}} </h1>
 
   <mat-form-field class="example-full-width">
     <mat-label>Id</mat-label>
-    <input matInput placeholder="Id" type="number" [(ngModel)]="types.id">
+    <input matInput placeholder="Id" type="number" [(ngModel)]="types.id" disabled="{{edicion}}">
   </mat-form-field>
 
   <br>

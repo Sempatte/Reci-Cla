@@ -2,14 +2,14 @@
 #tabla-listarRecicladores {
     padding: 20px;
     margin: 20px;
-    width: 70%;
+    width: 80%;
     font-size: 20px;
     text-align: center
 }
 
 #tabla-listarRecicladores th {
     text-align: center !important;
-} 
+}
 
 #tabla-listarRecicladores .mat-column-id {
     width: 32px;
@@ -48,3 +48,15 @@ h2 {
     padding: 30px;
     margin: 10px;
 }
+
+.btn-eliminar {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: unset!important;
+}
+
+.btn-eliminar mat-icon {
+  font-size: 20px !important;
+  vertical-align: text-bottom;
+}
+

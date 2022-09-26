@@ -29,6 +29,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './page/reciclador/dialog/dialog.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -50,6 +53,7 @@ import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-ed
     ListarTicketRecicladorComponent,
     SidenavComponent,
     InsertarEditarRecicladorComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-ed
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSlideToggleModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

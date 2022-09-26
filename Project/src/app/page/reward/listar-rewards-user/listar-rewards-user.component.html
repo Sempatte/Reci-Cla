@@ -1,4 +1,5 @@
 <div class="container history_form">
+  <h1>Usuarios con rewards obtenidos</h1>
   <table
     id="tabla-listarRewardsUsers"
     mat-table
@@ -27,6 +28,11 @@
       <td mat-cell *matCellDef="let element">{{ element.Reward.EndDate }}</td>
     </ng-container>
 
+    <ng-container matColumnDef="expired">
+      <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+      <td mat-cell [ngStyle]="{'color': validarFechaMenorActual(element.Reward.EndDate) ? 'red' : 'green' }" *matCellDef="let element">{{ validarFechaMenorActual(element.Reward.EndDate) ? "Expirado" : "No expirado" }}</td>
+    </ng-container>
+
     <ng-container matColumnDef="NameReward">
       <th mat-header-cell *matHeaderCellDef>Objeto</th>
       <td mat-cell *matCellDef="let element">{{ element.Reward.NameReward }}</td>
@@ -45,8 +51,8 @@
 
     <ng-container matColumnDef="Claimed">
       <th mat-header-cell *matHeaderCellDef>Canjeado</th>
-      <td mat-cell [ngStyle]="{'color': element.Claimed ? 'green' : 'red'}" *matCellDef="let element">
-        {{ element.Claimed ? "Si" : "No" }}
+      <td mat-cell [ngStyle]="{'color': element.Claimed ? 'green' : 'red', 'font-weight': '600'}" *matCellDef="let element">
+        {{ element.Claimed ? "SI" : "NO" }}
       </td>
     </ng-container>
 

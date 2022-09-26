@@ -1,4 +1,4 @@
-<div class="toolbar-container" [class.example-is-mobile]="mobileQuery.matches">
+<div  class="toolbar-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar class="toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
@@ -22,6 +22,8 @@
           {{ nav.name }}
         </a>
       </mat-nav-list>
+      <mat-slide-toggle ngModel class="slide-button" name="enableDarkMode"> Dark Mode</mat-slide-toggle>
+
     </mat-sidenav>
 
     <mat-sidenav-content>

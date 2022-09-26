@@ -12,8 +12,9 @@ export class RecicladorService {
 
   url : string = 'http://localhost:5000/users';
   private listaUser = new Subject<User[]>()
+  private confirmaEliminacion = new Subject<Boolean>()
 
-  
+
   getUsers() {
     return this.http.get<User[]>(this.url);
   }
@@ -38,4 +39,16 @@ export class RecicladorService {
   ListarIdUbication(id: number) {
     return this.http.get<User>(`${this.url}/${id}`);
   }
+
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
+  }
+
+
 }
