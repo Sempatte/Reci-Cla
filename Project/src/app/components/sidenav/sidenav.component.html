@@ -14,7 +14,7 @@
       #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches"
-
+      id="sidenav"
       fixedTopGap="56"
     >
       <mat-nav-list>
@@ -27,7 +27,7 @@
 
     </mat-sidenav>
 
-    <mat-sidenav-content id="sidenav">
+    <mat-sidenav-content id="sidenav-content">
         <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

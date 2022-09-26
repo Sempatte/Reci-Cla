@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
+  /* Normal mode */
   --bkg-color: #fff;
-  --bkg-color-dark-mode: #161616;
   --font-color: #000000;
+  /* Dark mode */
+  --bkg-sidenav-color-dark-mode: #2E3233;
+  --bkg-color-dark-mode: #1C1C1C;
   --font-color-dark-mode: #ffffff;
 }
 
@@ -23,12 +26,21 @@ body {
   padding: 35px;
 }
 
-mat-sidenav-content {
+.mat-sidenav-content {
   background-color: var(--bkg-color);
   color: var(--font-color)
 }
 
-.dark-theme {
+.mat-sidenav-content.dark-theme {
   background-color: var(--bkg-color-dark-mode);
   color: var(--font-color-dark-mode)
+}
+
+.mat-sidenav.dark-theme {
+  background-color: var(--bkg-sidenav-color-dark-mode) !important;
+  color: var(--font-color-dark-mode) !important
+}
+
+.mat-sidenav.dark-theme .mat-list-base .mat-list-item {
+  color: var(--font-color-dark-mode) !important
 }

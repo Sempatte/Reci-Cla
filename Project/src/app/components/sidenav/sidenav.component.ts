@@ -45,6 +45,7 @@ export class SidenavComponent implements OnInit {
   }
 
   toggleDarkTheme(): void {
+    document.getElementById("sidenav-content")!.classList.toggle('dark-theme');
     document.getElementById("sidenav")!.classList.toggle('dark-theme');
   }
 
