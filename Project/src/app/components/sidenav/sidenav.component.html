@@ -14,6 +14,7 @@
       #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches"
+
       fixedTopGap="56"
     >
       <mat-nav-list>
@@ -22,11 +23,11 @@
           {{ nav.name }}
         </a>
       </mat-nav-list>
-      <mat-slide-toggle ngModel class="slide-button" name="enableDarkMode"> Dark Mode</mat-slide-toggle>
+      <mat-slide-toggle (change)="toggleDarkTheme()" ngModel class="slide-button" name="enableDarkMode"> Dark Mode</mat-slide-toggle>
 
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content id="sidenav">
         <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

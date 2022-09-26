@@ -44,4 +44,8 @@ export class SidenavComponent implements OnInit {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  toggleDarkTheme(): void {
+    document.getElementById("sidenav")!.classList.toggle('dark-theme');
+  }
+
 }
