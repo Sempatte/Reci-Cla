@@ -32,6 +32,7 @@ import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-ed
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './page/reciclador/dialog/dialog.component';
+import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -54,6 +55,7 @@ import { DialogComponent } from './page/reciclador/dialog/dialog.component';
     SidenavComponent,
     InsertarEditarRecicladorComponent,
     DialogComponent,
+    BuscarRecicladorComponent,
   ],
   imports: [
     BrowserModule,

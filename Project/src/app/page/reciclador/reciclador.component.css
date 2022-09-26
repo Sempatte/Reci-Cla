@@ -49,14 +49,23 @@ h2 {
     margin: 10px;
 }
 
-.btn-eliminar {
+.btn-eliminar, .btn-editar{
   width: 30px !important;
   height: 30px !important;
   min-width: unset!important;
 }
 
-.btn-eliminar mat-icon {
+.btn-editar {
+  width: 40px !important;
+}
+
+.btn-eliminar mat-icon, .btn-editar mat-icon {
   font-size: 20px !important;
   vertical-align: text-bottom;
 }
 
+.btn-editar mat-icon {
+  margin-left: -7px !important;
+  margin-top: 4px;
+
+}

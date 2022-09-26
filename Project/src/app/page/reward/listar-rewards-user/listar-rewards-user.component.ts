@@ -13,7 +13,6 @@ export class ListarRewardsUserComponent implements OnInit {
   DisplayedColumns: String[] = [
     'RewardId',
     'nombres',
-    'StartDate',
     'EndDate',
     'expired',
     'NameReward',
