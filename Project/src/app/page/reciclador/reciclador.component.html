@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <div [hidden]="route.children.length !== 0">
   <div class="container">
-    <h2>Lista de recicladores</h2>
+    <h2 class="title">Lista de recicladores</h2>
     <app-buscar-reciclador [ngStyle]="{'margin-left': '20px'}"></app-buscar-reciclador>
     <table id="tabla-listarRecicladores" mat-table [dataSource]="dataSource" class="mat-elevation-z8"
       *ngIf="!isLoading">

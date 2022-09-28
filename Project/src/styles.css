@@ -44,3 +44,8 @@ body {
 .mat-sidenav.dark-theme .mat-list-base .mat-list-item {
   color: var(--font-color-dark-mode) !important
 }
+
+h2.title{
+  padding: 30px;
+  margin: 10px;
+}
