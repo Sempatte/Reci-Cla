@@ -44,7 +44,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
             array = array[0].historial;
             if (array.length < 1) {
               this._find = false;
-              this.error = 'No hay historial registrado';
+              this.error = 'No hay historial registrado para el usuario.';
               return;
             }
             array = array[0].busquedas;
@@ -52,11 +52,12 @@ export class ListarHistorialRecicladorComponent implements OnInit {
             this.rS.setListaUser(array);
             this.dataSource = new MatTableDataSource(array);
             this.error = '';
-          } else {
-            this._find = false;
-            this.nombresEncontrados = '';
-            this.error = 'No se encontraron resultados';
+            return
           }
+          this._find = false;
+          this.nombresEncontrados = '';
+          this.error = 'No se encontraron resultados';
+          
         },
         (error) => {
           this._find = false;
