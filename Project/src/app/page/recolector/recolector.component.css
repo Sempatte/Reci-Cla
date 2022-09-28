@@ -1,0 +1,48 @@
+
+#tabla-listarRecolectores {
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    font-size: 20px;
+    text-align: center
+}
+
+#tabla-listarRecolectores th {
+    text-align: center !important;
+}
+
+#tabla-listarRecolectores .mat-column-id {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+
+#tabla-listarRecolectores .mat-column-nombre {
+    padding-left: 6px;
+}
+
+#tabla-listarRecolectores .mat-column-apellido {
+    font-style: italic;
+}
+
+#tabla-listarRecolectores .mat-column-telefono {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tabla-listarRecolectores .mat-column-email {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tabla-listarRecolectores .mat-column-dni {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+

@@ -14,7 +14,7 @@ export class BuscarRecicladorComponent implements OnInit {
 
   buscar(_e: any) {
     let array: User[] = [];
-    this.rS.getUsers().subscribe((data) => {
+    this.rS.getRecicladores().subscribe((data) => {
 
       array = data.filter(
         (e) =>

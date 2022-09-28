@@ -8,6 +8,7 @@ module.exports = function () {
         email: "sebastiandelatorre@gmail.com",
         telefono: "992737884",
         dni: "72845242",
+        esReciclador: true,
       },
       {
         id: 2,
@@ -16,6 +17,7 @@ module.exports = function () {
         email: "diego@gmail.com",
         telefono: "992737884",
         dni: "12345678",
+        esReciclador: true,
       },
       {
         id: 3,
@@ -24,6 +26,7 @@ module.exports = function () {
         email: "Giancarlo@gmail.com",
         telefono: "941868604",
         dni: "12345678",
+        esReciclador: true,
       },
       {
         id: 4,
@@ -32,6 +35,7 @@ module.exports = function () {
         email: "Jhonatan@gmail.com",
         telefono: "941868604",
         dni: "12345678",
+        esReciclador: true,
       },
       {
         id: 5,
@@ -40,6 +44,7 @@ module.exports = function () {
         email: "Brian@gmail.com",
         telefono: "941868604",
         dni: "78657812",
+        esReciclador: true,
       },
       {
         id: 6,
@@ -48,6 +53,7 @@ module.exports = function () {
         email: "ismael@gmail.com",
         telefono: "941868604",
         dni: "78786565",
+        esReciclador: true,
       },
       {
         id: 7,
@@ -56,6 +62,7 @@ module.exports = function () {
         email: "m.alvarez@gmail.com",
         telefono: "987678123",
         dni: "76859301",
+        esReciclador: true,
       },
       {
         id: 8,
@@ -64,6 +71,7 @@ module.exports = function () {
         email: "m.perez@gmail.com",
         telefono: "987641021",
         dni: "07651821",
+        esReciclador: true,
       },
       {
         id: 9,
@@ -72,6 +80,7 @@ module.exports = function () {
         email: "l.lopez@gmail.com",
         telefono: "916393124",
         dni: "23456789",
+        esReciclador: true,
       },
       {
         id: 10,
@@ -80,9 +89,17 @@ module.exports = function () {
         email: "k.ibañez@gmail.com",
         telefono: "987345678",
         dni: "45789121",
+        esReciclador: true,
       },
-
-
+      {
+        id: 11,
+        nombre: "Jorge",
+        apellido: "Wong",
+        email: "j.wong@gmail.com",
+        telefono: "987345678",
+        dni: "45789121",
+        esReciclador: false,
+      },
     ],
     Scores: [
       {

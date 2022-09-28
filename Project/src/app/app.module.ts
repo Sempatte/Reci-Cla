@@ -31,11 +31,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from './page/reciclador/dialog/dialog.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 
 //import {MatLabelModule} from '@angular/material/label'
@@ -80,7 +80,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDialogModule,
     MatPaginatorModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -4,7 +4,7 @@ import { RecicladorService } from 'src/app/service/reciclador.service';
 import { User } from 'src/app/model/User';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
@@ -38,7 +38,7 @@ export class RecicladorComponent implements  OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.rS.getUsers().subscribe((data) => {
+    this.rS.getRecicladores().subscribe((data) => {
       this.isLoading = false;
       this.dataSource = new MatTableDataSource<User>(data);
       this.dataSource.paginator = this.paginator;
@@ -64,7 +64,7 @@ export class RecicladorComponent implements  OnInit {
 
   eliminar(id: number) {
     this.rS.eliminar(id).subscribe(() => {
-      this.rS.getUsers().subscribe(data => {
+      this.rS.getRecicladores().subscribe(data => {
         this.rS.setListaUser(data);
       });
     });

@@ -4,31 +4,36 @@ import { User } from '../model/User';
 import { Subject, EMPTY } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecicladorService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  url: string = 'http://localhost:5000/users';
+  private listaUser = new Subject<User[]>();
+  private confirmaEliminacion = new Subject<Boolean>();
 
-  url : string = 'http://localhost:5000/users';
-  private listaUser = new Subject<User[]>()
-  private confirmaEliminacion = new Subject<Boolean>()
-
-
-  getUsers() {
+  getAllUsers(){
     return this.http.get<User[]>(this.url);
   }
 
-  InsertarUser(user: User){
+  getRecicladores() {
+    return this.http.get<User[]>(this.url + '?esReciclador=true');
+  }
+
+  getRecolectores() {
+    return this.http.get<User[]>(this.url + '?esReciclador=false');
+  }
+
+  InsertarUser(user: User) {
     return this.http.post(this.url, user);
   }
 
-  setListaUser(listaNuevaUser: User[]){
-
+  setListaUser(listaNuevaUser: User[]) {
     this.listaUser.next(listaNuevaUser);
   }
 
-  getListaUser(){
+  getListaUser() {
     return this.listaUser.asObservable();
   }
 
@@ -36,12 +41,12 @@ export class RecicladorService {
     return this.http.put(this.url + '/' + user.id, user);
   }
 
-  ListarIdUbication(id: number) {
+  ListarIdUser(id: number) {
     return this.http.get<User>(`${this.url}/${id}`);
   }
 
   eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+    return this.http.delete(this.url + '/' + id);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
@@ -49,8 +54,4 @@ export class RecicladorService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
-
-
-
-
 }

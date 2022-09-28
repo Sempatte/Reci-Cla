@@ -11,6 +11,7 @@ export class SidenavComponent implements OnInit {
   fillerNav = [
     { name: 'Home', route: 'Home', icon: 'home' },
     { name: 'List of Recyclers', route: 'Recicladores', icon: 'recycling' },
+    { name: 'List of Recolectores', route: 'Recolectores', icon: 'recycling' },
     { name: 'Scores', route: 'ListarScores', icon: 'star' },
     { name: 'History', route: 'ListarHistorial', icon: 'history' },
     { name: 'Rewards', route: 'ListarProductos', icon: 'military_tech' },

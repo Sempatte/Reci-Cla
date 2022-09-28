@@ -12,6 +12,7 @@ import { UbicationComponent } from './page/ubication/ubication.component';
 import { InsertarUbicationComponent } from './page/ubication/insertar-ubication/insertar-ubication.component';
 import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
+import { RecolectorComponent } from './page/recolector/recolector.component';
 
 // Rutas de nav
 const routes: Routes = [
@@ -20,6 +21,14 @@ const routes: Routes = [
   {
     path: 'Recicladores',
     component: RecicladorComponent,
+    children: [
+      { path: 'insertar', component: InsertarEditarRecicladorComponent },
+      { path: 'editar/:id', component: InsertarEditarRecicladorComponent },
+    ],
+  },
+  {
+    path: 'Recolectores',
+    component: RecolectorComponent,
     children: [
       { path: 'insertar', component: InsertarEditarRecicladorComponent },
       { path: 'editar/:id', component: InsertarEditarRecicladorComponent },
