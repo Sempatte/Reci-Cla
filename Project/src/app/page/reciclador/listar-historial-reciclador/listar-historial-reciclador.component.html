@@ -6,11 +6,13 @@
       <input matInput placeholder="Jhon Doe" type="text"  (keyup)="buscarHistorial($event)" />
     </mat-form-field><br>
     <!-- -->
+    <h3 *ngIf="nombresEncontrados">Usuario: <strong>{{nombresEncontrados}}</strong></h3>
     <pre style="color: red" >{{error}}</pre>
+    
 </div>
 
 <div *ngIf="_find" class="container history_form">
-  <h2>{{nombresEncontrados}}</h2>
+  
   <table id="tabla-listarHistorial" mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
     <ng-container matColumnDef="busquedaID">
         <th mat-header-cell *matHeaderCellDef> No. </th>

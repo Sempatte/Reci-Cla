@@ -27,8 +27,12 @@ export class ListarHistorialRecicladorComponent implements OnInit {
         (data) => {
           array = data.filter(
             (e) =>
-              e['nombre'].includes(_e.target.value) ||
-              e['apellido'].includes(_e.target.value) ||
+              e['nombre']
+                .toLowerCase()
+                .includes(_e.target.value.toLowerCase()) ||
+              e['apellido']
+                .toLowerCase()
+                .includes(_e.target.value.toLowerCase()) ||
               e['dni'].includes(_e.target.value) ||
               e['email'].includes(_e.target.value) ||
               e['telefono'].includes(_e.target.value)
@@ -50,7 +54,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
             this.error = '';
           } else {
             this._find = false;
-
+            this.nombresEncontrados = '';
             this.error = 'No se encontraron resultados';
           }
         },
@@ -60,8 +64,9 @@ export class ListarHistorialRecicladorComponent implements OnInit {
         }
       );
     } else {
+      this.nombresEncontrados = '';
       this._find = false;
-      this.error = ''
+      this.error = '';
     }
   }
 }
