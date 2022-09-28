@@ -44,7 +44,7 @@ h1.app-name {
 }
 
 .mat-toolbar {
-  background: url('https://ledanddomotics.com/wp-content/uploads/importedmedia/importedmedia.jpg') no-repeat center;
+  background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
   background-size: cover;
   color: #fff;
 }
