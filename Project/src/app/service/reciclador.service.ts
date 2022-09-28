@@ -25,6 +25,10 @@ export class RecicladorService {
     return this.http.get<User[]>(this.url + '?esReciclador=false');
   }
 
+  getHistorialRecicladores() {
+    return this.http.get<any[]>(`${this.url}?_embed=history`);
+  }
+
   InsertarUser(user: User) {
     return this.http.post(this.url, user);
   }

@@ -3,14 +3,14 @@
   <h2 class="title">Historial de busquedas </h2>
     <mat-form-field  class="search" appearance="fill">
       <mat-label>Reciclador</mat-label>
-      <input matInput placeholder="Jhon Doe" type="text" [(ngModel)]="nombreReciclador"  (keyup)="buscarHistorial()" />
+      <input matInput placeholder="Jhon Doe" type="text" [(ngModel)]="textoBuscar"  (keyup)="buscarHistorial($event)" />
     </mat-form-field><br>
-    <button (click)= buscarHistorial() mat-raised-button color="primary">Buscar</button>
+    <!-- -->
     <pre style="color: red" *ngIf="_find === false" >{{error}}</pre>
 </div>
 
 <div class="container history_form" *ngIf="_find">
-  <h2>{{data_nombreReciclador}} {{data_apellidoReciclador}}</h2>
+
   <table id="tabla-listarHistorial" mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
     <ng-container matColumnDef="busquedaID">
         <th mat-header-cell *matHeaderCellDef> No. </th>
