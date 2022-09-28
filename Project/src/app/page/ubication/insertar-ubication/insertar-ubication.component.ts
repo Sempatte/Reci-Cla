@@ -8,8 +8,8 @@ import { Ubication } from 'src/app/model/Ubication';
   templateUrl: './insertar-ubication.component.html',
   styleUrls: ['./insertar-ubication.component.css'],
 })
-export class InsertarUbicationComponent implements OnInit {
-  ubication: Ubication = new Ubication();
+export class InsertarUbicationComponent implements OnInit{
+  ubication: Ubication =  new Ubication();
   mensaje: string = '';
   edicion: boolean = false;
   id: number = 0;
