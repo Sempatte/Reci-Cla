@@ -80,7 +80,7 @@ module.exports = function () {
         email: "l.lopez@gmail.com",
         telefono: "916393124",
         dni: "23456789",
-        esReciclador: true,
+        esReciclador: false,
       },
       {
         id: 10,
@@ -89,7 +89,7 @@ module.exports = function () {
         email: "k.ibañez@gmail.com",
         telefono: "987345678",
         dni: "45789121",
-        esReciclador: true,
+        esReciclador: false,
       },
       {
         id: 11,
@@ -138,7 +138,7 @@ module.exports = function () {
         nEstrellas: 0,
       },
     ],
-    history: [
+    historial: [
       {
         userId: 1,
         busquedas: [

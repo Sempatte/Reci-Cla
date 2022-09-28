@@ -26,7 +26,7 @@ export class RecicladorService {
   }
 
   getHistorialRecicladores() {
-    return this.http.get<any[]>(`${this.url}?_embed=history`);
+    return this.http.get<any[]>(`${this.url}?_embed=historial`);
   }
 
   InsertarUser(user: User) {

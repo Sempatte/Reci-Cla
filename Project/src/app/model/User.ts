@@ -1,3 +1,4 @@
+import Historial from "./Historial";
 import { Ubication } from "./Ubication";
 export class User {
   id : number = 0;
@@ -8,4 +9,5 @@ export class User {
   dni : string = "";
   esReciclador : boolean = true;
   ubicacion : Ubication = new Ubication();
+  historial : Historial = new Historial();
 }
