@@ -23,7 +23,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
   buscarHistorial(_e: any) {
     let array: any[] = [];
     if (_e.target.value.length > 0) {
-      this.rS.getHistorialRecicladores().subscribe(
+      this.rS.getHistorialUsuario().subscribe(
         (data) => {
           array = data.filter(
             (e) =>
@@ -57,7 +57,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
           this._find = false;
           this.nombresEncontrados = '';
           this.error = 'No se encontraron resultados';
-          
+
         },
         (error) => {
           this._find = false;
