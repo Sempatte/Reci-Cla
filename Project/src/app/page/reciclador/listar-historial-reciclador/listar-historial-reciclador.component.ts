@@ -22,7 +22,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
 
   buscarHistorial(_e: any) {
     let array: any[] = [];
-    if (_e.target.value.length > 1) {
+    if (_e.target.value.length > 0) {
       this.rS.getHistorialRecicladores().subscribe(
         (data) => {
           array = data.filter(
@@ -38,20 +38,19 @@ export class ListarHistorialRecicladorComponent implements OnInit {
             this._find = true;
 
             array = array[0].historial;
-            console.info('arr', array);
             if (array.length < 1) {
               this._find = false;
               this.error = 'No hay historial registrado';
               return;
             }
             array = array[0].busquedas;
-            console.log('e', array);
+
             this.rS.setListaUser(array);
             this.dataSource = new MatTableDataSource(array);
             this.error = '';
           } else {
             this._find = false;
-            console.log('NO');
+
             this.error = 'No se encontraron resultados';
           }
         },
@@ -62,29 +61,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
       );
     } else {
       this._find = false;
+      this.error = ''
     }
-
-    //this.nombreReciclador = this.nombreReciclador.charAt(0).toUpperCase() + this.nombreReciclador.slice(1);
-    /* this.uS.getHistorialXReciclador(this.nombreReciclador).subscribe(
-
-      (data) => {
-        if (data.length > 0) {
-          this.data_apellidoReciclador = data[0].apellido;
-          this.data_nombreReciclador = data[0].nombre;
-          data = data[0].history[0].busquedas;
-          this.dataSource = new MatTableDataSource(data);
-          this._find = true;
-        } else {
-          this._find = false;
-          console.log("NO")
-          this.error = "No se encontraron resultados";
-        }
-
-      },
-      (error) => {
-        this._find = false;
-        this.error = "Uknown error";
-      }
-    ) */
   }
 }
