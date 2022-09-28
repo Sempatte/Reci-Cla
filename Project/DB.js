@@ -162,6 +162,7 @@ module.exports = function () {
         idTicket: 1,
         DescriptionReclamo:
           "Mi historial no se actualizada con mis pedidos anteriores",
+        Estado: "Activo",
         userId: 1,
         fecha: "2022-07-09",
       },
@@ -169,6 +170,7 @@ module.exports = function () {
         idTicket: 2,
         DescriptionReclamo:
           "Mis recompensas se eliminaron antes de ser reclamadas",
+        Estado: "Cerrado",
         userId: 2,
         fecha: "2022-07-09",
       },
@@ -237,6 +239,8 @@ module.exports = function () {
     Ubications: [
       {
         id: 1,
+        Departamento: "Lima",
+        Provincia: "Lima",
         Distrito: "Miraflores",
         Direccion: "Av. Angamos 123",
       },

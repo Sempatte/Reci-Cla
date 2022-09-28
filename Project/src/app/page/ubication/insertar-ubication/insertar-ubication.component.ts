@@ -49,7 +49,7 @@ export class InsertarUbicationComponent implements OnInit {
           }
         );
       }
-      
+
       this.router.navigate(['ListarUbicacion']);
     } else {
       this.mensaje = 'Complete los valores requeridos';

@@ -10,7 +10,7 @@ import { UsuarioTsService } from 'src/app/service/lists.service';
 export class ListarTicketRecicladorComponent implements OnInit {
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
-  displayedColumns: string[] = ['id','descripcion' ,'nombre', 'email' ,'fecha'];
+  displayedColumns: string[] = ['id','descripcion' ,'nombre', 'email', 'Estado' ,'fecha'];
   isLoading: boolean = true;
 
   constructor(private uS: UsuarioTsService) { }

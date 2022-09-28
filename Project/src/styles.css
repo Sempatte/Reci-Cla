@@ -22,9 +22,10 @@ body {
 }
 
 .container {
-  margin-left: 30px;
-  padding-bottom: 30px;
+  margin-left: 50px;
+  padding-top: 50px;
 }
+
 
 .mat-sidenav-content {
   background-color: var(--bkg-color);
@@ -46,6 +47,8 @@ body {
 }
 
 h2.title{
-  padding: 30px;
-  margin: 10px;
+  margin-left: 18px;
+  font-size: 28px;
+
+  letter-spacing: 2px;
 }
