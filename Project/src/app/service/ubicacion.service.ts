@@ -15,7 +15,7 @@ export class UbicacionService {
 
   constructor(private http: HttpClient) { }
 
-  getUbication() {
+  getUbications() {
     return this.http.get<Ubication[]>(this.url);
   }
 

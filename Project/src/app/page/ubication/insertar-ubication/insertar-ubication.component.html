@@ -2,43 +2,29 @@
   <div class="form-insertar">
     <h1>Insertar o modificar ubicación</h1>
 
-    <mat-form-field id="_id">
-      <mat-label>Id</mat-label>
-      <input
-        matInput
-        placeholder="Id"
-        type="number"
-        [(ngModel)]="ubication.id"
-      />
+    <mat-form-field>
+      <mat-label>Deparmanto</mat-label>
+      <input matInput required placeholder="Lima" type="text" [(ngModel)]="ubication.Departamento" />
     </mat-form-field>
 
-    <br />
+    <mat-form-field>
+      <mat-label>Provincia</mat-label>
+      <input matInput required placeholder="Cañete" type="text" [(ngModel)]="ubication.Provincia" />
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>Distrito</mat-label>
-      <input
-        matInput
-        required
-        placeholder="Name"
-        type="text"
-        [(ngModel)]="ubication.Distrito"
-      />
+      <input matInput required placeholder="San Vicente de Cañete" type="text" [(ngModel)]="ubication.Distrito" />
     </mat-form-field>
 
     <br />
-    <mat-form-field>
-      <mat-label>Descripcion</mat-label>
-      <input
-        type="Description"
-        matInput
-        required
-        placeholder="text"
-        [(ngModel)]="ubication.Direccion"
-      />
+    <mat-form-field class="_direccion">
+      <mat-label>Dirección</mat-label>
+      <input type="Description" matInput required placeholder="Av. Los Incas 123" [(ngModel)]="ubication.Direccion" />
     </mat-form-field>
 
     <div class="form-controls">
-      <button mat-raised-button id="button-action" color="primary" (click)="aceptarUbication()">
+      <button mat-raised-button id="button-action" color="primary" (click)="aceptarEditarUbicacion()">
         Aceptar
       </button>
       <button mat-raised-button id="button-action" color="warn" routerLink="/ListarUbicacion">

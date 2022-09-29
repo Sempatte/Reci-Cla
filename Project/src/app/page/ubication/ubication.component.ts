@@ -25,7 +25,7 @@ export class UbicationComponent implements OnInit {
   constructor(private ubS: UbicacionService, public route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.ubS.getUbication().subscribe((data) => {
+    this.ubS.getUbications().subscribe((data) => {
       this.DataSource = new MatTableDataSource(data);
     });
 

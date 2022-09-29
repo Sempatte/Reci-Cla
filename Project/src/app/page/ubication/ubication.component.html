@@ -2,12 +2,7 @@
 <div [hidden]="route.children.length !== 0">
   <div class="container">
     <h2 class="title">Lista de ubicaciones</h2>
-    <table
-      id="tabla-listarUbicaciones"
-      mat-table
-      [dataSource]="DataSource"
-      class="mat-elevation-z8"
-    >
+    <table id="tabla-listarUbicaciones" mat-table [dataSource]="DataSource" class="mat-elevation-z8">
 
       <ng-container matColumnDef="idUbication">
         <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -39,12 +34,8 @@
       <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button
-            mat-raised-button
-            color="primary"
-            [routerLink]="['editar', element?.id]"
-          >
-            Editar
+          <button mat-mini-fab color="primary" [routerLink]="['editar', element?.id]">
+            <mat-icon>edit</mat-icon>
           </button>
         </td>
       </ng-container>
@@ -54,12 +45,8 @@
     </table>
 
     <div id="add" class="example-button-container">
-      <button
-        mat-mini-fab
-        color="primary"
-        aria-label="Example icon button with a plus one icon"
-        routerLink="/ListarUbicacion/insertar"
-      >
+      <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+        routerLink="/ListarUbicacion/insertar">
         <mat-icon>add</mat-icon>
       </button>
     </div>

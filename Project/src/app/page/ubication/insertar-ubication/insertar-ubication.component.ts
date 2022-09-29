@@ -27,7 +27,7 @@ export class InsertarUbicationComponent implements OnInit{
     });
   }
 
-  aceptarUbication(): void {
+  aceptarEditarUbicacion(): void {
     if (
       this.ubication.Direccion.length > 0 &&
       this.ubication.Direccion.length > 0
@@ -35,19 +35,23 @@ export class InsertarUbicationComponent implements OnInit{
       if (this.edicion) {
         this.UbicacionService.modifyUbication(this.ubication).subscribe(
           (data) => {
-            this.UbicacionService.getUbication().subscribe((data) => {
+            this.UbicacionService.getUbications().subscribe((data) => {
               this.UbicacionService.setListaUbication(data);
             });
           }
         );
       } else {
-        this.UbicacionService.InsertarUbication(this.ubication).subscribe(
-          (data) => {
-            this.UbicacionService.getUbication().subscribe((data) => {
-              this.UbicacionService.setListaUbication(data);
-            });
-          }
-        );
+        this.UbicacionService.getUbications().subscribe((data) => {
+          this.ubication.id = data.length + 1
+          this.UbicacionService.InsertarUbication(this.ubication).subscribe(
+            (data) => {
+              this.UbicacionService.getUbications().subscribe((data) => {
+                this.UbicacionService.setListaUbication(data);
+              });
+            }
+          );
+        })
+
       }
 
       this.router.navigate(['ListarUbicacion']);

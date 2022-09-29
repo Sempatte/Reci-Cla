@@ -1,9 +1,16 @@
+.form-insertar mat-form-field#_id {
+  width: 2rem;
+}
 
-.form-insertar mat-form-field#_id{
-    width: 2rem;
+.form-insertar mat-form-field._direccion{
+  width: 40vh;
 
 }
 
 .form-insertar .form-controls #button-action {
-    margin: 4px
+  margin: 4px
+}
+
+mat-form-field {
+  margin: 10px;
 }
