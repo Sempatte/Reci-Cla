@@ -1,3 +1,7 @@
-<p>¿Està seguro de eliminar?</p>
-<button mat-raised-button color="primary" (click)="confirmar(true)">Si</button>
-<button mat-raised-button color="accent" (click)="confirmar(false)">No</button>
+<div mat-dialog-content>
+  ¿Estás seguro de eliminar?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="confirmar(false)">No</button>
+  <button mat-button mat-dialog-close (click)="confirmar(true)" cdkFocusInitial>Si</button>
+</div>

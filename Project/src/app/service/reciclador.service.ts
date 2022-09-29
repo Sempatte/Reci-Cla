@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../model/User';
 import { Subject, EMPTY } from 'rxjs';
+import { Score } from '../model/Score';
+import { Ticket } from '../model/Ticket';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +25,14 @@ export class RecicladorService {
 
   getRecolectores() {
     return this.http.get<User[]>(this.url + '?esReciclador=false');
+  }
+
+  getScoresRecolectores() {
+    return this.http.get<Score[]>('http://localhost:5000/Scores?_expand=user');
+  }
+
+  getTicketRecicladores() {
+    return this.http.get<Ticket[]>(`${this.url}Tickets?_expand=user`);
   }
 
   getHistorialUsuario() {
