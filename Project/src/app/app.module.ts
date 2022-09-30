@@ -10,7 +10,6 @@ import { RecicladorComponent } from './page/reciclador/reciclador.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
@@ -51,7 +50,6 @@ import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ti
   declarations: [
     AppComponent,
     RecicladorComponent,
-    NavbarComponent,
     HomeComponent,
     RecolectorComponent,
     ListarScoresRecicladorComponent,
