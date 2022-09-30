@@ -160,6 +160,7 @@ module.exports = function () {
     Tickets: [
       {
         idTicket: 1,
+        TipoTicketId: 1,
         DescriptionReclamo:
           "Mi historial no se actualizada con mis pedidos anteriores",
         Estado: "Activo",
@@ -168,6 +169,7 @@ module.exports = function () {
       },
       {
         idTicket: 2,
+        TipoTicketId: 1,
         DescriptionReclamo:
           "Mis recompensas se eliminaron antes de ser reclamadas",
         Estado: "Cerrado",

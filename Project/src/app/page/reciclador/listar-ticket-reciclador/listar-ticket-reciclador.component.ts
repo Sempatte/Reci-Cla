@@ -2,7 +2,6 @@ import { RecicladorService } from 'src/app/service/reciclador.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
-
 @Component({
   selector: 'app-listar-ticket-reciclador',
   templateUrl: './listar-ticket-reciclador.component.html',
@@ -13,6 +12,8 @@ export class ListarTicketRecicladorComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'descripcion',
+    'categoriaTicket',
+    'importancia',
     'nombre',
     'email',
     'Estado',

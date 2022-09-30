@@ -32,7 +32,7 @@ export class RecicladorService {
   }
 
   getTicketRecicladores() {
-    return this.http.get<Ticket[]>('http://localhost:5000/Tickets?_expand=user');
+    return this.http.get<Ticket[]>('http://localhost:5000/Tickets?_expand=user&_expand=TipoTicket');
   }
 
   getHistorialUsuario() {
