@@ -163,7 +163,7 @@ module.exports = function () {
         DescriptionReclamo:
           "Mi historial no se actualizada con mis pedidos anteriores",
         Estado: "Activo",
-        userId: 1,
+        userId: 3,
         fecha: "2022-07-09",
       },
       {
@@ -173,6 +173,14 @@ module.exports = function () {
         Estado: "Cerrado",
         userId: 2,
         fecha: "2022-07-09",
+      },
+    ],
+    TipoTickets: [
+      {
+        id: 1,
+        DescripcionCategoria: "Queja sobre el producto ",
+        Categoria: "Reclamo",
+        Importancia: "Alto",
       },
     ],
     Types: [

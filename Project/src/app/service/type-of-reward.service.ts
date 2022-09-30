@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class TypeOfRewardService {
   url: string = 'http://localhost:5000/Types';
+  private confirmaEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Types[]>();
 
   constructor(private http: HttpClient) {}
@@ -34,5 +35,14 @@ export class TypeOfRewardService {
 
   ListarIdTypeOfReward(id: number) {
     return this.http.get<Types>(`${this.url}/${id}`);
+  }
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 }
