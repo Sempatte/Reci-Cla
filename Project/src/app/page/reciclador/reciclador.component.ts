@@ -23,6 +23,7 @@ export class RecicladorComponent implements  OnInit {
     'nombre',
     'apellido',
     'email',
+    'ubicacion',
     'telefono',
     'dni',
     'accionEditar',

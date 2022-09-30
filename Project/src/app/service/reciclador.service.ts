@@ -20,11 +20,11 @@ export class RecicladorService {
   }
 
   getRecicladores() {
-    return this.http.get<User[]>(this.url + '?esReciclador=true');
+    return this.http.get<User[]>(this.url + '?esReciclador=true&_expand=Ubication');
   }
 
   getRecolectores() {
-    return this.http.get<User[]>(this.url + '?esReciclador=false');
+    return this.http.get<User[]>(this.url + '?esReciclador=false&_expand=Ubication');
   }
 
   getScoresRecolectores() {

@@ -9,6 +9,7 @@ module.exports = function () {
         telefono: "992737884",
         dni: "72845242",
         esReciclador: true,
+        UbicationId: 1,
       },
       {
         id: 2,
@@ -18,6 +19,7 @@ module.exports = function () {
         telefono: "992737884",
         dni: "12345678",
         esReciclador: true,
+        UbicationId: 1,
       },
       {
         id: 3,
@@ -27,6 +29,7 @@ module.exports = function () {
         telefono: "941868604",
         dni: "12345678",
         esReciclador: true,
+        UbicationId: 1,
       },
       {
         id: 4,
@@ -36,6 +39,7 @@ module.exports = function () {
         telefono: "941868604",
         dni: "12345678",
         esReciclador: true,
+        UbicationId: 2,
       },
       {
         id: 5,
@@ -45,6 +49,7 @@ module.exports = function () {
         telefono: "941868604",
         dni: "78657812",
         esReciclador: true,
+        UbicationId: 1,
       },
       {
         id: 6,
@@ -54,6 +59,7 @@ module.exports = function () {
         telefono: "941868604",
         dni: "78786565",
         esReciclador: true,
+        UbicationId: 2,
       },
       {
         id: 7,
@@ -63,6 +69,7 @@ module.exports = function () {
         telefono: "987678123",
         dni: "76859301",
         esReciclador: true,
+        UbicationId: 1,
       },
       {
         id: 8,
@@ -72,6 +79,7 @@ module.exports = function () {
         telefono: "987641021",
         dni: "07651821",
         esReciclador: true,
+        UbicationId: 2,
       },
       {
         id: 9,
@@ -81,6 +89,7 @@ module.exports = function () {
         telefono: "916393124",
         dni: "23456789",
         esReciclador: false,
+        UbicationId: 2,
       },
       {
         id: 10,
@@ -90,6 +99,7 @@ module.exports = function () {
         telefono: "987345678",
         dni: "45789121",
         esReciclador: false,
+        UbicationId: 1,
       },
       {
         id: 11,
@@ -99,6 +109,7 @@ module.exports = function () {
         telefono: "987345678",
         dni: "45789121",
         esReciclador: false,
+        UbicationId: 2,
       },
     ],
     Scores: [
