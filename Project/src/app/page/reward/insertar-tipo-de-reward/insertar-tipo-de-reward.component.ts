@@ -38,12 +38,16 @@ export class InsertarTipoDeRewardComponent implements OnInit {
           });
         });
       } else {
-        this.tRS.insertarTypeOfReward(this.types).subscribe((data) => {
-          console.log(data);
-          this.tRS.listarTypeOfReward().subscribe((data) => {
-            this.tRS.setListaTypeOfReward(data);
+        this.tRS.listarTypeOfReward().subscribe((data) => { 
+          this.types.id = data.length + 1; 
+          this.tRS.insertarTypeOfReward(this.types).subscribe((data) => {
+            console.log(data);
+            this.tRS.listarTypeOfReward().subscribe((data) => {
+              this.tRS.setListaTypeOfReward(data);
+            });
           });
-        });
+        })
+
       }
 
       this.router.navigate(['ListarTipoProductos']);

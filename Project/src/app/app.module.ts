@@ -35,7 +35,14 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatNativeDateModule} from '@angular/material/core';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TipoRewardDialogoComponent } from './page/reward/listar-tipo-reward/tipo-reward-dialogo/tipo-reward-dialogo.component';
+import { TicketComponent } from './page/ticket/ticket.component';
+import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
+import { BuscarTipoRewardComponent } from './page/reward/buscar-tipo-reward/buscar-tipo-reward.component';
+import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
+import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ticket-dialogo/tipo-ticket-dialogo.component';
+
 
 
 //import {MatLabelModule} from '@angular/material/label'
@@ -60,6 +67,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     InsertarEditarRecicladorComponent,
     DialogComponent,
     BuscarRecicladorComponent,
+    TipoRewardDialogoComponent,
+    TicketComponent,
+    TipoDeTicketComponent,
+    BuscarTipoRewardComponent,
+    InsertarTipoDeTicketComponent,
+    TipoTicketDialogoComponent,
   ],
   imports: [
     BrowserModule,

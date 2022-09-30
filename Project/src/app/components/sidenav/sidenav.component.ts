@@ -27,6 +27,7 @@ export class SidenavComponent implements OnInit {
       icon: 'location_on',
     },
     { name: 'Tickets', route: 'ListarTickets', icon: 'confirmation_number' },
+    { name: 'Tipo de Tickets', route: 'ListarTipoDeTickets', icon: 'book_online' }
   ];
 
   private _mobileQueryListener: () => void;

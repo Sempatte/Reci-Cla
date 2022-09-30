@@ -6,23 +6,27 @@ import { UsuarioTsService } from 'src/app/service/lists.service';
 @Component({
   selector: 'app-listar-ticket-reciclador',
   templateUrl: './listar-ticket-reciclador.component.html',
-  styleUrls: ['./listar-ticket-reciclador.component.css']
+  styleUrls: ['./listar-ticket-reciclador.component.css'],
 })
 export class ListarTicketRecicladorComponent implements OnInit {
-
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
-  displayedColumns: string[] = ['id','descripcion' ,'nombre', 'email', 'Estado' ,'fecha'];
+  displayedColumns: string[] = [
+    'id',
+    'descripcion',
+    'nombre',
+    'email',
+    'Estado',
+    'fecha',
+  ];
   isLoading: boolean = true;
 
-  constructor(private rS: RecicladorService) { }
+  constructor(private rS: RecicladorService) {}
 
   ngOnInit(): void {
-    this.rS.getTicketRecicladores().subscribe(
-      (data) => {
-        this.dataSource = new MatTableDataSource(data);
-        this.isLoading = false;
-      }
-    )
+    this.rS.getTicketRecicladores().subscribe((data) => {
+      console.info(data);
+      this.dataSource = new MatTableDataSource(data);
+      this.isLoading = false;
+    });
   }
-
 }
