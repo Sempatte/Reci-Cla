@@ -1,7 +1,7 @@
 import { RecicladorService } from 'src/app/service/reciclador.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { UsuarioTsService } from 'src/app/service/lists.service';
+
 
 @Component({
   selector: 'app-listar-ticket-reciclador',
