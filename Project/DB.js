@@ -254,6 +254,13 @@ module.exports = function () {
         Distrito: "Miraflores",
         Direccion: "Av. Angamos 123",
       },
+      {
+        id: 2,
+        Departamento: "Ica",
+        Provincia: "Ica",
+        Distrito: "Ica",
+        Direccion: "Av. De las Incas 545",
+      },
     ],
   };
 

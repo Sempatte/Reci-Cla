@@ -41,6 +41,8 @@ import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-tick
 import { BuscarTipoRewardComponent } from './page/reward/buscar-tipo-reward/buscar-tipo-reward.component';
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
 import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ticket-dialogo/tipo-ticket-dialogo.component';
+import { DialogUbicationComponent } from './page/ubication/dialog-ubication/dialog-ubication.component';
+import {BuscarUbicationComponent} from './page/ubication/buscar-ubication/buscar-ubication.component';
 
 
 
@@ -71,6 +73,8 @@ import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ti
     BuscarTipoRewardComponent,
     InsertarTipoDeTicketComponent,
     TipoTicketDialogoComponent,
+    DialogUbicationComponent,
+    BuscarUbicationComponent,
   ],
   imports: [
     BrowserModule,

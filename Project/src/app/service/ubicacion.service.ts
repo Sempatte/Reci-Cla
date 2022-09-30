@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 export class UbicacionService {
 
   url : string = 'http://localhost:5000/Ubications';
+  private confirmaEliminacion = new Subject<Boolean>()
   private listaUbication = new Subject<Ubication[]>()
 
   constructor(private http: HttpClient) { }
@@ -38,5 +39,15 @@ export class UbicacionService {
 
   ListarIdUbication(id: number) {
     return this.http.get<Ubication>(`${this.url}/${id}`);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 }
