@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-listar-ticket-reciclador',
-  templateUrl: './listar-ticket-reciclador.component.html',
-  styleUrls: ['./listar-ticket-reciclador.component.css'],
+  selector: 'app-listar-ticket',
+  templateUrl: './listar-ticket.component.html',
+  styleUrls: ['./listar-ticket.component.css'],
 })
-export class ListarTicketRecicladorComponent implements OnInit {
+export class ListarTickets implements OnInit {
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
   displayedColumns: string[] = [
     'id',
@@ -15,6 +15,7 @@ export class ListarTicketRecicladorComponent implements OnInit {
     'categoriaTicket',
     'importancia',
     'nombre',
+    'tipo_usuario',
     'email',
     'Estado',
     'fecha',

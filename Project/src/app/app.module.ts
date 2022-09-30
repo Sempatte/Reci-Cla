@@ -21,7 +21,7 @@ import { RewardComponent } from './page/reward/reward.component';
 import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/listar-tipo-reward.component';
 import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
-import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
+import { ListarTickets } from './page/ticket/listar-ticket/listar-ticket.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -60,7 +60,7 @@ import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ti
     InsertarTipoDeRewardComponent,
     InsertarUbicationComponent,
     UbicationComponent,
-    ListarTicketRecicladorComponent,
+    ListarTickets,
     SidenavComponent,
     InsertarEditarRecicladorComponent,
     DialogComponent,

@@ -1,3 +1,4 @@
+import { TicketComponent } from './page/ticket/ticket.component';
 import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
 import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
@@ -11,7 +12,6 @@ import { RewardComponent } from './page/reward/reward.component';
 import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/listar-tipo-reward.component';
 import { UbicationComponent } from './page/ubication/ubication.component';
 import { InsertarUbicationComponent } from './page/ubication/insertar-ubication/insertar-ubication.component';
-import { ListarTicketRecicladorComponent } from './page/reciclador/listar-ticket-reciclador/listar-ticket-reciclador.component';
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
@@ -83,7 +83,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'ListarTickets', component: ListarTicketRecicladorComponent },
+  { path: 'ListarTickets', component: TicketComponent },
 ];
 
 @NgModule({
