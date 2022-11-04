@@ -4,14 +4,14 @@ import { User } from '../model/User';
 import { Subject, EMPTY } from 'rxjs';
 import { Score } from '../model/Score';
 import { Ticket } from '../model/Ticket';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class RecicladorService {
   constructor(private http: HttpClient) {}
 
-  url: string = 'http://localhost:5000/users';
+  private url: string = environment.host;
   private listaUser = new Subject<User[]>();
   private confirmaEliminacion = new Subject<Boolean>();
 

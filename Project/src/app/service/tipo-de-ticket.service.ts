@@ -2,12 +2,13 @@ import { TipoTicket } from './../model/TipoTicket';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoDeTicketService {
-  url: string = 'http://localhost:5000/TipoTickets';
+  private url: string = environment.host;
   private confirmaEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<TipoTicket[]>();
 

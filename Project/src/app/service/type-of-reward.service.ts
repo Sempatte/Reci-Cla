@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Types } from '../model/Types';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TypeOfRewardService {
-  url: string = 'http://localhost:5000/Types';
+  private url: string = environment.host;
   private confirmaEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Types[]>();
 

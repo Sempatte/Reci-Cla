@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ubication } from '../model/Ubication';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -10,7 +11,7 @@ import { Subject } from 'rxjs';
 })
 export class UbicacionService {
 
-  url : string = 'http://localhost:5000/Ubications';
+  private url: string = environment.host;
   private confirmaEliminacion = new Subject<Boolean>()
   private listaUbication = new Subject<Ubication[]>()
 
