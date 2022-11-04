@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class RecicladorService {
   constructor(private http: HttpClient) {}
 
-  private url: string = environment.host;
+  private url: string = `${environment.host}/usuarios`;
   private listaUser = new Subject<User[]>();
   private confirmaEliminacion = new Subject<Boolean>();
 
