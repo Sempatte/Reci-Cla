@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Reward } from '../model/Reward';
 import { Rewards_Users } from '../model/Rewards_User';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioTsService {
-  url: string = 'http://localhost:5000/';
+  private url: string = environment.host;
 
   constructor(private http: HttpClient) {}
 
