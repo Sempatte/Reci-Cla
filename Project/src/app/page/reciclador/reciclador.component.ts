@@ -41,6 +41,7 @@ export class RecicladorComponent implements  OnInit {
   ngOnInit(): void {
     this.rS.getRecicladores().subscribe((data) => {
       this.isLoading = false;
+      console.log(data);
       this.dataSource = new MatTableDataSource<User>(data);
       this.dataSource.paginator = this.paginator;
     });

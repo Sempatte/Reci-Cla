@@ -1,6 +1,6 @@
 import { RecicladorService } from 'src/app/service/reciclador.service';
 import { Component, OnInit } from '@angular/core';
-import { RewardService } from 'src/app/service/lists.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
@@ -16,12 +16,12 @@ export class ListarScoresRecicladorComponent implements OnInit {
   constructor(private rS: RecicladorService) { }
 
   ngOnInit(): void {
-    this.rS.getScoresRecolectores().subscribe(
+    /* this.rS.getScoresRecolectores().subscribe(
       (data) => {
         this.dataSource = new MatTableDataSource(data);
         console.log(data);
       }
-    )
+    ) */
   }
 
 }

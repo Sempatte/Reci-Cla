@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeOfRewardService } from 'src/app/service/type-of-reward.service';
+import { TypeOfUsuarioTsService } from 'src/app/service/type-of-reward.service';
 import { Types } from 'src/app/model/Types';
 
 @Component({
@@ -9,19 +9,19 @@ import { Types } from 'src/app/model/Types';
 })
 export class BuscarTipoRewardComponent implements OnInit {
   textoBuscar: string = "";
-  constructor(private typerewardService: TypeOfRewardService) { }
+  constructor(private typeUsuarioTsService: TypeOfUsuarioTsService) { }
 
   ngOnInit(): void {
   }
   buscar(e: any) {
     let array: Types[] = [];
-    this.typerewardService.listarTypeOfReward().subscribe(data => {
+    this.typeUsuarioTsService.listarTypeOfReward().subscribe(data => {
       data.forEach((element, index) => {
         if (element.Name.includes(e.target.value)) {
           array.push(data[index]);
         }
       });
-      this.typerewardService.setListaTypeOfReward(array);
+      this.typeUsuarioTsService.setListaTypeOfReward(array);
     })
   }
 }

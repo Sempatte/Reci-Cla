@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RewardService } from 'src/app/service/lists.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/model/User';
 import { RecicladorService } from 'src/app/service/reciclador.service';
@@ -23,7 +23,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
   buscarHistorial(_e: any) {
     let array: any[] = [];
     if (_e.target.value.length > 0) {
-      this.rS.getHistorialUsuario().subscribe(
+      this.rS.getAllUsers().subscribe(
         (data) => {
           array = data.filter(
             (e) =>

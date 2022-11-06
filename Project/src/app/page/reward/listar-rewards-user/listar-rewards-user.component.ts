@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RewardService } from 'src/app/service/lists.service';
+import { UsuarioTsService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Rewards_Users } from 'src/app/model/Rewards_User';
 
@@ -20,7 +20,7 @@ export class ListarRewardsUserComponent implements OnInit {
     'CodeReward',
     'Claimed',
   ];
-  constructor(private uS: RewardService) {}
+  constructor(private uS: UsuarioTsService) {}
 
   ngOnInit(): void {
     this.uS.getRewardsUser().subscribe((data) => {
