@@ -37,10 +37,6 @@ export class RecicladorService {
     ); // CAMBIAR
   }
 
-  /* getHistorialUsuario() {
-    return this.http.get<any[]>(`${this.url}?_embed=historial`);
-  } */
-
   InsertarUser(user: User) {
     return this.http.post(this.url, user);
   }
