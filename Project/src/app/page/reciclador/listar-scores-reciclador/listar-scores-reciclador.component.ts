@@ -16,12 +16,12 @@ export class ListarScoresRecicladorComponent implements OnInit {
   constructor(private rS: RecicladorService) { }
 
   ngOnInit(): void {
-    this.rS.getScoresRecolectores().subscribe(
+    /* this.rS.getScoresRecolectores().subscribe(
       (data) => {
         this.dataSource = new MatTableDataSource(data);
         console.log(data);
       }
-    )
+    ) */
   }
 
 }

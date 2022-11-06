@@ -15,53 +15,67 @@ export class RecicladorService {
   private listaUser = new Subject<User[]>();
   private confirmaEliminacion = new Subject<Boolean>();
 
-  getAllUsers(){
+  getAllUsers() {
     return this.http.get<User[]>(this.url);
   }
 
   getRecicladores() {
-    return this.http.get<User[]>(this.url + '?esReciclador=true&_expand=Ubication');
+    return this.http.get<User[]>(`${this.url}/ListarRecicladores`);
   }
 
   getRecolectores() {
-    return this.http.get<User[]>(this.url + '?esReciclador=false&_expand=Ubication');
+    return this.http.get<User[]>(`${this.url}/ListarRecolectores`);
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>('http://localhost:5000/Scores?_expand=user');
+    return this.http.get<Score[]>('http://localhost:5000/Scores?_expand=user'); // CAMBIAR
   }
 
   getTicketRecicladores() {
-    return this.http.get<Ticket[]>('http://localhost:5000/Tickets?_expand=user&_expand=TipoTicket');
+    return this.http.get<Ticket[]>(
+      'http://localhost:5000/Tickets?_expand=user&_expand=TipoTicket'
+    ); // CAMBIAR
   }
 
-  getHistorialUsuario() {
+  /* getHistorialUsuario() {
     return this.http.get<any[]>(`${this.url}?_embed=historial`);
-  }
+  } */
 
   InsertarUser(user: User) {
     return this.http.post(this.url, user);
+  }
+
+  modifyUser(user: User) {
+    return this.http.put(`${this.url}/Modificar`, user);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<User[]>(
+        `${this.url}/buscar`,
+        texto.toLowerCase()
+      );
+    }
+    return EMPTY;
+  }
+
+  ListarIdUser(id: number) {
+    return this.http.get<User>(`${this.url}/${id}`);
+  }  
+
+  getListaUser() {
+    return this.listaUser.asObservable();
   }
 
   setListaUser(listaNuevaUser: User[]) {
     this.listaUser.next(listaNuevaUser);
   }
 
-  getListaUser() {
-    return this.listaUser.asObservable();
-  }
 
-  modifyUser(user: User) {
-    return this.http.put(this.url + '/' + user.id, user);
-  }
-
-  ListarIdUser(id: number) {
-    return this.http.get<User>(`${this.url}/${id}`);
-  }
-
-  eliminar(id: number) {
-    return this.http.delete(this.url + '/' + id);
-  }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
   }
