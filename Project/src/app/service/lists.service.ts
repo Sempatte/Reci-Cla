@@ -7,7 +7,7 @@ import { Rewards_Users } from '../model/Rewards_User';
 @Injectable({
   providedIn: 'root',
 })
-export class UsuarioTsService {
+export class RewardService {
   url: string = 'http://localhost:5000/';
 
   constructor(private http: HttpClient) {}

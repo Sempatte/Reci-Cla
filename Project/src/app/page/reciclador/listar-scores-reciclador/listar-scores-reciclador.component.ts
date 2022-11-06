@@ -1,6 +1,6 @@
 import { RecicladorService } from 'src/app/service/reciclador.service';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/lists.service';
+import { RewardService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
