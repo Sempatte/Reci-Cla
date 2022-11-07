@@ -1,21 +1,21 @@
 import { TipoTicket } from './../model/TipoTicket';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { EMPTY, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TipoDeTicketService {
-  private url: string = environment.host;
-  private confirmaEliminacion = new Subject<Boolean>()
+  private url: string = `${environment.host}/TipoTickets`;
+  private confirmaEliminacion = new Subject<Boolean>();
   private listaCambio = new Subject<TipoTicket[]>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   listarTipoDeTickets() {
-    return this.http.get<TipoTicket[]>(this.url)
+    return this.http.get<TipoTicket[]>(this.url);
   }
 
   insertarTipoDeTickets(tipoTicket: TipoTicket) {
@@ -31,20 +31,31 @@ export class TipoDeTicketService {
   }
 
   modifyTipoDeTickets(tipoTicket: TipoTicket) {
-    return this.http.put(this.url + '/' + tipoTicket.id, tipoTicket);
+    return this.http.put(this.url, tipoTicket);
   }
 
   ListarIdTipoDeTickets(id: number) {
     return this.http.get<TipoTicket>(`${this.url}/${id}`);
   }
   eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+    return this.http.delete(`${this.url}/${id}`);
   }
+
+
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<TipoTicket[]>(
+        `${this.url}/buscar`,
+        texto.toLowerCase()
+      );
+    }
+    return EMPTY;
+  }
+
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
-
 }

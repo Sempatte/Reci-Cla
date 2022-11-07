@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UbicacionService {
 
-  private url: string = environment.host;
+  private url: string = `${environment.host}/ubications`;
   private confirmaEliminacion = new Subject<Boolean>()
   private listaUbication = new Subject<Ubication[]>()
 
@@ -35,7 +35,7 @@ export class UbicacionService {
   }
 
   modifyUbication(ubication: Ubication) {
-    return this.http.put(this.url + '/' + ubication.id, ubication);
+    return this.http.put(this.url, ubication);
   }
 
   ListarIdUbication(id: number) {
@@ -43,7 +43,7 @@ export class UbicacionService {
   }
 
   eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+    return this.http.delete(`${this.url}/${id}`);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

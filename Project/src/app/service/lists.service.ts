@@ -8,21 +8,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UsuarioTsService {
-  private url: string = environment.host;
+  private url: string = `${environment.host}/`;
 
   constructor(private http: HttpClient) {}
 
   getProducto() {
-    return this.http.get<Reward[]>(`${this.url}Rewards/?_expand=Type`);
+    return this.http.get<Reward[]>(`${this.url}reward`);
   }
 
   getTiposDeProductos() {
-    return this.http.get<Reward[]>(`${this.url}Types`);
+    return this.http.get<Reward[]>(`${this.url}types`);
   }
 
   getRewardsUser() {
     return this.http.get<Rewards_Users[]>(
-      `${this.url}Reward_Users?_expand=user&_expand=Reward`
+      `${this.url}reward`
     );
   }
 

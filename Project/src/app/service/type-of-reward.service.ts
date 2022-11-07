@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class TypeOfRewardService {
-  private url: string = environment.host;
+  private url: string = `${environment.host}/types`;
   private confirmaEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Types[]>();
 
@@ -31,14 +31,14 @@ export class TypeOfRewardService {
   }
 
   modifyTypeOfReward(types: Types) {
-    return this.http.put(this.url + '/' + types.id, types);
+    return this.http.put(this.url, types);
   }
 
   ListarIdTypeOfReward(id: number) {
     return this.http.get<Types>(`${this.url}/${id}`);
   }
   eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+    return this.http.delete(`${this.url}/${id}`);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

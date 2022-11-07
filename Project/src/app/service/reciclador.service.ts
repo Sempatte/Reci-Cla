@@ -28,13 +28,11 @@ export class RecicladorService {
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>('http://localhost:5000/Scores?_expand=user'); // CAMBIAR
+    return this.http.get<Score[]>(`${this.url}/scores`); // CAMBIAR
   }
 
   getTicketRecicladores() {
-    return this.http.get<Ticket[]>(
-      'http://localhost:5000/Tickets?_expand=user&_expand=TipoTicket'
-    ); // CAMBIAR
+    return this.http.get<Score[]>(`${this.url}/tickets`); // CAMBIAR
   }
 
   InsertarUser(user: User) {
@@ -61,7 +59,7 @@ export class RecicladorService {
 
   ListarIdUser(id: number) {
     return this.http.get<User>(`${this.url}/${id}`);
-  }  
+  }
 
   getListaUser() {
     return this.listaUser.asObservable();
