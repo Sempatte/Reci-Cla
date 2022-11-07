@@ -16,11 +16,11 @@ export class SidenavComponent implements OnInit {
     { name: 'History', route: 'ListarHistorial', icon: 'history' },
     { name: 'Rewards', route: 'ListarProductos', icon: 'military_tech' },
     { name: 'Type of rewards', route: 'ListarTipoProductos', icon: 'category' },
-    {
+    /* {
       name: 'Users Rewards',
       route: 'ListarRewards_User',
       icon: 'supervisor_account',
-    },
+    }, */
     {
       name: 'List of Ubications',
       route: 'ListarUbicacion',
