@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Component, OnInit, Type } from '@angular/core';
-import { TypeOfRewardService } from 'src/app/service/type-of-reward.service';
+import { TypeOfUsuarioTsService } from 'src/app/service/type-of-reward.service';
 import { Types } from 'src/app/model/Types';
 
 @Component({
@@ -15,7 +15,7 @@ export class InsertarTipoDeRewardComponent implements OnInit {
   id: number = 0;
 
   constructor(
-    private tRS: TypeOfRewardService,
+    private tRS: TypeOfUsuarioTsService,
     private router: Router,
     private route: ActivatedRoute
   ) {}

@@ -7,8 +7,10 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
+
 export class TypeOfRewardService {
   private url: string = `${environment.host}/types`;
+
   private confirmaEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Types[]>();
 

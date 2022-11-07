@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeOfRewardService } from 'src/app/service/type-of-reward.service';
+import { TypeOfUsuarioTsService } from 'src/app/service/type-of-reward.service';
 import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-tipo-reward-dialogo',
@@ -8,13 +8,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class TipoRewardDialogoComponent implements OnInit {
   constructor(
-    private typeofrewardService: TypeOfRewardService,
+    private typeofUsuarioTsService: TypeOfUsuarioTsService,
     private dialogRef: MatDialogRef<TipoRewardDialogoComponent>
   ) {}
 
   ngOnInit(): void {}
   confirmar(estado: boolean) {
-    this.typeofrewardService.setConfirmaEliminacion(estado);
+    this.typeofUsuarioTsService.setConfirmaEliminacion(estado);
     this.dialogRef.close();
   }
 }

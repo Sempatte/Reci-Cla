@@ -14,7 +14,7 @@ export class ListarHistorialRecicladorComponent implements OnInit {
   nombresEncontrados: string = '';
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
   _find: boolean = false;
-  displayedColumns: string[] = ['busquedaID', 'fecha', 'hora', 'contenido'];
+  displayedColumns: string[] = ['id','contenido'];
 
   constructor(private rS: RecicladorService) {}
 
@@ -40,24 +40,23 @@ export class ListarHistorialRecicladorComponent implements OnInit {
           if (array.length > 0) {
             this.nombresEncontrados = array[0].nombre + ' ' + array[0].apellido;
             this._find = true;
+            
 
-            array = array[0].historial;
+            //array = array[0].historial;
+            
             if (array.length < 1) {
               this._find = false;
               this.error = 'No hay historial registrado para el usuario.';
               return;
             }
-            array = array[0].busquedas;
-
-            this.rS.setListaUser(array);
+            console.info(array);
             this.dataSource = new MatTableDataSource(array);
             this.error = '';
-            return
+            return;
           }
           this._find = false;
           this.nombresEncontrados = '';
           this.error = 'No se encontraron resultados';
-
         },
         (error) => {
           this._find = false;

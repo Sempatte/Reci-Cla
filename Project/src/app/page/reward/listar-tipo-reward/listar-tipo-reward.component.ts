@@ -1,4 +1,4 @@
-import { TypeOfRewardService } from 'src/app/service/type-of-reward.service';
+import { TypeOfUsuarioTsService } from 'src/app/service/type-of-reward.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -11,19 +11,11 @@ import { TipoRewardDialogoComponent } from './tipo-reward-dialogo/tipo-reward-di
 })
 export class ListarTipoRewardComponent implements OnInit {
   DataSource: MatTableDataSource<any> = new MatTableDataSource();
-  DisplayedColumns: String[] = [
-    'id',
-    'nameType',
-    'description',
-    'accion1',
-    'accion2',
-  ];
-  private idMayor: number = 0;
-  constructor(
-    private tUs: TypeOfRewardService,
-    public route: ActivatedRoute,
-    private dialog: MatDialog
-  ) {}
+
+  DisplayedColumns: String[] = ['id', 'nameType', 'description', 'accion1','accion2'];
+  private idMayor: number=0;
+  constructor(private tUs: TypeOfRewardService, public route: ActivatedRoute,private dialog:MatDialog) {}
+
 
   ngOnInit(): void {
     this.tUs.listarTypeOfReward().subscribe((data) => {

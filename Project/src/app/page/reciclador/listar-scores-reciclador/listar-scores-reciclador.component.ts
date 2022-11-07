@@ -19,9 +19,11 @@ export class ListarScoresRecicladorComponent implements OnInit {
     this.rS.getScoresRecolectores().subscribe(
       (data) => {
         this.dataSource = new MatTableDataSource(data);
-        console.log(data);
+        console.log('data', data);
       }
+
     )
+
   }
 
 }

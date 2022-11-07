@@ -1,6 +1,6 @@
 import { Ubication } from './../model/Ubication';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Reward } from '../model/Reward';
 import { Rewards_Users } from '../model/Rewards_User';
 import { environment } from 'src/environments/environment';
@@ -39,6 +39,4 @@ export class UsuarioTsService {
       `${this.url}ubications`
     );
   }
-
-
 }
