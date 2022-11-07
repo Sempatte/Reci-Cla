@@ -8,8 +8,8 @@ import { Ubication } from 'src/app/model/Ubication';
   templateUrl: './insertar-ubication.component.html',
   styleUrls: ['./insertar-ubication.component.css'],
 })
-export class InsertarUbicationComponent implements OnInit{
-  ubication: Ubication =  new Ubication();
+export class InsertarUbicationComponent implements OnInit {
+  ubication: Ubication = new Ubication();
   mensaje: string = '';
   edicion: boolean = false;
   id: number = 0;
@@ -29,8 +29,8 @@ export class InsertarUbicationComponent implements OnInit{
 
   aceptarEditarUbicacion(): void {
     if (
-      this.ubication.Direccion.length > 0 &&
-      this.ubication.Direccion.length > 0
+      this.ubication.direccion.length > 0 &&
+      this.ubication.direccion.length > 0
     ) {
       if (this.edicion) {
         this.UbicacionService.modifyUbication(this.ubication).subscribe(
@@ -41,17 +41,14 @@ export class InsertarUbicationComponent implements OnInit{
           }
         );
       } else {
-        this.UbicacionService.getUbications().subscribe((data) => {
-          this.ubication.id = data.length + 1
-          this.UbicacionService.InsertarUbication(this.ubication).subscribe(
-            (data) => {
-              this.UbicacionService.getUbications().subscribe((data) => {
-                this.UbicacionService.setListaUbication(data);
-              });
-            }
-          );
-        })
 
+        this.UbicacionService.InsertarUbication(this.ubication).subscribe(
+          (data) => {
+            this.UbicacionService.getUbications().subscribe((data) => {
+              this.UbicacionService.setListaUbication(data);
+            });
+          }
+        );
       }
 
       this.router.navigate(['ListarUbicacion']);

@@ -5,18 +5,17 @@ import { User } from 'src/app/model/User';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-recolector',
   templateUrl: './recolector.component.html',
-  styleUrls: ['./recolector.component.css']
+  styleUrls: ['./recolector.component.css'],
 })
 export class RecolectorComponent implements OnInit {
-
   isLoading: boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   listaRecolectores: any = [];
-
+  public esReciclador: boolean = false;
   private idMayor: number = 0;
   displayedColumns: string[] = [
     'id',
@@ -44,17 +43,19 @@ export class RecolectorComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     });
 
-     this.rS.getListaUser().subscribe((data) => {
+    this.rS.getListaUser().subscribe((data) => {
       this.isLoading = false;
       this.dataSource = new MatTableDataSource<User>(data);
       this.dataSource.paginator = this.paginator;
     });
 
-    this.rS.getConfirmaEliminacion().subscribe(data => {
+    this.rS.getConfirmaEliminacion().subscribe((data) => {
       data == true ? this.eliminar(this.idMayor) : false;
     });
+  }
 
-
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
   }
 
   confirmar(id: number) {
@@ -64,11 +65,9 @@ export class RecolectorComponent implements OnInit {
 
   eliminar(id: number) {
     this.rS.eliminar(id).subscribe(() => {
-      this.rS.getRecicladores().subscribe(data => {
+      this.rS.getRecolectores().subscribe((data) => {
         this.rS.setListaUser(data);
       });
     });
-
   }
-
 }

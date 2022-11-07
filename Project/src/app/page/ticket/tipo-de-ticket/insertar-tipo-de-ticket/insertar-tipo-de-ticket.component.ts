@@ -39,7 +39,7 @@ export class InsertarTipoDeTicketComponent implements OnInit {
   }
 
   aceptar(): void {
-    if (this.tipoTicket.Categoria.length > 0 && this.tipoTicket.DescripcionCategoria.length > 0) {
+    if (this.tipoTicket.categoria.length > 0 && this.tipoTicket.descripcionCategoria.length > 0) {
       if (this.edicion) {
         this.tipodeticketService.modifyTipoDeTickets(this.tipoTicket).subscribe((data) => {
           console.log(data);

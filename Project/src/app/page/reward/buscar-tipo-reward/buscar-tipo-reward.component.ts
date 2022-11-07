@@ -17,7 +17,7 @@ export class BuscarTipoRewardComponent implements OnInit {
     let array: Types[] = [];
     this.typerewardService.listarTypeOfReward().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.Name.includes(e.target.value)) {
+        if (element.name.includes(e.target.value)) {
           array.push(data[index]);
         }
       });

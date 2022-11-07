@@ -43,6 +43,7 @@ import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/inse
 import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ticket-dialogo/tipo-ticket-dialogo.component';
 import { DialogUbicationComponent } from './page/ubication/dialog-ubication/dialog-ubication.component';
 import {BuscarUbicationComponent} from './page/ubication/buscar-ubication/buscar-ubication.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -96,7 +97,8 @@ import {BuscarUbicationComponent} from './page/ubication/buscar-ubication/buscar
     MatPaginatorModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

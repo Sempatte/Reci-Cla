@@ -60,6 +60,24 @@
           [(ngModel)]="user.dni"
         />
       </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Seleccione Historial</mat-label>
+        <mat-select [(value)]="_idHistorialSeleccionado" required>
+            <mat-option *ngFor="let p of listaHistorial" [value]="p.id">
+                {{p.busquedas}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Seleccione Ubicacion</mat-label>
+        <mat-select [(value)]="_idUbicacionSeleccionado" required>
+            <mat-option *ngFor="let p of listaUbicaciones" [value]="p.id">
+                {{p.distrito + ' / ' + p.direccion}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
       <section >
         <mat-checkbox class="example-margin" [(ngModel)]="user.esReciclador">Reciclador</mat-checkbox>
       </section>

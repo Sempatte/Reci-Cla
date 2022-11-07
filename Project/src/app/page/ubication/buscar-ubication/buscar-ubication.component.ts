@@ -19,9 +19,9 @@ export class BuscarUbicationComponent implements OnInit {
 
       array = data.filter(
         (e) =>
-          e['Direccion'].toLowerCase().includes(_e.target.value.toLowerCase()) ||
-          e['Distrito'].toLowerCase().includes(_e.target.value.toLowerCase()) ||
-          e['Provincia'].toLowerCase().includes(_e.target.value.toLowerCase())
+          e['direccion'].toLowerCase().includes(_e.target.value.toLowerCase()) ||
+          e['distrito'].toLowerCase().includes(_e.target.value.toLowerCase()) ||
+          e['provincia'].toLowerCase().includes(_e.target.value.toLowerCase())
       );
 
       this.uB.setListaUbication(array);

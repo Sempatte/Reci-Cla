@@ -29,7 +29,7 @@ export class InsertarTipoDeRewardComponent implements OnInit {
   }
 
   aceptar(): void {
-    if (this.types.Description.length > 0 && this.types.Name.length > 0) {
+    if (this.types.description.length > 0 && this.types.name.length > 0) {
       if (this.edicion) {
         this.tRS.modifyTypeOfReward(this.types).subscribe((data) => {
           console.log(data);

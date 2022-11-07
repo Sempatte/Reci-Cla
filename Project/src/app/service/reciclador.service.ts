@@ -36,7 +36,8 @@ export class RecicladorService {
   }
 
   InsertarUser(user: User) {
-    return this.http.post(this.url, user);
+    console.log('user', user);
+    return this.http.post(`${this.url}/Registrar`, user);
   }
 
   modifyUser(user: User) {

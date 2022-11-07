@@ -2,7 +2,10 @@
 <div [hidden]="route.children.length !== 0">
   <div class="container">
     <h2 class="title">Lista de ubicaciones</h2>
-    <app-buscar-ubication></app-buscar-ubication> <!-- Search component -->
+    <!-- <app-buscar-ubication></app-buscar-ubication> --> <!-- Search component -->
+    <mat-form-field [ngStyle]="{'margin-left': '20px'}">
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+    </mat-form-field>
     <table id="tabla-listarUbicaciones" mat-table [dataSource]="DataSource" class="mat-elevation-z8">
 
       <ng-container matColumnDef="idUbication">
@@ -14,7 +17,7 @@
         <th mat-header-cell *matHeaderCellDef>Departamento</th>
         <td mat-cell *matCellDef="let element">{{ element.departamento }}</td>
       </ng-container>
-
+1
       <ng-container matColumnDef="Provincia">
         <th mat-header-cell *matHeaderCellDef>Provincia</th>
         <td mat-cell *matCellDef="let element">{{ element.provincia }}</td>

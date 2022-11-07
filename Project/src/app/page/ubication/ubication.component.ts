@@ -56,4 +56,7 @@ export class UbicationComponent implements OnInit {
     });
 
   }
+  filtrar(e: any) {
+    this.DataSource.filter = e.target.value.trim();
+  }
 }

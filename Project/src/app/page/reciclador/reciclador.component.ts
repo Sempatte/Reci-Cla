@@ -16,6 +16,7 @@ export class RecicladorComponent implements  OnInit {
   isLoading: boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   listaRecicladores: any = [];
+  public esReciclador : boolean = true;
 
   private idMayor: number = 0;
   displayedColumns: string[] = [
@@ -23,7 +24,6 @@ export class RecicladorComponent implements  OnInit {
     'nombre',
     'apellido',
     'email',
-    'ubicacion',
     'telefono',
     'dni',
     'accionEditar',
@@ -72,5 +72,10 @@ export class RecicladorComponent implements  OnInit {
     });
 
   }
+
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
+
 
 }

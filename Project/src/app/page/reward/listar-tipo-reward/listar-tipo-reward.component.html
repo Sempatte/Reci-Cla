@@ -3,7 +3,9 @@
 <div [hidden]="route.children.length !== 0">
   <div class="container">
     <h2 class="title">Listar los tipo de Rewards</h2>
-    <app-buscar-tipo-reward></app-buscar-tipo-reward>
+    <mat-form-field [ngStyle]="{'margin-left': '20px'}">
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+    </mat-form-field>
 
     <table
       id="tabla-listarProductos"
