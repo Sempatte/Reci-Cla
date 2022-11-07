@@ -14,24 +14,15 @@
 <div *ngIf="_find" class="container history_form">
   
   <table id="tabla-listarHistorial" mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
-    <ng-container matColumnDef="busquedaID">
+    <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.busquedaID}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="fecha">
-        <th mat-header-cell *matHeaderCellDef> Fecha </th>
-        <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="hora">
-        <th mat-header-cell *matHeaderCellDef> Hora </th>
-        <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
-    </ng-container>
 
     <ng-container matColumnDef="contenido">
         <th mat-header-cell *matHeaderCellDef> Contenido </th>
-        <td mat-cell *matCellDef="let element"> {{element.contenido}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.historial.busquedas}} </td>
     </ng-container>
 
 
