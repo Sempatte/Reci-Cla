@@ -11,44 +11,44 @@
     <ng-container matColumnDef="descripcion">
       <th mat-header-cell *matHeaderCellDef>Descripcion del ticket</th>
       <td mat-cell *matCellDef="let element">
-        {{ element.DescriptionReclamo }}
+        {{ element.descripcionReclamo }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="categoriaTicket">
       <th mat-header-cell *matHeaderCellDef>Categoria del ticket</th>
       <td mat-cell *matCellDef="let element">
-        {{ element.TipoTicket.Categoria }}
+        {{ element.tipoTicket.categoria }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="importancia">
       <th mat-header-cell *matHeaderCellDef>Importancia</th>
       <td mat-cell *matCellDef="let element">
-        {{ element.TipoTicket.Importancia }}
+        {{ element.tipoTicket.importancia }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef>Nombres del usuario</th>
-      <td mat-cell *matCellDef="let element">{{ element.user.nombre + " " + element.user.apellido}}</td>
+      <td mat-cell *matCellDef="let element">{{ element.usuario.nombre + " " + element.usuario.apellido}}</td>
     </ng-container>
 
     <ng-container matColumnDef="tipo_usuario">
       <th mat-header-cell *matHeaderCellDef>Tipo de usuario</th>
-      <td mat-cell *matCellDef="let element">{{ element.user.esReciclador ? 'Reciclador' : 'Recolector' }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.usuario.esReciclador ? 'Reciclador' : 'Recolector' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef>Correo</th>
-      <td style="font-weight: 400" mat-cell *matCellDef="let element">{{ element.user.email}}</td>
+      <td style="font-weight: 400" mat-cell *matCellDef="let element">{{ element.usuario.email}}</td>
     </ng-container>
 
     <ng-container matColumnDef="Estado">
       <th mat-header-cell *matHeaderCellDef>Estado</th>
       <td mat-cell *matCellDef="let element"
-        [ngStyle]="{'color': element.Estado === 'Activo' ? 'green' : 'red', 'font-weight': 600}">
-        {{ element.Estado }}</td>
+        [ngStyle]="{'color': element.estado === 'Activo' ? 'green' : 'red', 'font-weight': 600}">
+        {{ element.estado }}</td>
     </ng-container>
 
     <ng-container matColumnDef="fecha">
