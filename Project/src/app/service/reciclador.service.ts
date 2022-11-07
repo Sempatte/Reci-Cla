@@ -22,13 +22,13 @@ export class RecicladorService {
   getRecicladores() {
     return this.http.get<User[]>(`${this.url}/ListarRecicladores`);
   }
-
-  getRecolectores() {
+  
+  getRecolectores() { 
     return this.http.get<User[]>(`${this.url}/ListarRecolectores`);
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>('http://localhost:5000/Scores?_expand=user'); // CAMBIAR
+    return this.http.get<Score[]>(`${environment.host}/scores`);
   }
 
   getTicketRecicladores() {
