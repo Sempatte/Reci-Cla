@@ -13,12 +13,12 @@
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Nombre</th>
-      <td mat-cell *matCellDef="let element">{{ element.NameReward }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.nameReward }}</td>
     </ng-container>
 
     <ng-container matColumnDef="TipoProducto">
       <th mat-header-cell *matHeaderCellDef>Tipo de Producto</th>
-      <td mat-cell *matCellDef="let element">{{ element.Type.Name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.types.name }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="DisplayedColumns"></tr>

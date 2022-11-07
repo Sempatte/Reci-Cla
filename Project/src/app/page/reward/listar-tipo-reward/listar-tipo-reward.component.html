@@ -4,7 +4,7 @@
   <div class="container">
     <h2 class="title">Listar los tipo de Rewards</h2>
     <app-buscar-tipo-reward></app-buscar-tipo-reward>
-    
+
     <table
       id="tabla-listarProductos"
       mat-table
@@ -18,12 +18,12 @@
 
       <ng-container matColumnDef="nameType">
         <th mat-header-cell *matHeaderCellDef>Nombre del producto</th>
-        <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
       </ng-container>
 
       <ng-container matColumnDef="description">
         <th mat-header-cell *matHeaderCellDef>Descripcion</th>
-        <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
       </ng-container>
 
       <ng-container matColumnDef="accion1">

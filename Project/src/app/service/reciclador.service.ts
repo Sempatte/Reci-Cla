@@ -28,11 +28,11 @@ export class RecicladorService {
   }
 
   getScoresRecolectores() {
-    return this.http.get<Score[]>(`${this.url}/scores`); // CAMBIAR
+    return this.http.get<Score[]>(`${environment.host}/scores`); // CAMBIAR
   }
 
   getTicketRecicladores() {
-    return this.http.get<Score[]>(`${this.url}/tickets`); // CAMBIAR
+    return this.http.get<Score[]>(`${environment.host}/tickets`); // CAMBIAR
   }
 
   InsertarUser(user: User) {
