@@ -1,3 +1,4 @@
+import { Ticket } from './../model/Ticket';
 import { TipoTicket } from './../model/TipoTicket';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -58,4 +59,9 @@ export class TipoDeTicketService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+  /**************** */
+  getTickets_tipoTickets(){
+    return this.http.get<Ticket[]>(`${environment.host}/tickets`);
+  }
+  
 }

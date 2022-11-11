@@ -48,7 +48,7 @@ import { ScoreComponent } from './page/score/score.component';
 import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
 import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
 import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.component';
-
+import{MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -109,7 +109,9 @@ import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.com
     MatNativeDateModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],
