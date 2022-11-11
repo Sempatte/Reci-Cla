@@ -2,7 +2,7 @@ import { TicketComponent } from './page/ticket/ticket.component';
 import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
 import { ListarRewardsUserComponent } from './page/reward/listar-rewards-user/listar-rewards-user.component';
-import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
+import { ListarScoresRecicladorComponent } from './page/score/listar-scores-reciclador/listar-scores-reciclador.component';
 import { HomeComponent } from './page/home/home.component';
 import { RecicladorComponent } from './page/reciclador/reciclador.component';
 import { NgModule } from '@angular/core';
@@ -15,6 +15,8 @@ import { InsertarUbicationComponent } from './page/ubication/insertar-ubication/
 import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
+import { ScoreComponent } from './page/score/score.component';
+import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
 
 // Rutas de nav
 const routes: Routes = [
@@ -37,7 +39,10 @@ const routes: Routes = [
     ],
   },
   { path: 'Home', component: HomeComponent },
-  { path: 'ListarScores', component: ListarScoresRecicladorComponent },
+  { path: 'Scores', component: ScoreComponent, children: [
+    { path: 'insertar', component: EditarInsertarScoreComponent},
+    {path: 'editar/:id', component: EditarInsertarScoreComponent}
+  ] },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },
   { path: 'ListarProductos', component: RewardComponent },
   {

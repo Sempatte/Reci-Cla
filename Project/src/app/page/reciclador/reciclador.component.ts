@@ -65,6 +65,7 @@ export class RecicladorComponent implements  OnInit {
   }
 
   eliminar(id: number) {
+    console.log('id',id);
     this.rS.eliminar(id).subscribe(() => {
       this.rS.getRecicladores().subscribe(data => {
         this.rS.setListaUser(data);

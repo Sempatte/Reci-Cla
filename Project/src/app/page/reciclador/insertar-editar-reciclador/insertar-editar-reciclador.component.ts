@@ -59,7 +59,7 @@ export class InsertarEditarRecicladorComponent implements OnInit {
       _historial.id = this._idHistorialSeleccionado;
       _ubicacion.id = this._idUbicacionSeleccionado;
       this.user.historial = _historial;
-      this.user.ubicacion = _ubicacion;
+      this.user.ubication = _ubicacion;
       console.log('this.user', this.user);
       if (this.edicion) {
         this.rS.modifyUser(this.user).subscribe((data) => {
@@ -90,9 +90,11 @@ export class InsertarEditarRecicladorComponent implements OnInit {
 
   init() {
     this.esRecolector = this.current_route === 'Recolectores' && true;
-
+    
     if (this.edicion) {
       this.rS.ListarIdUser(this.id).subscribe((data) => {
+        this._idHistorialSeleccionado = data.historial.id;
+        this._idUbicacionSeleccionado = data.ubication.id;
         this.user = data;
       });
     }

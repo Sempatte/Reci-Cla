@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="form-insertar">
+      <h1>{{edicion ? "Editar Score" : "Añadir Score"}} </h1>
+
+      <mat-form-field>
+        <mat-label>Numero de estrellas</mat-label>
+        <input
+          matInput
+          required
+          placeholder="Name"
+          type="text"
+          [(ngModel)]="score.nEstrellas"
+        />
+      </mat-form-field>
+
+      <br />
+      <mat-form-field>
+        <mat-label>Pedidos realizados</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          placeholder="text"
+          [(ngModel)]="score.pedidosRealizados"
+        />
+      </mat-form-field>
+
+      <br />
+      <mat-form-field id="_email">
+        <mat-label>Pedidos entregados</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          placeholder="text"
+          [(ngModel)]="score.pedidosEntregados"
+        />
+      </mat-form-field>
+
+      <br />
+      <mat-form-field>
+        <mat-label>Pedidos cancelados</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          placeholder="text"
+          [(ngModel)]="score.pedidosCancelados"
+        />
+      </mat-form-field>
+
+      <br />
+    <mat-form-field>
+        <mat-label>Seleccione Usuario</mat-label>
+        <mat-select [(value)]="_idUsuarioSeleccionado" required>
+            <mat-option *ngFor="let u of listaUsuarios" [value]="u.id">
+                {{u.nombre + " " + u.apellido }}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <div class="form-controls">
+        <button mat-raised-button id="button-action" color="primary" (click)="aceptar_Modificar_o_Insertar()">
+          Aceptar
+        </button>
+        <button mat-raised-button id="button-action" color="warn" routerLink="/Recicladores">
+          Cancelar
+        </button>
+      </div>
+      <p>{{ mensaje }}</p>
+    </div>
+  </div>

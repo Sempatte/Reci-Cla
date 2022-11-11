@@ -12,7 +12,7 @@ export class SidenavComponent implements OnInit {
     { name: 'Home', route: 'Home', icon: 'home' },
     { name: 'List of Recyclers', route: 'Recicladores', icon: 'recycling' },
     { name: 'List of Recolectors', route: 'Recolectores', icon: 'compost' },
-    { name: 'Scores', route: 'ListarScores', icon: 'star' },
+    { name: 'Scores', route: 'Scores', icon: 'star' },
     { name: 'History', route: 'ListarHistorial', icon: 'history' },
     { name: 'Rewards', route: 'ListarProductos', icon: 'military_tech' },
     { name: 'Type of rewards', route: 'ListarTipoProductos', icon: 'category' },

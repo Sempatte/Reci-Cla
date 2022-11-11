@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
-import { ListarScoresRecicladorComponent } from './page/reciclador/listar-scores-reciclador/listar-scores-reciclador.component';
+import { ListarScoresRecicladorComponent } from './page/score/listar-scores-reciclador/listar-scores-reciclador.component';
 import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-historial-reciclador/listar-historial-reciclador.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -44,6 +44,11 @@ import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ti
 import { DialogUbicationComponent } from './page/ubication/dialog-ubication/dialog-ubication.component';
 import {BuscarUbicationComponent} from './page/ubication/buscar-ubication/buscar-ubication.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ScoreComponent } from './page/score/score.component';
+import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
+import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
+import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.component';
+
 
 
 
@@ -76,6 +81,12 @@ import { MatSelectModule } from '@angular/material/select';
     TipoTicketDialogoComponent,
     DialogUbicationComponent,
     BuscarUbicationComponent,
+    ScoreComponent,
+    EditarInsertarScoreComponent,
+    InsertarTicketComponent,
+    DialogScoreComponent,
+
+
   ],
   imports: [
     BrowserModule,
