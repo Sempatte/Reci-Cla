@@ -24,6 +24,7 @@ export class RecolectorComponent implements OnInit {
     'email',
     'telefono',
     'dni',
+    'direccion',
     'accionEditar',
     'accionEliminar',
   ];
