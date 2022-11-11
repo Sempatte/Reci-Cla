@@ -1,7 +1,13 @@
+import { RecicladorService } from './../../../../service/reciclador.service';
+import { User } from './../../../../model/User';
+import { TipoDeTicketService } from 'src/app/service/tipo-de-ticket.service';
+import { TicketService } from './../../../../service/ticket.service';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/model/Ticket';
 import { TipoTicket } from 'src/app/model/TipoTicket';
 import * as moment from 'moment';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { tick } from '@angular/core/testing';
 @Component({
   selector: 'app-insertar-ticket',
   templateUrl: './insertar-ticket.component.html',
@@ -9,16 +15,86 @@ import * as moment from 'moment';
 })
 export class InsertarTicketComponent implements OnInit {
   ticket: Ticket = new Ticket();
-  id: number = 0;
-  edicion: boolean = false;
-  listaTipoTickets: TipoTicket[] = [];
-  idTipoTicketSeleccionado: number = 0;
-  fechaSeleccionada: Date = moment().add(-1, 'days').toDate();
   mensaje: string = '';
+  edicion: boolean = false;
+
+  listaTipoTickets: TipoTicket[] = [];
+  listaUsuarios:User[]=[];
+
+  idTipoTicketSeleccionado: number = 0;
+  idUsuarioSeleccionado:number=0;
+
+  id:number=0;
+
+  fechaSeleccionada: Date = moment().add(-1, 'days').toDate();
   maxFecha: Date = moment().add(-1, 'days').toDate();
   mensaje1: string = '';
 
-  constructor() {}
+  constructor(private ticketService: TicketService,
+    private ttsService: TipoDeTicketService,
+    private usuarioService:RecicladorService,
+    private router: Router,
+    private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    });
+    this.ttsService.listarTipoDeTickets().subscribe((data) => {
+      this.listaTipoTickets = data;
+    });
+    this.usuarioService.getListaUser().subscribe((data)=>{
+      this.listaUsuarios=data;
+    })
+  }
+  aceptar(){
+    if(this.ticket.DescriptionReclamo.length>=0 &&
+      this.idTipoTicketSeleccionado!==null &&
+      this.idUsuarioSeleccionado!=null &&
+      this.ticket.Estado.length>=0 &&
+      this.ticket.fecha.length>=0){
+
+        let _tipoticket=new TipoTicket();
+        let _user=new User();
+
+        _tipoticket.id=this.idTipoTicketSeleccionado;
+        _user.id=this.idUsuarioSeleccionado;
+
+        this.ticket.TipoTicket=_tipoticket;
+        this.ticket.Usuario=_user;
+
+        this.ticket.fecha=moment(this.fechaSeleccionada).format('YYYY-MM-DDTHH:mm:ss');
+
+        if(this.edicion){
+          this.ticketService.modifyTickets(this.ticket).subscribe(()=>{
+            this.ticketService.listarTickets().subscribe((data)=>{
+              this.ticketService.setListaTickets(data);
+            });
+          });
+        }else{
+          this.ticketService.insertarTickets(this.ticket).subscribe(()=>{
+            this.ticketService.listarTickets().subscribe((data)=>{
+              this.ticketService.setListaTickets(data);
+            });
+          });
+        }
+        this.router.navigate(['tickets']);
+      }else{
+        this.mensaje='Complete los valores requeridos';
+      }
+  }
+  init() {
+    if (this.edicion) {
+      this.ticketService.ListarIdTicket(this.id).subscribe((data) => {
+        console.log('data', data)
+        this.ticket = data;
+        //this.idTipoTicketSeleccionado = this.ticket.TipoTicket.id;
+        //this.idUsuarioSeleccionado=this.ticket.Usuario.id;
+        this.idTipoTicketSeleccionado =data.TipoTicket.id;
+        this.idUsuarioSeleccionado=data.Usuario.id;
+      });
+    }
+  }
 }
