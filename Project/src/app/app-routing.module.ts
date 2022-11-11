@@ -1,3 +1,4 @@
+import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
 import { TicketComponent } from './page/ticket/ticket.component';
 import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
 import { InsertarTipoDeRewardComponent } from './page/reward/insertar-tipo-de-reward/insertar-tipo-de-reward.component';
@@ -88,7 +89,10 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'ListarTickets', component: TicketComponent },
+  { path: 'ListarTickets', component: TicketComponent, children:[
+    {path:'insertar',component:InsertarTicketComponent}
+  ]
+},
 ];
 
 @NgModule({

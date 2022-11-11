@@ -22,24 +22,19 @@ export class ListarTickets implements OnInit {
     'tipo_usuario',
     'email',
     'Estado',
-    'fecha',
-    'acciones'
+    'fecha'
   ];
-  isLoading: boolean = true;
+  
   private idMayor:number=0;
   constructor(private tS:TicketService,public route:ActivatedRoute,private dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.tS.listarTickets().subscribe(data => {
-      //this.lista = data;
       this.dataSource = new MatTableDataSource(data);
-      console.log(data);
     });
 
     this.tS.getListaTickets().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      //console.log(data);
-      this.isLoading = false;
+      this.dataSource = new MatTableDataSource(data);      
     });
 
     this.tS.getConfirmaEliminacion().subscribe(data => {
