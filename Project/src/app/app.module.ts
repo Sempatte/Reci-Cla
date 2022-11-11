@@ -51,6 +51,8 @@ import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.com
 import{MatDatepickerModule} from '@angular/material/datepicker';
 import { DialogoTicketComponent } from './page/ticket/listar-ticket/dialogo-ticket/dialogo-ticket.component';
 import { BuscarTicketComponent } from './page/ticket/listar-ticket/buscar-ticket/buscar-ticket.component';
+import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
+import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-reward.component';
 
 
 
@@ -89,6 +91,8 @@ import { BuscarTicketComponent } from './page/ticket/listar-ticket/buscar-ticket
     DialogScoreComponent,
     DialogoTicketComponent,
     BuscarTicketComponent,
+    InsertarRewardComponent,
+    DialogoRewardComponent,
 
 
   ],

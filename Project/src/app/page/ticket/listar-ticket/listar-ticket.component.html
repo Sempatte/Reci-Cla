@@ -1,5 +1,8 @@
 <div class="container">
   <h2 class="title">Lista de tickets </h2>
+  <mat-form-field [ngStyle]="{ 'margin-left': '20px' }">
+    <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+  </mat-form-field>
   <table 
     id="tabla-listarTickets" 
     mat-table 

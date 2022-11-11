@@ -58,4 +58,7 @@ export class ListarTickets implements OnInit {
     this.idMayor = id;
     this.dialog.open(DialogoTicketComponent);
   }
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
 }

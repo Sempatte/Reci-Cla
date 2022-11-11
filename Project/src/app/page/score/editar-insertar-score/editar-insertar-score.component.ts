@@ -70,7 +70,6 @@ export class EditarInsertarScoreComponent implements OnInit {
   init() {
     if (this.edicion) {
       this.scoreService.listarIdScore(this.id).subscribe((data) => {
-        console.log('data', data)
         this.score = data;
         this._idUsuarioSeleccionado = this.score.usuario.id;
       });

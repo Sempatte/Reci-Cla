@@ -50,7 +50,6 @@ export class InsertarTicketComponent implements OnInit {
       this.listaTipoTickets = data;
     });
     this.usuarioService.getAllUsers().subscribe((data) => {
-      console.log('usuarios',data)
       this.listaUsuarios = data;
     });
   }

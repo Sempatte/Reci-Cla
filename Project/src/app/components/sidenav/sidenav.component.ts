@@ -13,7 +13,7 @@ export class SidenavComponent implements OnInit {
     { name: 'List of Recyclers', route: 'Recicladores', icon: 'recycling' },
     { name: 'List of Recolectors', route: 'Recolectores', icon: 'compost' },
     { name: 'Scores', route: 'Scores', icon: 'star' },
-    { name: 'History', route: 'ListarHistorial', icon: 'history' },
+    /* { name: 'History', route: 'ListarHistorial', icon: 'history' },*/
     { name: 'Rewards', route: 'ListarProductos', icon: 'military_tech' },
     { name: 'Type of rewards', route: 'ListarTipoProductos', icon: 'category' },
     /* {
@@ -27,7 +27,11 @@ export class SidenavComponent implements OnInit {
       icon: 'location_on',
     },
     { name: 'Tickets', route: 'ListarTickets', icon: 'confirmation_number' },
-    { name: 'Type of Tickets', route: 'ListarTipoDeTickets', icon: 'book_online' }
+    {
+      name: 'Type of Tickets',
+      route: 'ListarTipoDeTickets',
+      icon: 'book_online',
+    },
   ];
 
   private _mobileQueryListener: () => void;

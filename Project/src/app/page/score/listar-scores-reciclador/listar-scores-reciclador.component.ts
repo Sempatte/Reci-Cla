@@ -56,5 +56,9 @@ export class ListarScoresRecicladorComponent implements OnInit {
     });
   }
 
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
+
   
 }

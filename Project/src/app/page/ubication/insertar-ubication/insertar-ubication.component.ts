@@ -43,6 +43,7 @@ export class InsertarUbicationComponent implements OnInit {
       } else {
 
         this.UbicacionService.InsertarUbication(this.ubication).subscribe(
+          
           (data) => {
             this.UbicacionService.getUbications().subscribe((data) => {
               this.UbicacionService.setListaUbication(data);

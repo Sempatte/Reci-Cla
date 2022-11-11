@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="form-insertar">
+    <h1>{{ edicion ? "Editar Reward" : "Añadir Reward" }}</h1>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        required
+        placeholder="Estado"
+        type="text"
+        [(ngModel)]="reward.nameReward"
+      />
+    </mat-form-field>
+
+    <br />
+    <mat-form-field>
+      <mat-label>Descripcion del producto</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        placeholder="text"
+        [(ngModel)]="reward.description"
+      />
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+        <mat-label>Codigo</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          placeholder="text"
+          [(ngModel)]="reward.code"
+        />
+      </mat-form-field>
+
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de inicio</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="fechaSeleccionadaStart"
+        [max]="maxFecha"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de expiracion</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="fechaSeleccionadaEnd"
+        [max]="maxFecha"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Seleccione tipo de producto</mat-label>
+      <mat-select [(value)]="idTipoRewardSeleccionado" required>
+        <mat-option *ngFor="let t of listaTipoReward" [value]="t.id">
+          {{ t.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+
+
+
+    <div class="form-controls">
+      <button
+        mat-raised-button
+        id="button-action"
+        color="primary"
+        (click)="aceptar()"
+      >
+        Aceptar
+      </button>
+      <button
+        mat-raised-button
+        id="button-action"
+        color="warn"
+        routerLink="/ListarProductos"
+      >
+        Cancelar
+      </button>
+    </div>
+    <p>{{ mensaje }}</p>
+  </div>
+</div>

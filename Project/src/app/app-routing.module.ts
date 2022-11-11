@@ -18,7 +18,7 @@ import { RecolectorComponent } from './page/recolector/recolector.component';
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
 import { ScoreComponent } from './page/score/score.component';
 import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
-
+import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
@@ -49,7 +49,10 @@ const routes: Routes = [
     ],
   },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },
-  { path: 'ListarProductos', component: RewardComponent },
+  { path: 'ListarProductos', component: RewardComponent,children:[
+    {path:'insertar',component:InsertarRewardComponent},
+    { path: 'editar/:id', component: InsertarRewardComponent }
+  ]},
   {
     path: 'ListarTipoProductos',
     component: ListarTipoRewardComponent,
