@@ -40,10 +40,14 @@ const routes: Routes = [
     ],
   },
   { path: 'Home', component: HomeComponent },
-  { path: 'Scores', component: ScoreComponent, children: [
-    { path: 'insertar', component: EditarInsertarScoreComponent},
-    {path: 'editar/:id', component: EditarInsertarScoreComponent}
-  ] },
+  {
+    path: 'Scores',
+    component: ScoreComponent,
+    children: [
+      { path: 'insertar', component: EditarInsertarScoreComponent },
+      { path: 'editar/:id', component: EditarInsertarScoreComponent },
+    ],
+  },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },
   { path: 'ListarProductos', component: RewardComponent },
   {
@@ -66,13 +70,13 @@ const routes: Routes = [
     children: [
       {
         path: 'insertar',
-        component: InsertarTipoDeTicketComponent
+        component: InsertarTipoDeTicketComponent,
       },
       {
         path: 'editar/:id',
-        component: InsertarTipoDeTicketComponent
-      }
-    ]
+        component: InsertarTipoDeTicketComponent,
+      },
+    ],
   },
   { path: 'ListarRewards_User', component: ListarRewardsUserComponent },
   {
@@ -89,10 +93,14 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'ListarTickets', component: TicketComponent, children:[
-    {path:'insertar',component:InsertarTicketComponent}
-  ]
-},
+  {
+    path: 'ListarTickets',
+    component: TicketComponent,
+    children: [
+      { path: 'insertar', component: InsertarTicketComponent },
+      { path: 'editar/:id', component: InsertarTicketComponent }
+    ],
+  },
 ];
 
 @NgModule({

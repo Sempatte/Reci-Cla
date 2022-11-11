@@ -5,6 +5,7 @@ import { Ticket } from 'src/app/model/Ticket';
 import { TicketService } from 'src/app/service/ticket.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { DialogoTicketComponent } from './dialogo-ticket/dialogo-ticket.component';
 @Component({
   selector: 'app-listar-ticket',
   templateUrl: './listar-ticket.component.html',
@@ -22,7 +23,9 @@ export class ListarTickets implements OnInit {
     'tipo_usuario',
     'email',
     'Estado',
-    'fecha'
+    'fecha',
+    'accionEditar',
+    'accionEliminar'
   ];
   
   private idMayor:number=0;
@@ -30,6 +33,7 @@ export class ListarTickets implements OnInit {
 
   ngOnInit(): void {
     this.tS.listarTickets().subscribe(data => {
+      console.log(data)
       this.dataSource = new MatTableDataSource(data);
     });
 
@@ -47,5 +51,11 @@ export class ListarTickets implements OnInit {
         this.tS.setListaTickets(data);
       });
     });
+  }
+
+  confirmarEliminacion(id: number) {
+    console.log(id)
+    this.idMayor = id;
+    this.dialog.open(DialogoTicketComponent);
   }
 }

@@ -49,6 +49,8 @@ import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score
 import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
 import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.component';
 import{MatDatepickerModule} from '@angular/material/datepicker';
+import { DialogoTicketComponent } from './page/ticket/listar-ticket/dialogo-ticket/dialogo-ticket.component';
+import { BuscarTicketComponent } from './page/ticket/listar-ticket/buscar-ticket/buscar-ticket.component';
 
 
 
@@ -85,6 +87,8 @@ import{MatDatepickerModule} from '@angular/material/datepicker';
     EditarInsertarScoreComponent,
     InsertarTicketComponent,
     DialogScoreComponent,
+    DialogoTicketComponent,
+    BuscarTicketComponent,
 
 
   ],

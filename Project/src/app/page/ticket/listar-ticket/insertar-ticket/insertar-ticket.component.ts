@@ -19,25 +19,29 @@ export class InsertarTicketComponent implements OnInit {
   edicion: boolean = false;
 
   listaTipoTickets: TipoTicket[] = [];
-  listaUsuarios:User[]=[];
+  listaUsuarios: User[] = [];
 
   idTipoTicketSeleccionado: number = 0;
-  idUsuarioSeleccionado:number=0;
+  idUsuarioSeleccionado: number = 0;
 
-  id:number=0;
+  id: number = 0;
 
   fechaSeleccionada: Date = moment().add(-1, 'days').toDate();
   maxFecha: Date = moment().add(-1, 'days').toDate();
   mensaje1: string = '';
 
-  constructor(private ticketService: TicketService,
+  constructor(
+    private ticketService: TicketService,
     private ttsService: TipoDeTicketService,
-    private usuarioService:RecicladorService,
+    private usuarioService: RecicladorService,
     private router: Router,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+
     this.route.params.subscribe((data: Params) => {
+
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
@@ -45,55 +49,57 @@ export class InsertarTicketComponent implements OnInit {
     this.ttsService.listarTipoDeTickets().subscribe((data) => {
       this.listaTipoTickets = data;
     });
-    this.usuarioService.getListaUser().subscribe((data)=>{
-      this.listaUsuarios=data;
-    })
+    this.usuarioService.getAllUsers().subscribe((data) => {
+      console.log('usuarios',data)
+      this.listaUsuarios = data;
+    });
   }
-  aceptar(){
-    if(this.ticket.DescriptionReclamo.length>=0 &&
-      this.idTipoTicketSeleccionado!==null &&
-      this.idUsuarioSeleccionado!=null &&
-      this.ticket.Estado.length>=0 &&
-      this.ticket.fecha.length>=0){
+  aceptar() {
+    if (
+      this.ticket.descripcionReclamo.length >= 0 &&
+      this.idTipoTicketSeleccionado !== null &&
+      this.idUsuarioSeleccionado != null &&
+      this.ticket.estado.length >= 0 &&
+      this.ticket.fecha.length >= 0
+    ) {
+      let _tipoticket = new TipoTicket();
+      let _user = new User();
 
-        let _tipoticket=new TipoTicket();
-        let _user=new User();
+      _tipoticket.id = this.idTipoTicketSeleccionado;
+      _user.id = this.idUsuarioSeleccionado;
 
-        _tipoticket.id=this.idTipoTicketSeleccionado;
-        _user.id=this.idUsuarioSeleccionado;
+      this.ticket.tipoTicket = _tipoticket;
+      this.ticket.usuario = _user;
 
-        this.ticket.TipoTicket=_tipoticket;
-        this.ticket.Usuario=_user;
+      this.ticket.fecha = moment(this.fechaSeleccionada).format(
+        'YYYY-MM-DDTHH:mm:ss'
+      );
 
-        this.ticket.fecha=moment(this.fechaSeleccionada).format('YYYY-MM-DDTHH:mm:ss');
-
-        if(this.edicion){
-          this.ticketService.modifyTickets(this.ticket).subscribe(()=>{
-            this.ticketService.listarTickets().subscribe((data)=>{
-              this.ticketService.setListaTickets(data);
-            });
+      if (this.edicion) {
+        this.ticketService.modifyTickets(this.ticket).subscribe(() => {
+          this.ticketService.listarTickets().subscribe((data) => {
+            this.ticketService.setListaTickets(data);
           });
-        }else{
-          this.ticketService.insertarTickets(this.ticket).subscribe(()=>{
-            this.ticketService.listarTickets().subscribe((data)=>{
-              this.ticketService.setListaTickets(data);
-            });
+        });
+      } else {
+        this.ticketService.insertarTickets(this.ticket).subscribe(() => {
+          this.ticketService.listarTickets().subscribe((data) => {
+            this.ticketService.setListaTickets(data);
           });
-        }
-        this.router.navigate(['tickets']);
-      }else{
-        this.mensaje='Complete los valores requeridos';
+        });
       }
+      this.router.navigate(['ListarTickets']);
+    } else {
+      this.mensaje = 'Complete los valores requeridos';
+    }
   }
   init() {
     if (this.edicion) {
+      console.log('a')
       this.ticketService.ListarIdTicket(this.id).subscribe((data) => {
-        console.log('data', data)
+        this.idTipoTicketSeleccionado = data.tipoTicket.id;
+        this.idUsuarioSeleccionado = data.usuario.id;
         this.ticket = data;
-        //this.idTipoTicketSeleccionado = this.ticket.TipoTicket.id;
-        //this.idUsuarioSeleccionado=this.ticket.Usuario.id;
-        this.idTipoTicketSeleccionado =data.TipoTicket.id;
-        this.idUsuarioSeleccionado=data.Usuario.id;
       });
     }
   }
