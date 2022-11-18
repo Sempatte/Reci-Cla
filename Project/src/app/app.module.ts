@@ -53,6 +53,8 @@ import { DialogoTicketComponent } from './page/ticket/listar-ticket/dialogo-tick
 import { BuscarTicketComponent } from './page/ticket/listar-ticket/buscar-ticket/buscar-ticket.component';
 import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
 import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-reward.component';
+import { SolicitudComponent } from './page/solicitud/solicitud.component';
+import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
 
 
 
@@ -93,6 +95,8 @@ import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-rew
     BuscarTicketComponent,
     InsertarRewardComponent,
     DialogoRewardComponent,
+    SolicitudComponent,
+    InsertarSolicitudComponent,
 
 
   ],
