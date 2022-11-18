@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class SolicitudService {
-  private url:string=`${environment.host}/solicitudes`
+  private url:string=`${environment.host}/solicitudes`;
   private listaCambio=new Subject<Solicitud[]>()
   private confirmaEliminacion=new Subject<Boolean>()
   constructor(private http:HttpClient) { }
