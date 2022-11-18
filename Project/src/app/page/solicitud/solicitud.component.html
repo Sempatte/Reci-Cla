@@ -1,3 +1,5 @@
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length !== 0">
 <div class="container">
     <h2 class="title">Lista de solicitudes </h2>
     <mat-form-field [ngStyle]="{ 'margin-left': '20px' }">
@@ -82,4 +84,4 @@
     </div>
   
   </div>
-  
+</div>

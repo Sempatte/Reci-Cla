@@ -32,6 +32,7 @@ export class SidenavComponent implements OnInit {
       route: 'ListarTipoDeTickets',
       icon: 'book_online',
     },
+    {name:'Solicitudes',route:'Solicitudes',icon:'recycling'},
   ];
 
   private _mobileQueryListener: () => void;
