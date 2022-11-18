@@ -56,6 +56,7 @@ import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-rew
 import { SolicitudComponent } from './page/solicitud/solicitud.component';
 import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
 import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/dialogo-solicitud.component';
+import { BuscarSolicitudComponent } from './page/solicitud/buscar-solicitud/buscar-solicitud.component';
 
 
 
@@ -99,6 +100,7 @@ import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/di
     SolicitudComponent,
     InsertarSolicitudComponent,
     DialogoSolicitudComponent,
+    BuscarSolicitudComponent,
 
 
   ],

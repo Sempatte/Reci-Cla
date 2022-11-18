@@ -7,14 +7,14 @@ import { TicketService } from './../../../../service/ticket.service';
 })
 export class BuscarTicketComponent implements OnInit {
   textoBuscar:string="";
-  constructor(ticketService:TicketService) { }
+  constructor(private ticketService:TicketService) { }
 
   ngOnInit(): void {
   }
-  /*buscar(e: any) {
+  buscar(e: any) {
   this.ticketService.buscar(e.target.value).subscribe(data=>{
-    this.ticketService.setLista(data);
+    this.ticketService.setListaTickets(data);
   });
-}*/
+}
 
 }
