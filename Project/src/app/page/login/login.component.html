@@ -325,7 +325,7 @@
   </div>
 
   <div class="inputGroup inputGroup1">
-    <label for="email1">Usuario</label>
+    <label for="username">Usuario</label>
     <input
       matInput
       type="text"
@@ -336,7 +336,6 @@
       maxlength="256"
       [(ngModel)]="username"
     />
-    <p class="helper helper1">Admin</p>
     <span class="indicator"></span>
   </div>
   <div class="inputGroup inputGroup2">
@@ -350,6 +349,7 @@
       class="password"
       [(ngModel)]="password"
     />
+
   </div>
   <div class="inputGroup inputGroup3">
     <button type="submit" [disabled]="!loginForm.form.valid" id="login">

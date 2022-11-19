@@ -8,7 +8,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-insertar-reward',
   templateUrl: './insertar-reward.component.html',
-  styleUrls: ['./insertar-reward.component.css']
 })
 export class InsertarRewardComponent implements OnInit {
   reward: Reward = new Reward();
@@ -51,12 +50,12 @@ export class InsertarRewardComponent implements OnInit {
       this.reward.description.length >= 0 &&
       this.idTipoRewardSeleccionado !== null &&
       this.fechaSeleccionadaStart !== null &&
-      this.fechaSeleccionadaEnd !== null 
+      this.fechaSeleccionadaEnd !== null
     ) {
       let _tipoReward = new Types();
       _tipoReward.id = this.idTipoRewardSeleccionado;
       this.reward.types = _tipoReward;
-      
+
       this.reward.startDate = moment(this.fechaSeleccionadaStart).format('YYYY-MM-DD');
       this.reward.endDate = moment(this.fechaSeleccionadaEnd).format('YYYY-MM-DD');
       if (this.edicion) {
@@ -85,7 +84,7 @@ export class InsertarRewardComponent implements OnInit {
       this.rewardService.ListarIdReward(this.id).subscribe((data) => {
         this.idTipoRewardSeleccionado = data.types.id;
         this.reward = data;
-        
+
       });
     }
   }

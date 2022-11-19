@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
   __horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   __verticalPosition: MatSnackBarVerticalPosition = 'top';
   ngOnInit(): void {
-    if (this.loginService.verificar()) {
-      this.router.navigate(['Home']);
-    }
+    this.loginService.verificar() && this.router.navigate(['Home']);
+
   }
 
   ngAfterViewInit(): void {
+
     let Username: any = document.querySelector('#username'),
       password: any = document.querySelector('#password'),
       mySVG: any = document.querySelector('.svgContainer'),
@@ -426,7 +426,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   login() {
     let request = new JwtRequest();
     let textbox = document.getElementById('login') as HTMLButtonElement;
-    textbox.textContent  = 'Loading...';
+    textbox.textContent = 'Loading...';
     textbox.disabled = true;
     request.username = this.username;
     request.password = this.password;
@@ -438,14 +438,21 @@ export class LoginComponent implements OnInit, AfterViewInit {
         this.router.navigate(['Home']);
       },
       (error) => {
-        textbox.textContent  = 'Log in';
-        textbox.disabled = false;
-        this.mensaje = 'Credenciales incorrectas';
+        console.log('error', error);
+        if (error.status == 500 || error.status == 0) { // 500 is server error, 0 is network error
+          this.mensaje = 'Error en el servidor';
+        }
+        else if (error.status == 401) { // Credenciales incorrectas
+          this.mensaje = 'Credenciales incorrectas';
+        }
         this.snackBar.open(this.mensaje, 'Aviso', {
           horizontalPosition: this.__horizontalPosition,
           verticalPosition: this.__verticalPosition,
           duration: 2000,
         });
+        textbox.textContent = 'Log in';
+        textbox.disabled = false;
+
         this.password = '';
       }
     );

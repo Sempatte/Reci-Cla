@@ -5,8 +5,7 @@ import { Types } from 'src/app/model/Types';
 
 @Component({
   selector: 'app-insertar-tipo-de-reward',
-  templateUrl: './insertar-tipo-de-reward.component.html',
-  styleUrls: ['./insertar-tipo-de-reward.component.css'],
+  templateUrl: './insertar-tipo-de-reward.component.html'
 })
 export class InsertarTipoDeRewardComponent implements OnInit {
   types: Types = new Types();
@@ -37,8 +36,8 @@ export class InsertarTipoDeRewardComponent implements OnInit {
           });
         });
       } else {
-        this.tRS.listarTypeOfReward().subscribe((data) => { 
-          this.types.id = data.length + 1; 
+        this.tRS.listarTypeOfReward().subscribe((data) => {
+          this.types.id = data.length + 1;
           this.tRS.insertarTypeOfReward(this.types).subscribe((data) => {
 
             this.tRS.listarTypeOfReward().subscribe((data) => {

@@ -4,7 +4,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-tipo-reward-dialogo',
   templateUrl: './tipo-reward-dialogo.component.html',
-  styleUrls: ['./tipo-reward-dialogo.component.css'],
 })
 export class TipoRewardDialogoComponent implements OnInit {
   constructor(

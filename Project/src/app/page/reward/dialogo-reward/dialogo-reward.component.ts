@@ -4,7 +4,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialogo-reward',
   templateUrl: './dialogo-reward.component.html',
-  styleUrls: ['./dialogo-reward.component.css']
 })
 export class DialogoRewardComponent implements OnInit {
 
