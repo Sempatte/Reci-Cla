@@ -2,68 +2,84 @@
 <div [hidden]="route.children.length !== 0">
   <div class="container">
     <h2 class="title">Lista de ubicaciones</h2>
-    <!-- <app-buscar-ubication></app-buscar-ubication> --> <!-- Search component -->
-    <mat-form-field [ngStyle]="{'margin-left': '20px'}">
-      <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
-    </mat-form-field>
-    <table id="tabla-listarUbicaciones" mat-table [dataSource]="DataSource" class="mat-elevation-z8">
+    <!-- <app-buscar-ubication></app-buscar-ubication> -->
+    <!-- Search component -->
+    <div *ngIf="!isLoading">
+      <mat-form-field [ngStyle]="{ 'margin-left': '20px' }">
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+      <table
+        id="tabla-listarUbicaciones"
+        mat-table
+        [dataSource]="DataSource"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="idUbication">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="idUbication">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
+        <ng-container matColumnDef="Departamento">
+          <th mat-header-cell *matHeaderCellDef>Departamento</th>
+          <td mat-cell *matCellDef="let element">{{ element.departamento }}</td>
+        </ng-container>
+        1
+        <ng-container matColumnDef="Provincia">
+          <th mat-header-cell *matHeaderCellDef>Provincia</th>
+          <td mat-cell *matCellDef="let element">{{ element.provincia }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="Departamento">
-        <th mat-header-cell *matHeaderCellDef>Departamento</th>
-        <td mat-cell *matCellDef="let element">{{ element.departamento }}</td>
-      </ng-container>
-1
-      <ng-container matColumnDef="Provincia">
-        <th mat-header-cell *matHeaderCellDef>Provincia</th>
-        <td mat-cell *matCellDef="let element">{{ element.provincia }}</td>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="Distrito">
+          <th mat-header-cell *matHeaderCellDef>Distrito</th>
+          <td mat-cell *matCellDef="let element">{{ element.distrito }}</td>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="Distrito">
-        <th mat-header-cell *matHeaderCellDef>Distrito</th>
-        <td mat-cell *matCellDef="let element">{{ element.distrito }}</td>
-      </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Direccion">
+          <th mat-header-cell *matHeaderCellDef>Direccion</th>
+          <td mat-cell *matCellDef="let element">{{ element.direccion }}</td>
+        </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="Direccion">
-        <th mat-header-cell *matHeaderCellDef>Direccion</th>
-        <td mat-cell *matCellDef="let element">{{ element.direccion }}</td>
-      </ng-container>
+        <ng-container matColumnDef="accion_editar">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-mini-fab
+              color="primary"
+              [routerLink]="['editar', element?.id]"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="accion_editar">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-mini-fab color="primary" [routerLink]="['editar', element?.id]">
-            <mat-icon>edit</mat-icon>
-          </button>
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="accion_eliminar">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-mini-fab color="warn" (click)="confirmar(element.id)">
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="accion_eliminar">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-mini-fab color="warn" (click)="confirmar(element.id)">
-            <mat-icon>close</mat-icon>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
 
-          </button>
-
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-
-    <div id="add" class="example-button-container">
-      <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
-        routerLink="/ListarUbicacion/insertar">
-        <mat-icon>add</mat-icon>
-      </button>
+      <div id="add" class="example-button-container">
+        <button
+          mat-mini-fab
+          color="primary"
+          aria-label="Example icon button with a plus one icon"
+          routerLink="/ListarUbicacion/insertar"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="isLoading">
+      <app-loader></app-loader>
     </div>
   </div>
 </div>

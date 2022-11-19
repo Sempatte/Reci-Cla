@@ -12,6 +12,7 @@ import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 })
 export class ListarScoresRecicladorComponent implements OnInit {
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  isLoading: boolean = true;
   private idMayor: number = 0;
   displayedColumns: string[] = [
     'id',
@@ -32,9 +33,11 @@ export class ListarScoresRecicladorComponent implements OnInit {
 
   ngOnInit(): void {
     this.scoreService.listarScores().subscribe((data) => {
+      this.isLoading = false;
       this.dataSource = new MatTableDataSource(data);
     });
     this.scoreService.getListaScore().subscribe((data) => {
+      this.isLoading = false;
       this.dataSource = new MatTableDataSource(data);
     });
     this.scoreService.getConfirmaEliminacion().subscribe((data) => {

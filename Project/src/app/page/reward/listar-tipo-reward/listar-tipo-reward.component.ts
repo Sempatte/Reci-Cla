@@ -11,6 +11,7 @@ import { TipoRewardDialogoComponent } from './tipo-reward-dialogo/tipo-reward-di
 })
 export class ListarTipoRewardComponent implements OnInit {
   DataSource: MatTableDataSource<any> = new MatTableDataSource();
+  isLoading: boolean = true;
   DisplayedColumns: String[] = [
     'id',
     'nameType',
@@ -27,12 +28,12 @@ export class ListarTipoRewardComponent implements OnInit {
 
   ngOnInit(): void {
     this.tUs.listarTypeOfReward().subscribe((data) => {
-      console.log(data);
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
 
     this.tUs.getListaTypeOfReward().subscribe((data) => {
-      console.log(data);
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
     this.tUs.getConfirmaEliminacion().subscribe((data) => {

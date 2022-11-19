@@ -1,0 +1,39 @@
+
+<div class="login-div">
+  <mat-card class="z-depth center" flex="50">
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <h2>Log In to Reci-cla</h2>
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Username"
+            [(ngModel)]="username"
+            name="username"
+            required
+          />
+          <mat-error> Inserta un nombre de usuario valido </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+          <mat-error> Inserta una contraseña valida </mat-error>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!loginForm.form.valid"
+        >
+          Login
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -2,74 +2,83 @@
 <div [hidden]="route.children.length !== 0">
   <div class="container history_form">
     <h2 class="title">Rewards</h2>
-    <mat-form-field [ngStyle]="{ 'margin-left': '20px' }">
-      <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
-    </mat-form-field>
-    <table
-      id="tabla-listarProductos"
-      mat-table
-      [dataSource]="DataSource"
-      class="mat-elevation-z8"
-    >
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>id</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Nombre</th>
-        <td mat-cell *matCellDef="let element">{{ element.nameReward }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="TipoProducto">
-        <th mat-header-cell *matHeaderCellDef>Tipo de Producto</th>
-        <td mat-cell *matCellDef="let element">{{ element.types.name }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="FechaInicio">
-        <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
-        <td mat-cell *matCellDef="let element">{{ element.startDate }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="FechaFin">
-        <th mat-header-cell *matHeaderCellDef>Fecha de finalizacion</th>
-        <td mat-cell *matCellDef="let element">{{ element.endDate }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="accion_editar">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <button
-            mat-mini-fab
-            color="primary"
-            [routerLink]="['editar', element?.id]"
-          >
-            <mat-icon>edit</mat-icon>
-          </button>
-        </td>
-      </ng-container>
-
-     <ng-container matColumnDef="accionEliminar">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-mini-fab color="warn" (click)="confirmarEliminacion(element.id)">
-          <mat-icon>close</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="DisplayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: DisplayedColumns"></tr>
-    </table>
-    <div id="add" class="example-button-container">
-      <button
-        mat-fab
-        color="primary"
-        aria-label="..."
-        routerLink="/ListarProductos/insertar"
+    <div *ngIf="!isLoading">
+      <mat-form-field [ngStyle]="{ 'margin-left': '20px' }">
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+      <table
+        id="tabla-listarProductos"
+        mat-table
+        [dataSource]="DataSource"
+        class="mat-elevation-z8"
       >
-        <mat-icon>add</mat-icon>
-      </button>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.nameReward }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="TipoProducto">
+          <th mat-header-cell *matHeaderCellDef>Tipo de Producto</th>
+          <td mat-cell *matCellDef="let element">{{ element.types.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="FechaInicio">
+          <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
+          <td mat-cell *matCellDef="let element">{{ element.startDate }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="FechaFin">
+          <th mat-header-cell *matHeaderCellDef>Fecha de finalizacion</th>
+          <td mat-cell *matCellDef="let element">{{ element.endDate }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion_editar">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-mini-fab
+              color="primary"
+              [routerLink]="['editar', element?.id]"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accionEliminar">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-mini-fab
+              color="warn"
+              (click)="confirmarEliminacion(element.id)"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="DisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: DisplayedColumns"></tr>
+      </table>
+      <div id="add" class="example-button-container">
+        <button
+          mat-fab
+          color="primary"
+          aria-label="..."
+          routerLink="/ListarProductos/insertar"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="isLoading">
+      <app-loader></app-loader>
     </div>
   </div>
 </div>

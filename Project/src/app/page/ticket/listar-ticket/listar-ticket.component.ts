@@ -12,8 +12,9 @@ import { DialogoTicketComponent } from './dialogo-ticket/dialogo-ticket.componen
   styleUrls: ['./listar-ticket.component.css'],
 })
 export class ListarTickets implements OnInit {
-  lista:Ticket[]=[];
+  lista: Ticket[] = [];
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  isLoading: boolean = true;
   displayedColumns: string[] = [
     'id',
     'descripcion',
@@ -25,36 +26,41 @@ export class ListarTickets implements OnInit {
     'Estado',
     'fecha',
     'accionEditar',
-    'accionEliminar'
+    'accionEliminar',
   ];
-  
-  private idMayor:number=0;
-  constructor(private tS:TicketService,public route:ActivatedRoute,private dialog:MatDialog) {}
+
+  private idMayor: number = 0;
+  constructor(
+    private tS: TicketService,
+    public route: ActivatedRoute,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
-    this.tS.listarTickets().subscribe(data => {
-      console.log(data)
+    this.tS.listarTickets().subscribe((data) => {
+      this.isLoading = false;
       this.dataSource = new MatTableDataSource(data);
     });
 
-    this.tS.getListaTickets().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);      
+    this.tS.getListaTickets().subscribe((data) => {
+      this.isLoading = false;
+      this.dataSource = new MatTableDataSource(data);
     });
 
-    this.tS.getConfirmaEliminacion().subscribe(data => {
+    this.tS.getConfirmaEliminacion().subscribe((data) => {
       data == true ? this.eliminar(this.idMayor) : false;
     });
   }
-  eliminar(id:number){
+  eliminar(id: number) {
     this.tS.eliminarTicket(id).subscribe(() => {
-      this.tS.listarTickets().subscribe(data => {
+      this.tS.listarTickets().subscribe((data) => {
         this.tS.setListaTickets(data);
       });
     });
   }
 
   confirmarEliminacion(id: number) {
-    console.log(id)
+    console.log(id);
     this.idMayor = id;
     this.dialog.open(DialogoTicketComponent);
   }

@@ -10,6 +10,7 @@ import { Rewards_Users } from 'src/app/model/Rewards_User';
 })
 export class ListarRewardsUserComponent implements OnInit {
   DataSource: MatTableDataSource<Rewards_Users> = new MatTableDataSource(); // Instancia de la clase
+  isLoading: boolean = true;
   DisplayedColumns: String[] = [
     'RewardId',
     'nombres',
@@ -24,10 +25,10 @@ export class ListarRewardsUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.uS.getRewardsUser().subscribe((data) => {
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data); // <--- pasar la data al DataSource
       console.log(data);
     });
-    console.info(this.validarFechaMenorActual('24/09/2022'));
   }
 
   validarFechaMenorActual(date: String): boolean {

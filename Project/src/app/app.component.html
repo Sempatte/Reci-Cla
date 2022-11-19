@@ -1,2 +1,8 @@
-<app-sidenav></app-sidenav>
-<router-outlet></router-outlet>
+<!-- <app-sidenav></app-sidenav> -->
+
+<div *ngIf="verificar()">
+    <app-sidenav></app-sidenav>
+    <router-outlet></router-outlet>
+</div>
+
+<app-login *ngIf="!verificar()"></app-login>

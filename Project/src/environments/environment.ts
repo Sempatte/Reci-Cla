@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host: "https://re-cicla.herokuapp.com"
+  host: "http://localhost:8080"
 };
 
 /*

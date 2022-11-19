@@ -12,6 +12,7 @@ import { RewardService } from 'src/app/service/reward.service';
 })
 export class RewardComponent implements OnInit {
   DataSource: MatTableDataSource<any> = new MatTableDataSource();
+  isLoading: boolean = true;
   private idMayor: number = 0;
   DisplayedColumns: String[] = [
     'id',
@@ -27,11 +28,13 @@ export class RewardComponent implements OnInit {
 
   ngOnInit(): void {
     this.us.listarRewards().subscribe((data) => {
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
       console.log(data);
     });
 
     this.us.getListaRewards().subscribe((data) => {
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
 

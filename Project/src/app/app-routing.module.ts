@@ -19,10 +19,12 @@ import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/inse
 import { ScoreComponent } from './page/score/score.component';
 import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
 import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
+import { LoginComponent } from './page/login/login.component';
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
-  { path: '', redirectTo: '/Home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   {
     path: 'Recicladores',
     component: RecicladorComponent,
@@ -49,10 +51,14 @@ const routes: Routes = [
     ],
   },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },
-  { path: 'ListarProductos', component: RewardComponent,children:[
-    {path:'insertar',component:InsertarRewardComponent},
-    { path: 'editar/:id', component: InsertarRewardComponent }
-  ]},
+  {
+    path: 'ListarProductos',
+    component: RewardComponent,
+    children: [
+      { path: 'insertar', component: InsertarRewardComponent },
+      { path: 'editar/:id', component: InsertarRewardComponent },
+    ],
+  },
   {
     path: 'ListarTipoProductos',
     component: ListarTipoRewardComponent,
@@ -101,7 +107,7 @@ const routes: Routes = [
     component: TicketComponent,
     children: [
       { path: 'insertar', component: InsertarTicketComponent },
-      { path: 'editar/:id', component: InsertarTicketComponent }
+      { path: 'editar/:id', component: InsertarTicketComponent },
     ],
   },
 ];

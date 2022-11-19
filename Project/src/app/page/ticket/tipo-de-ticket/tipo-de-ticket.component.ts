@@ -12,29 +12,30 @@ import { TipoTicketDialogoComponent } from './tipo-ticket-dialogo/tipo-ticket-di
 })
 export class TipoDeTicketComponent implements OnInit {
   DataSource: MatTableDataSource<any> = new MatTableDataSource();
+  isLoading: boolean = true;
   DisplayedColumns: String[] = [
     'id',
     'DescripcionCategoria',
     'Categoria',
     'Importancia',
     'accion_eliminar',
-    'accion_editar'
+    'accion_editar',
   ];
   private idMayor: number = 0;
   constructor(
     private TipoTicketService: TipoDeTicketService,
     public route: ActivatedRoute,
-    private dialog:MatDialog
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.TipoTicketService.listarTipoDeTickets().subscribe((data) => {
-      console.log(data);
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
 
     this.TipoTicketService.getListaTipoDeTickets().subscribe((data) => {
-      console.log(data);
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
     this.TipoTicketService.getConfirmaEliminacion().subscribe((data) => {
@@ -47,13 +48,11 @@ export class TipoDeTicketComponent implements OnInit {
     this.dialog.open(TipoTicketDialogoComponent);
   }
 
-
   eliminar(id: number) {
     this.TipoTicketService.eliminar(id).subscribe(() => {
-      this.TipoTicketService.listarTipoDeTickets().subscribe(data => {
+      this.TipoTicketService.listarTipoDeTickets().subscribe((data) => {
         this.TipoTicketService.setListaTipoDeTickets(data);
       });
     });
-
   }
 }

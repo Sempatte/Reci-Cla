@@ -15,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class UbicationComponent implements OnInit {
   DataSource: MatTableDataSource<Ubication> = new MatTableDataSource();
   listaUbication: Ubication[] = [];
+  isLoading: boolean = true;
   private idMayor: number = 0;
 
   displayedColumns: string[] = [
@@ -31,10 +32,12 @@ export class UbicationComponent implements OnInit {
 
   ngOnInit(): void {
     this.ubS.getUbications().subscribe((data) => {
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
 
     this.ubS.getListaUbication().subscribe((data) => {
+      this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
     });
 

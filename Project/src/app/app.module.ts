@@ -14,7 +14,7 @@ import { HomeComponent } from './page/home/home.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { ListarScoresRecicladorComponent } from './page/score/listar-scores-reciclador/listar-scores-reciclador.component';
 import { ListarHistorialRecicladorComponent } from './page/reciclador/listar-historial-reciclador/listar-historial-reciclador.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RewardComponent } from './page/reward/reward.component';
@@ -33,8 +33,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {
+  DateAdapter,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TipoRewardDialogoComponent } from './page/reward/listar-tipo-reward/tipo-reward-dialogo/tipo-reward-dialogo.component';
 import { TicketComponent } from './page/ticket/ticket.component';
 import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
@@ -42,19 +46,21 @@ import { BuscarTipoRewardComponent } from './page/reward/buscar-tipo-reward/busc
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
 import { TipoTicketDialogoComponent } from './page/ticket/tipo-de-ticket/tipo-ticket-dialogo/tipo-ticket-dialogo.component';
 import { DialogUbicationComponent } from './page/ubication/dialog-ubication/dialog-ubication.component';
-import {BuscarUbicationComponent} from './page/ubication/buscar-ubication/buscar-ubication.component';
+import { BuscarUbicationComponent } from './page/ubication/buscar-ubication/buscar-ubication.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ScoreComponent } from './page/score/score.component';
 import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
 import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
 import { DialogScoreComponent } from './page/score/dialog-score/dialog-score.component';
-import{MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DialogoTicketComponent } from './page/ticket/listar-ticket/dialogo-ticket/dialogo-ticket.component';
 import { BuscarTicketComponent } from './page/ticket/listar-ticket/buscar-ticket/buscar-ticket.component';
 import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
 import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-reward.component';
-
-
+import { LoginComponent } from './page/login/login.component';
+import { CustomDateAdapter } from './utils/DateAdapter';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './components/loader/loader.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -93,8 +99,8 @@ import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-rew
     BuscarTicketComponent,
     InsertarRewardComponent,
     DialogoRewardComponent,
-
-
+    LoginComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,9 +125,13 @@ import { DialogoRewardComponent } from './page/reward/dialogo-reward/dialogo-rew
     MatCheckboxModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    { provide: DateAdapter, useClass: CustomDateAdapter },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

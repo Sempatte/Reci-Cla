@@ -1,7 +1,7 @@
 import { Ticket } from './../model/Ticket';
 import { TipoTicket } from './../model/TipoTicket';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EMPTY, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -10,17 +10,25 @@ import { environment } from 'src/environments/environment';
 })
 export class TipoDeTicketService {
   private url: string = `${environment.host}/TipoTickets`;
+  private token = sessionStorage.getItem('token');
+  private headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${this.token}`)
+    .set('Content-Type', 'application/json');
   private confirmaEliminacion = new Subject<Boolean>();
   private listaCambio = new Subject<TipoTicket[]>();
 
   constructor(private http: HttpClient) {}
 
   listarTipoDeTickets() {
-    return this.http.get<TipoTicket[]>(this.url);
+    return this.http.get<TipoTicket[]>(this.url, {
+      headers: this.headers,
+    });
   }
 
   insertarTipoDeTickets(tipoTicket: TipoTicket) {
-    return this.http.post(this.url, tipoTicket);
+    return this.http.post(this.url, tipoTicket, {
+      headers: this.headers,
+    });
   }
 
   setListaTipoDeTickets(listaNueva: TipoTicket[]) {
@@ -32,22 +40,30 @@ export class TipoDeTicketService {
   }
 
   modifyTipoDeTickets(tipoTicket: TipoTicket) {
-    return this.http.put(this.url, tipoTicket);
+    return this.http.put(this.url, tipoTicket, {
+      headers: this.headers,
+    });
   }
 
   ListarIdTipoDeTickets(id: number) {
-    return this.http.get<TipoTicket>(`${this.url}/${id}`);
+    return this.http.get<TipoTicket>(`${this.url}/${id}`, {
+      headers: this.headers,
+    });
   }
   eliminar(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: this.headers,
+    });
   }
-
 
   buscar(texto: string) {
     if (texto.length != 0) {
       return this.http.post<TipoTicket[]>(
         `${this.url}/buscar`,
-        texto.toLowerCase()
+        texto.toLowerCase(),
+        {
+          headers: this.headers,
+        }
       );
     }
     return EMPTY;
@@ -60,8 +76,9 @@ export class TipoDeTicketService {
     this.confirmaEliminacion.next(estado);
   }
   /**************** */
-  getTickets_tipoTickets(){
-    return this.http.get<Ticket[]>(`${environment.host}/tickets`);
+  getTickets_tipoTickets() {
+    return this.http.get<Ticket[]>(`${environment.host}/tickets`, {
+      headers: this.headers,
+    });
   }
-  
 }
