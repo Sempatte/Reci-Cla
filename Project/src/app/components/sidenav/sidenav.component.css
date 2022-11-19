@@ -10,6 +10,8 @@
 
 
 
+
+
 .example-is-mobile .toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
@@ -17,10 +19,16 @@
 
 }
 
+.spacer {
+  flex: 1 1 auto;
+}
+
 
 h1.app-name {
   margin-left: 8px;
 }
+
+
 
 .example-sidenav-container {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This

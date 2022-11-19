@@ -60,7 +60,6 @@ export class ListarTickets implements OnInit {
   }
 
   confirmarEliminacion(id: number) {
-    console.log(id);
     this.idMayor = id;
     this.dialog.open(DialogoTicketComponent);
   }

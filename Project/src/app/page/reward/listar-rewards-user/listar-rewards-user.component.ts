@@ -26,8 +26,7 @@ export class ListarRewardsUserComponent implements OnInit {
   ngOnInit(): void {
     this.uS.getRewardsUser().subscribe((data) => {
       this.isLoading = false;
-      this.DataSource = new MatTableDataSource(data); // <--- pasar la data al DataSource
-      console.log(data);
+      this.DataSource = new MatTableDataSource(data); 
     });
   }
 

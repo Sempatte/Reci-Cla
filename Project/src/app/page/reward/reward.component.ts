@@ -30,7 +30,7 @@ export class RewardComponent implements OnInit {
     this.us.listarRewards().subscribe((data) => {
       this.isLoading = false;
       this.DataSource = new MatTableDataSource(data);
-      console.log(data);
+
     });
 
     this.us.getListaRewards().subscribe((data) => {
@@ -44,7 +44,7 @@ export class RewardComponent implements OnInit {
     
   }
   confirmarEliminacion(id: number) {
-    console.log(id)
+   
     this.idMayor = id;
     this.dialog.open(DialogoRewardComponent);
   }

@@ -4,6 +4,14 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="app-name">Admin Panel / Re-Ricla</h1>
+    <span class="spacer"></span>
+
+      <mat-icon>person</mat-icon>
+      <h1>{{ adminName }}</h1>
+
+    <button mat-icon-button aria-label="" (click)="closeSession()">
+      <mat-icon>logout</mat-icon>
+    </button>
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -22,12 +30,12 @@
           <mat-icon class="toolbar-icon">{{ nav.icon }}</mat-icon>
           {{ nav.name }}
         </a>
-        <a mat-list-item (click)="closeSession()" > 
+        <a mat-list-item (click)="closeSession()">
           <mat-icon class="toolbar-icon">logout</mat-icon>
           Cerrar sesión
-         </a>
+        </a>
       </mat-nav-list>
-      
+
       <mat-slide-toggle
         (change)="toggleDarkTheme()"
         ngModel

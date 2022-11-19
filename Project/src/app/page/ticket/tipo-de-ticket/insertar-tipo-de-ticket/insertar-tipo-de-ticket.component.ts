@@ -42,7 +42,6 @@ export class InsertarTipoDeTicketComponent implements OnInit {
     if (this.tipoTicket.categoria.length > 0 && this.tipoTicket.descripcionCategoria.length > 0) {
       if (this.edicion) {
         this.tipodeticketService.modifyTipoDeTickets(this.tipoTicket).subscribe((data) => {
-          console.log(data);
           this.tipodeticketService.listarTipoDeTickets().subscribe((data) => {
             this.tipodeticketService.setListaTipoDeTickets(data);
           });
@@ -51,7 +50,6 @@ export class InsertarTipoDeTicketComponent implements OnInit {
         this.tipodeticketService.listarTipoDeTickets().subscribe((data) => { 
           this.tipoTicket.id = data.length + 1; 
           this.tipodeticketService.insertarTipoDeTickets(this.tipoTicket).subscribe((data) => {
-            console.log(data);
             this.tipodeticketService.listarTipoDeTickets().subscribe((data) => {
               this.tipodeticketService.setListaTipoDeTickets(data);
             });

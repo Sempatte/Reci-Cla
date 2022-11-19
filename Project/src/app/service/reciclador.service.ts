@@ -49,7 +49,6 @@ export class RecicladorService {
   }
 
   InsertarUser(user: User) {
-    console.log('user', user);
     return this.http.post(`${this.url}/Registrar`, user, {
       headers: this.headers,
     });

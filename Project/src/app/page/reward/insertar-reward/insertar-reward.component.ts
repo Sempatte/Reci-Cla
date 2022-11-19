@@ -60,7 +60,7 @@ export class InsertarRewardComponent implements OnInit {
       this.reward.startDate = moment(this.fechaSeleccionadaStart).format('YYYY-MM-DD');
       this.reward.endDate = moment(this.fechaSeleccionadaEnd).format('YYYY-MM-DD');
       if (this.edicion) {
-        console.log('this.reward', this.reward);
+
         this.rewardService.modifyRewards(this.reward).subscribe(() => {
           this.rewardService.listarRewards().subscribe((data) => {
             this.rewardService.setListaRewards(data);

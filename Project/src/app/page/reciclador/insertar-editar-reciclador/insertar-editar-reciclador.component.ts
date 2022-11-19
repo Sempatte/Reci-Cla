@@ -60,7 +60,7 @@ export class InsertarEditarRecicladorComponent implements OnInit {
       _ubicacion.id = this._idUbicacionSeleccionado;
       this.user.historial = _historial;
       this.user.ubication = _ubicacion;
-      console.log('this.user', this.user);
+
       if (this.edicion) {
         this.rS.modifyUser(this.user).subscribe((data) => {
           this.rS.getAllUsers().subscribe((data) => {

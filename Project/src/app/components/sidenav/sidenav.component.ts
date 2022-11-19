@@ -9,6 +9,7 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
+  public adminName = '';
 
   fillerNav = [
     { name: 'Home', route: 'Home', icon: 'home' },
@@ -41,7 +42,8 @@ export class SidenavComponent implements OnInit {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private router: Router
+    private router: Router,
+    
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -49,7 +51,7 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.adminName = sessionStorage.getItem('username') || '';
   }
 
   ngOnDestroy(): void {

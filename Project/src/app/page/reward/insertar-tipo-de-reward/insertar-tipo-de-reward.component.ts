@@ -32,7 +32,6 @@ export class InsertarTipoDeRewardComponent implements OnInit {
     if (this.types.description.length > 0 && this.types.name.length > 0) {
       if (this.edicion) {
         this.tRS.modifyTypeOfReward(this.types).subscribe((data) => {
-          console.log(data);
           this.tRS.listarTypeOfReward().subscribe((data) => {
             this.tRS.setListaTypeOfReward(data);
           });
@@ -41,7 +40,7 @@ export class InsertarTipoDeRewardComponent implements OnInit {
         this.tRS.listarTypeOfReward().subscribe((data) => { 
           this.types.id = data.length + 1; 
           this.tRS.insertarTypeOfReward(this.types).subscribe((data) => {
-            console.log(data);
+
             this.tRS.listarTypeOfReward().subscribe((data) => {
               this.tRS.setListaTypeOfReward(data);
             });

@@ -94,7 +94,6 @@ export class InsertarTicketComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      console.log('a')
       this.ticketService.ListarIdTicket(this.id).subscribe((data) => {
         this.idTipoTicketSeleccionado = data.tipoTicket.id;
         this.idUsuarioSeleccionado = data.usuario.id;

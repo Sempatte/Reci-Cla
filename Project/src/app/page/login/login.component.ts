@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   mensaje: string = '';
-  __horizontalPosition : MatSnackBarHorizontalPosition = 'center';
-  __verticalPosition : MatSnackBarVerticalPosition = 'top';
+  __horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  __verticalPosition: MatSnackBarVerticalPosition = 'top';
   ngOnInit(): void {
     if (this.loginService.verificar()) {
       this.router.navigate(['Home']);
@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
     request.password = this.password;
     this.loginService.login(request).subscribe(
       (data: any) => {
+        console.log('data login', data);
         sessionStorage.setItem('token', data.jwttoken);
+        sessionStorage.setItem('username', this.username);
         this.router.navigate(['Home']);
       },
       (error) => {
