@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/lists.service';
+import { ExtraService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoRewardComponent } from './dialogo-reward/dialogo-reward.component';

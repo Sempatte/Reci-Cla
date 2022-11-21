@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './recolector.component.html',
   styleUrls: ['./recolector.component.css'],
 })
-export class RecolectorComponent implements OnInit {
+export class RecolectorComponent implements OnInit, AfterViewInit {
   isLoading: boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   listaRecolectores: any = [];
@@ -29,13 +29,23 @@ export class RecolectorComponent implements OnInit {
     'accionEliminar',
   ];
 
-  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+  @ViewChild('paginator') paginator!: MatPaginator;
+
+  
+  @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.dataSource.paginator = this.paginator;
+  }
 
   constructor(
     private rS: RecicladorService,
     public route: ActivatedRoute,
     private dialog: MatDialog
   ) {}
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
 
   ngOnInit(): void {
     this.rS.getRecolectores().subscribe((data) => {
