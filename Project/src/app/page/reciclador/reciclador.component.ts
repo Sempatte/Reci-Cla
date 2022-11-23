@@ -60,6 +60,7 @@ export class RecicladorComponent implements OnInit, AfterViewInit {
     this.rS.getConfirmaEliminacion().subscribe((data) => {
       data ? this.eliminar(this.idMayor) : false;
     });
+
   }
 
   ngAfterViewInit(): void {

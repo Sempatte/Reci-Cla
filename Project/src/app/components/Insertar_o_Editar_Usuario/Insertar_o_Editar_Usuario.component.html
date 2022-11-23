@@ -1,64 +1,79 @@
 <div class="container">
-  <div class="example-form-fields">
+  <div *ngIf="!isLoading" class="example-form-fields">
     <h1>{{ edicion ? "Editar usuario" : "Añadir usuario" }}</h1>
 
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+    <mat-form-field
+      style="width: 300px"
+      hintLabel="Max 10 characters"
+      appearance="fill"
+    >
       <mat-label>Nombres</mat-label>
       <input
-        
         matInput
         required
         placeholder="Name"
         type="text"
         [(ngModel)]="user.nombre"
       />
+      <mat-icon *ngIf="edicion" matSuffix>mode_edit</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field style="width: 400px" appearance="fill">
       <mat-label>Apellidos</mat-label>
       <input
-        
         type="text"
         matInput
         required
         placeholder="text"
         [(ngModel)]="user.apellido"
       />
+      <mat-icon *ngIf="edicion" matSuffix>mode_edit</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field style="width: 300px" appearance="fill">
       <mat-label>Email</mat-label>
       <input
-        
-        type="text"
+        type="email"
         matInput
-        [minLength]="5"
-        [maxLength]="40"
+        [formControl]="emailFormControl"
         required
-        placeholder="text"
-        pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}"
+        placeholder="jhondoe@gmai.com"
+        [errorStateMatcher]="matcher"
         [(ngModel)]="user.email"
       />
+      <mat-icon *ngIf="edicion" matSuffix>mode_edit</mat-icon>
+
+      <mat-error
+        *ngIf="
+          emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')
+        "
+      >
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Teléfono</mat-label>
+      <span matPrefix>+51 &nbsp;</span>
       <input
-        
         type="text"
         [maxLength]="9"
         matInput
         required
-        placeholder="Número de celular"
+        placeholder="947678124"
         [(ngModel)]="user.telefono"
       />
+      <mat-icon *ngIf="edicion" matSuffix>mode_edit</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>DNI</mat-label>
       <input
-        
         type="text"
         matInput
         required
@@ -67,6 +82,7 @@
         placeholder="Documento de Identifacion"
         [(ngModel)]="user.dni"
       />
+      <mat-icon *ngIf="edicion" matSuffix>mode_edit</mat-icon>
     </mat-form-field>
     <br />
     <mat-form-field appearance="fill">
@@ -111,5 +127,8 @@
       </button>
     </div>
     <h3 *ngIf="mensaje" style="color: red">{{ mensaje }}</h3>
+  </div>
+  <div *ngIf="isLoading">
+    <app-loader></app-loader>
   </div>
 </div>
