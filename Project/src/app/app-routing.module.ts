@@ -1,3 +1,5 @@
+import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
+import { SolicitudComponent } from './page/solicitud/solicitud.component';
 import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
 import { TicketComponent } from './page/ticket/ticket.component';
 import { TipoDeTicketComponent } from './page/ticket/tipo-de-ticket/tipo-de-ticket.component';
@@ -108,6 +110,14 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarTicketComponent },
       { path: 'editar/:id', component: InsertarTicketComponent },
+    ],
+  },
+  {
+    path: 'Solicitudes',
+    component: SolicitudComponent,
+    children: [
+      { path: 'insertar', component: InsertarSolicitudComponent },
+      { path: 'editar/:id', component: InsertarSolicitudComponent },
     ],
   },
 ];

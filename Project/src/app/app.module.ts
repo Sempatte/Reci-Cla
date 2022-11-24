@@ -61,6 +61,9 @@ import { LoginComponent } from './page/login/login.component';
 import { CustomDateAdapter } from './utils/DateAdapter';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoaderComponent } from './components/loader/loader.component';
+import { SolicitudComponent } from './page/solicitud/solicitud.component';
+import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
+import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/dialogo-solicitud.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -101,6 +104,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     DialogoRewardComponent,
     LoginComponent,
     LoaderComponent,
+    SolicitudComponent,
+    InsertarSolicitudComponent,
+    DialogoSolicitudComponent,
   ],
   imports: [
     BrowserModule,
