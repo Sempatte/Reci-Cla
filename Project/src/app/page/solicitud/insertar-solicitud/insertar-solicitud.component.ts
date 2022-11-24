@@ -46,8 +46,8 @@ export class InsertarSolicitudComponent implements OnInit {
     });
   }
   aceptar(){
-    if(this.soli.Descripcion.length>=0 &&this.idUbicacionSeleccionado!==null &&
-      this.idUsuarioSeleccionado!=null && this.soli.Fecha.length>=0){
+    if(this.soli.descripcion.length>=0 &&this.idUbicacionSeleccionado!==null &&
+      this.idUsuarioSeleccionado!=null && this.soli.fecha.length>=0){
         let _ubicacion=new Ubication();
         let _user = new User();
 
@@ -57,7 +57,7 @@ export class InsertarSolicitudComponent implements OnInit {
         this.soli.ubicacion = _ubicacion;
         this.soli.usuario = _user;
 
-        this.soli.Fecha = moment(this.fechaSeleccionada).format(
+        this.soli.fecha = moment(this.fechaSeleccionada).format(
           'YYYY-MM-DDTHH:mm:ss'
         );
         if(this.edicion){

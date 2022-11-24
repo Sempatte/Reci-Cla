@@ -18,6 +18,7 @@ export class SolicitudComponent implements OnInit {
 
   ngOnInit(): void {
     this.sS.listarSolicitud().subscribe(data=>{
+      console.log(data);
       this.dataSource=new MatTableDataSource(data);
     });
     this.sS.getListaSolicitud().subscribe(data=>{
