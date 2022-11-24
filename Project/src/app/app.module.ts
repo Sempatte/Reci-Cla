@@ -64,6 +64,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { SolicitudComponent } from './page/solicitud/solicitud.component';
 import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
 import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/dialogo-solicitud.component';
+import { ListarUsuariosDestacadosComponent } from './components/listar-usuarios-destacados/listar-usuarios-destacados.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -107,6 +108,7 @@ import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/di
     SolicitudComponent,
     InsertarSolicitudComponent,
     DialogoSolicitudComponent,
+    ListarUsuariosDestacadosComponent,
   ],
   imports: [
     BrowserModule,

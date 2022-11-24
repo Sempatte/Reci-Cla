@@ -14,7 +14,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class RecolectorComponent implements OnInit, AfterViewInit {
   isLoading: boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
-  listaRecolectores: any = [];
+
   public esReciclador: boolean = false;
   private idMayor: number = 0;
   displayedColumns: string[] = [

@@ -22,6 +22,7 @@ import { ScoreComponent } from './page/score/score.component';
 import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score/editar-insertar-score.component';
 import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
 import { LoginComponent } from './page/login/login.component';
+import { ListarUsuariosDestacadosComponent } from './components/listar-usuarios-destacados/listar-usuarios-destacados.component';
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
@@ -50,6 +51,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: EditarInsertarScoreComponent },
       { path: 'editar/:id', component: EditarInsertarScoreComponent },
+      { path: 'UsuariosDestacados', component: ListarUsuariosDestacadosComponent },
     ],
   },
   { path: 'ListarHistorial', component: ListarHistorialRecicladorComponent },

@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Score } from '../model/Score';
 import { environment } from 'src/environments/environment';
+import { User } from '../model/User';
 
 @Injectable({
   providedIn: 'root',
@@ -44,6 +45,13 @@ export class ScoreService {
 
   modificarScore(score: Score) {
     return this.http.put(this.url, score, {
+      headers: this.headers,
+    });
+  }
+
+  getUsuariosDestacados() { // > 3.
+    console.log(`${environment.host}/usuarios/UsuariosDestacados`)
+    return this.http.get<User[]>(`${environment.host}/usuarios/UsuariosDestacados`, {
       headers: this.headers,
     });
   }
