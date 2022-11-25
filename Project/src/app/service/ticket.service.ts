@@ -1,3 +1,4 @@
+import { User } from './../model/User';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Ticket } from '../model/Ticket';
@@ -54,6 +55,18 @@ export class TicketService {
     });
   }
 
+  getTicketsMayorADiciembre() {
+    return this.http.get<Ticket[]>(`${this.url}/ObtenerTicketFechaMayorADiciembre`, {
+      headers: this.headers,
+    });
+  }
+
+  getTicketsPorImportancia() {
+    return this.http.get<User[]>(`${environment.host}/usuarios/SSSSSeleccionarPorImportancia`, {
+      headers: this.headers,
+    });
+  }
+
   getListaTickets() {
     return this.listaCambio.asObservable();
   }
@@ -66,4 +79,6 @@ export class TicketService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+
+  
 }

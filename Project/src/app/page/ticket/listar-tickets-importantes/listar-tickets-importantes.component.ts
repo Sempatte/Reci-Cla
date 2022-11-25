@@ -24,6 +24,7 @@ export class ListarTicketsImportantesComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticketService.getTicketsImportanciaAlta().subscribe((data) => {
+      
       this.dataSource = new MatTableDataSource<Ticket>(data);
     } );
   }

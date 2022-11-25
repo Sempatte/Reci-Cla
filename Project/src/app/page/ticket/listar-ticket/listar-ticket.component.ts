@@ -13,7 +13,7 @@ import { DialogoTicketComponent } from './dialogo-ticket/dialogo-ticket.componen
 })
 export class ListarTickets implements OnInit {
   lista: Ticket[] = [];
-  dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  dataSource: MatTableDataSource<Ticket> = new MatTableDataSource();
   isLoading: boolean = true;
   displayedColumns: string[] = [
     'id',

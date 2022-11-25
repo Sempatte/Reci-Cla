@@ -1,3 +1,5 @@
+import { FiltrarPorImportanciaComponent } from './page/ticket/filtrar-por-importancia/filtrar-por-importancia.component';
+import { ListarTicketMayoresDiciembreComponent } from './page/ticket/listar-ticket-mayores-diciembre/listar-ticket-mayores-diciembre.component';
 import { RewardCelularComponent } from './page/reward/reward-celular/reward-celular.component';
 import { CantidadSolicitudComponent } from './page/solicitud/cantidad-solicitud/cantidad-solicitud.component';
 import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-importantes/listar-tickets-importantes.component';
@@ -117,6 +119,8 @@ const routes: Routes = [
       { path: 'insertar', component: InsertarTicketComponent },
       { path: 'editar/:id', component: InsertarTicketComponent },
       { path: 'TicketsDeAltaPrioridad', component: ListarTicketsImportantesComponent },
+      { path: 'FechaDiciembre', component: ListarTicketMayoresDiciembreComponent },
+      {path: 'Importancia', component: FiltrarPorImportanciaComponent},
     ],
   },
   {

@@ -68,6 +68,8 @@ import { ListarUsuariosDestacadosComponent } from './components/listar-usuarios-
 import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-importantes/listar-tickets-importantes.component';
 import { CantidadSolicitudComponent } from './page/solicitud/cantidad-solicitud/cantidad-solicitud.component';
 import { RewardCelularComponent } from './page/reward/reward-celular/reward-celular.component';
+import { ListarTicketMayoresDiciembreComponent } from './page/ticket/listar-ticket-mayores-diciembre/listar-ticket-mayores-diciembre.component';
+import { FiltrarPorImportanciaComponent } from './page/ticket/filtrar-por-importancia/filtrar-por-importancia.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -115,6 +117,8 @@ import { RewardCelularComponent } from './page/reward/reward-celular/reward-celu
     ListarTicketsImportantesComponent,
     CantidadSolicitudComponent,
     RewardCelularComponent,
+    ListarTicketMayoresDiciembreComponent,
+    FiltrarPorImportanciaComponent,
   ],
   imports: [
     BrowserModule,

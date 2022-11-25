@@ -106,5 +106,53 @@ a.a-direccion:hover {
   font-weight: bold;
 }
 
+/* TICKETS */
+
+#tabla-listarTickets {
+  padding: 20px;
+  margin: 20px;
+  width: 95%;
+  font-size: 20px;
+  text-align: center;
+}
+
+#tabla-listarTickets th {
+  text-align: center !important;
+}
+
+#tabla-listarTickets .mat-column-id {
+  width: 10px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+#tabla-listarTickets .mat-column-nombre {
+  width: auto;
+}
+
+#tabla-listarTickets .mat-column-pedidosRealizados {
+  width: auto;
+  font-style: italic;
+}
+
+#tabla-listarTickets .mat-column-telefono {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#tabla-listarTickets .mat-column-email {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#tabla-listarTickets .mat-column-dni {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 

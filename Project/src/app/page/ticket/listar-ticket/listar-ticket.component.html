@@ -122,6 +122,22 @@
       >
         Tickets importantes
       </button>
+      <button
+        style="margin: 5px"
+        routerLink="/ListarTickets/FechaDiciembre"
+        mat-raised-button
+        color="warning"
+      >
+        Tickets con fecha noviembre y diciembre
+      </button>
+      <button
+        style="margin: 5px"
+        routerLink="/ListarTickets/Importancia"
+        mat-raised-button
+        color="warning"
+      >
+        Tickets por importancia
+      </button>
     </div>
   </div>
   <div *ngIf="isLoading">
