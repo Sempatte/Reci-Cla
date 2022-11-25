@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioTsService } from 'src/app/service/lists.service';
+import { ExtraService } from 'src/app/service/lists.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/model/User';
 import { RecicladorService } from 'src/app/service/reciclador.service';

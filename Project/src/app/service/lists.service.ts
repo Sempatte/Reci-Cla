@@ -9,7 +9,7 @@ import Historial from '../model/Historial';
 @Injectable({
   providedIn: 'root',
 })
-export class UsuarioTsService {
+export class ExtraService {
   private token = sessionStorage.getItem('token');
   private headers = new HttpHeaders()
     .set('Authorization', `Bearer ${this.token}`)
@@ -43,6 +43,8 @@ export class UsuarioTsService {
   }
 
   getUbicaciones() {
-    return this.http.get<Ubication[]>(`${this.url}ubications`);
+    return this.http.get<Ubication[]>(`${this.url}ubications`, {
+      headers: this.headers,
+    });
   }
 }

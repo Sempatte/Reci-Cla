@@ -27,11 +27,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
+import { Insertar_o_Editar_Usuario } from './components/Insertar_o_Editar_Usuario/Insertar_o_Editar_Usuario.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { BuscarRecicladorComponent } from './page/reciclador/buscar-reciclador/buscar-reciclador.component';
+import { BuscarUsuarioComponent } from './components/buscar-usuario/buscar-usuario.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {
   DateAdapter,
@@ -80,9 +80,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     UbicationComponent,
     ListarTickets,
     SidenavComponent,
-    InsertarEditarRecicladorComponent,
+    Insertar_o_Editar_Usuario,
     DialogComponent,
-    BuscarRecicladorComponent,
+    BuscarUsuarioComponent,
     TipoRewardDialogoComponent,
     TicketComponent,
     TipoDeTicketComponent,
@@ -126,7 +126,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },

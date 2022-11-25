@@ -5,18 +5,18 @@ import { User } from 'src/app/model/User';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-reciclador',
   templateUrl: './reciclador.component.html',
   styleUrls: ['./reciclador.component.css'],
 })
-export class RecicladorComponent implements  OnInit {
+export class RecicladorComponent implements OnInit, AfterViewInit {
   isLoading: boolean = true;
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   listaRecicladores: any = [];
-  public esReciclador : boolean = true;
+  public esReciclador: boolean = true;
 
   private idMayor: number = 0;
   displayedColumns: string[] = [
@@ -31,7 +31,12 @@ export class RecicladorComponent implements  OnInit {
     'accionEliminar',
   ];
 
-  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+  @ViewChild('paginator') paginator!: MatPaginator;
+
+  @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.dataSource.paginator = this.paginator;
+  }
 
   constructor(
     private rS: RecicladorService,
@@ -39,24 +44,27 @@ export class RecicladorComponent implements  OnInit {
     private dialog: MatDialog
   ) {}
 
+
+
   ngOnInit(): void {
     this.rS.getRecicladores().subscribe((data) => {
       this.isLoading = false;
       this.dataSource = new MatTableDataSource<User>(data);
-      this.dataSource.paginator = this.paginator;
     });
 
     this.rS.getListaUser().subscribe((data) => {
       this.isLoading = false;
       this.dataSource = new MatTableDataSource<User>(data);
-      this.dataSource.paginator = this.paginator;
     });
 
-    this.rS.getConfirmaEliminacion().subscribe(data => {
-      data == true ? this.eliminar(this.idMayor) : false;
+    this.rS.getConfirmaEliminacion().subscribe((data) => {
+      data ? this.eliminar(this.idMayor) : false;
     });
 
+  }
 
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
   }
 
   confirmar(id: number) {
@@ -66,16 +74,13 @@ export class RecicladorComponent implements  OnInit {
 
   eliminar(id: number) {
     this.rS.eliminar(id).subscribe(() => {
-      this.rS.getRecicladores().subscribe(data => {
+      this.rS.getRecicladores().subscribe((data) => {
         this.rS.setListaUser(data);
       });
     });
-
   }
 
   filtrar(e: any) {
     this.dataSource.filter = e.target.value.trim();
   }
-
-
 }

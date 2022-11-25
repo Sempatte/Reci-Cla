@@ -1,18 +1,45 @@
-import { RecicladorService } from './../../../service/reciclador.service';
+import { RecicladorService } from '../../service/reciclador.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/User';
 import Historial from 'src/app/model/Historial';
 import { Ubication } from 'src/app/model/Ubication';
-import { UsuarioTsService } from 'src/app/service/lists.service';
+import { ExtraService } from 'src/app/service/lists.service';
+import { UbicacionService } from 'src/app/service/ubicacion.service';
+import { ErrorStateMatcher } from '@angular/material/core';
+import {
+  FormControl,
+  FormGroupDirective,
+  NgForm,
+  Validators,
+} from '@angular/forms';
+
+export class EmailErrorMatcher implements ErrorStateMatcher {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
+  }
+}
 
 @Component({
-  selector: 'app-insertar-editar-reciclador',
-  templateUrl: './insertar-editar-reciclador.component.html',
-  styleUrls: ['./insertar-editar-reciclador.component.css'],
+  selector: 'app-Insertar_o_Editar_Usuario',
+  templateUrl: './Insertar_o_Editar_Usuario.component.html',
+  styleUrls: ['./Insertar_o_Editar_Usuario.component.css'],
 })
-export class InsertarEditarRecicladorComponent implements OnInit {
+export class Insertar_o_Editar_Usuario implements OnInit {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  matcher = new EmailErrorMatcher();
+  isLoading: boolean = true;
   user: User = new User();
   mensaje: string = '';
   edicion: boolean = false;
@@ -27,7 +54,8 @@ export class InsertarEditarRecicladorComponent implements OnInit {
 
   constructor(
     private rS: RecicladorService,
-    private usuarioService: UsuarioTsService,
+    private usuarioService: ExtraService,
+    private ubicacionService: UbicacionService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -41,9 +69,18 @@ export class InsertarEditarRecicladorComponent implements OnInit {
     this.usuarioService.getHistorial().subscribe((data) => {
       this.listaHistorial = data;
     });
-    this.usuarioService.getUbicaciones().subscribe((data) => {
+    this.ubicacionService.getUbications().subscribe((data) => {
       this.listaUbicaciones = data;
     });
+  }
+  
+  getUsuarios() {
+    this.rS.getAllUsers().subscribe((data) => {
+      this.rS.setListaUser(
+        data.filter((e) => e['esReciclador'] === this.user.esReciclador)
+      );
+    });
+
   }
 
   aceptarModInsUsuario() {
@@ -54,33 +91,18 @@ export class InsertarEditarRecicladorComponent implements OnInit {
       this.user.telefono.length > 0 &&
       this.user.dni.length > 0
     ) {
-      let _historial = new Historial();
+
+      let _historial = new Historial()
       let _ubicacion = new Ubication();
       _historial.id = this._idHistorialSeleccionado;
       _ubicacion.id = this._idUbicacionSeleccionado;
       this.user.historial = _historial;
       this.user.ubication = _ubicacion;
 
-      if (this.edicion) {
-        this.rS.modifyUser(this.user).subscribe((data) => {
-          this.rS.getAllUsers().subscribe((data) => {
-            data = data.filter((obj) => {
-              return obj.esReciclador === this.user.esReciclador;
-            });
-            this.rS.setListaUser(data);
-          });
-        });
-      } else {
-        this.rS.InsertarUser(this.user).subscribe((data) => {
-          this.rS.getAllUsers().subscribe((data) => {
-            data = data.filter((obj) => {
-              return obj.esReciclador === this.user.esReciclador;
-            });
-            this.rS.setListaUser(data);
-          });
-        });
-      }
-
+      this.edicion
+        ? this.rS.modifyUser(this.user).subscribe(() => {this.getUsuarios()})
+        : this.rS.InsertarUser(this.user).subscribe(() => {this.getUsuarios()});
+        
       if (this.user.esReciclador) this.router.navigate(['Recicladores']);
       else this.router.navigate(['Recolectores']);
     } else {
@@ -90,13 +112,16 @@ export class InsertarEditarRecicladorComponent implements OnInit {
 
   init() {
     this.esRecolector = this.current_route === 'Recolectores' && true;
-    
+
     if (this.edicion) {
       this.rS.ListarIdUser(this.id).subscribe((data) => {
         this._idHistorialSeleccionado = data.historial.id;
         this._idUbicacionSeleccionado = data.ubication.id;
         this.user = data;
+        this.isLoading = false;
       });
+    } else {
+      this.isLoading = false;
     }
   }
 }

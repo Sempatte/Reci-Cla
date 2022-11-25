@@ -39,16 +39,17 @@ export class RecicladorService {
   getScoresRecolectores() {
     return this.http.get<Score[]>(`${environment.host}/scores`, {
       headers: this.headers,
-    }); 
+    });
   }
 
   getTicketRecicladores() {
     return this.http.get<Score[]>(`${environment.host}/tickets`, {
       headers: this.headers,
-    }); 
+    });
   }
 
   InsertarUser(user: User) {
+    console.log('INSERTANDO USER');
     return this.http.post(`${this.url}/Registrar`, user, {
       headers: this.headers,
     });
@@ -68,12 +69,11 @@ export class RecicladorService {
 
   buscar(texto: string) {
     if (texto.length != 0) {
-      return (
-        this.http.post<User[]>(`${this.url}/buscar`, texto.toLowerCase()),
+      return this.http.post<User[]>(
+        `${this.url}/BuscarPorNombres`,
+        texto,
         {
-          headers: new HttpHeaders()
-            .set('Authorization', `Bearer ${this.token}`)
-            .set('Content-Type', 'application/json'),
+          headers: this.headers,
         }
       );
     }
@@ -82,9 +82,7 @@ export class RecicladorService {
 
   ListarIdUser(id: number) {
     return this.http.get<User>(`${this.url}/${id}`, {
-      headers: new HttpHeaders()
-        .set('Authorization', `Bearer ${this.token}`)
-        .set('Content-Type', 'application/json'),
+      headers: this.headers,
     });
   }
 

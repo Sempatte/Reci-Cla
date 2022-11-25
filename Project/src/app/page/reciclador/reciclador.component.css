@@ -22,9 +22,7 @@
     padding-left: 6px;
 }
 
-#tabla-listarRecicladores .mat-column-apellido {
-    font-style: italic;
-}
+
 
 #tabla-listarRecicladores .mat-column-telefono {
     width: 40px;
@@ -35,7 +33,7 @@
 #tabla-listarRecicladores .mat-column-email {
     width: auto;
     text-align: center;
-    font-weight: bold;
+
 }
 
 #tabla-listarRecicladores .mat-column-dni {
@@ -43,6 +41,4 @@
     text-align: center;
     font-weight: bold;
 }
-
-
 

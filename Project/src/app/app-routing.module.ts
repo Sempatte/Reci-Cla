@@ -13,7 +13,7 @@ import { RewardComponent } from './page/reward/reward.component';
 import { ListarTipoRewardComponent } from './page/reward/listar-tipo-reward/listar-tipo-reward.component';
 import { UbicationComponent } from './page/ubication/ubication.component';
 import { InsertarUbicationComponent } from './page/ubication/insertar-ubication/insertar-ubication.component';
-import { InsertarEditarRecicladorComponent } from './page/reciclador/insertar-editar-reciclador/insertar-editar-reciclador.component';
+import { Insertar_o_Editar_Usuario } from './components/Insertar_o_Editar_Usuario/Insertar_o_Editar_Usuario.component';
 import { RecolectorComponent } from './page/recolector/recolector.component';
 import { InsertarTipoDeTicketComponent } from './page/ticket/tipo-de-ticket/insertar-tipo-de-ticket/insertar-tipo-de-ticket.component';
 import { ScoreComponent } from './page/score/score.component';
@@ -29,16 +29,16 @@ const routes: Routes = [
     path: 'Recicladores',
     component: RecicladorComponent,
     children: [
-      { path: 'insertar', component: InsertarEditarRecicladorComponent },
-      { path: 'editar/:id', component: InsertarEditarRecicladorComponent },
+      { path: 'insertar', component: Insertar_o_Editar_Usuario },
+      { path: 'editar/:id', component: Insertar_o_Editar_Usuario },
     ],
   },
   {
     path: 'Recolectores',
     component: RecolectorComponent,
     children: [
-      { path: 'insertar', component: InsertarEditarRecicladorComponent },
-      { path: 'editar/:id', component: InsertarEditarRecicladorComponent },
+      { path: 'insertar', component: Insertar_o_Editar_Usuario },
+      { path: 'editar/:id', component: Insertar_o_Editar_Usuario },
     ],
   },
   { path: 'Home', component: HomeComponent },
