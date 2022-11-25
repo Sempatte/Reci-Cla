@@ -15,6 +15,7 @@ export class CantidadSolicitudComponent implements OnInit {
 
   ngOnInit(): void {
     this.vS.cantidadsolicitudes().subscribe(data=>{
+      console.log(data);
       this.dataSource=new MatTableDataSource(data);
     });
   }
