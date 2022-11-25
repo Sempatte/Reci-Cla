@@ -30,6 +30,12 @@ export class UbicacionService {
     });
   }
 
+  getUsuariosDeSurco(){
+    return this.http.get<Ubication[]>(`${environment.host}/usuarios/ListarQueryDistrito`,{
+      headers: this.headers,
+    });
+  }
+
   setListaUbication(listaNuevaUbication: Ubication[]) {
     this.listaUbication.next(listaNuevaUbication);
   }

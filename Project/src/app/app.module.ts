@@ -70,6 +70,7 @@ import { CantidadSolicitudComponent } from './page/solicitud/cantidad-solicitud/
 import { RewardCelularComponent } from './page/reward/reward-celular/reward-celular.component';
 import { ListarTicketMayoresDiciembreComponent } from './page/ticket/listar-ticket-mayores-diciembre/listar-ticket-mayores-diciembre.component';
 import { FiltrarPorImportanciaComponent } from './page/ticket/filtrar-por-importancia/filtrar-por-importancia.component';
+import { UsuariosDeSurcoComponent } from './page/ubication/usuarios-de-surco/usuarios-de-surco.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -119,6 +120,7 @@ import { FiltrarPorImportanciaComponent } from './page/ticket/filtrar-por-import
     RewardCelularComponent,
     ListarTicketMayoresDiciembreComponent,
     FiltrarPorImportanciaComponent,
+    UsuariosDeSurcoComponent,
   ],
   imports: [
     BrowserModule,

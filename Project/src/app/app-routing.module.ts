@@ -28,6 +28,7 @@ import { EditarInsertarScoreComponent } from './page/score/editar-insertar-score
 import { InsertarRewardComponent } from './page/reward/insertar-reward/insertar-reward.component';
 import { LoginComponent } from './page/login/login.component';
 import { ListarUsuariosDestacadosComponent } from './components/listar-usuarios-destacados/listar-usuarios-destacados.component';
+import { UsuariosDeSurcoComponent } from './page/ubication/usuarios-de-surco/usuarios-de-surco.component';
 // Rutas de nav
 const routes: Routes = [
   { path: 'Home', redirectTo: '/Home', pathMatch: 'full' },
@@ -103,13 +104,17 @@ const routes: Routes = [
     component: UbicationComponent,
     children: [
       {
-        path: 'insertar',
+        path: 'insertar', 
         component: InsertarUbicationComponent,
       },
       {
         path: 'editar/:id',
         component: InsertarUbicationComponent,
       },
+      {
+        path: 'UsuariosSurco',
+        component: UsuariosDeSurcoComponent,
+      }
     ],
   },
   {
