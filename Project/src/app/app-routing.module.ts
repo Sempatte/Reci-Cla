@@ -1,3 +1,4 @@
+import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-importantes/listar-tickets-importantes.component';
 import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
 import { SolicitudComponent } from './page/solicitud/solicitud.component';
 import { InsertarTicketComponent } from './page/ticket/listar-ticket/insertar-ticket/insertar-ticket.component';
@@ -112,6 +113,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarTicketComponent },
       { path: 'editar/:id', component: InsertarTicketComponent },
+      { path: 'TicketsDeAltaPrioridad', component: ListarTicketsImportantesComponent },
     ],
   },
   {

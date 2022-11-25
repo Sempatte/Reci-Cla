@@ -47,6 +47,13 @@ export class TicketService {
       headers: this.headers,
     });
   }
+
+  getTicketsImportanciaAlta() {
+    return this.http.get<Ticket[]>(`${this.url}/TicketsImportanciaAlta`, {
+      headers: this.headers,
+    });
+  }
+
   getListaTickets() {
     return this.listaCambio.asObservable();
   }

@@ -63,7 +63,7 @@
           mat-cell
           *matCellDef="let element"
           [ngStyle]="{
-            color: element.estado === 'Activo' ? 'green' : 'red',
+            color: element.estado === 'Abierto' ? 'green' : 'red',
             'font-weight': 600
           }"
         >
@@ -113,6 +113,14 @@
         routerLink="/ListarTickets/insertar"
       >
         <mat-icon>add</mat-icon>
+      </button>
+      <button
+        style="margin: 5px"
+        routerLink="/ListarTickets/TicketsDeAltaPrioridad"
+        mat-raised-button
+        color="accent"
+      >
+        Tickets importantes
       </button>
     </div>
   </div>

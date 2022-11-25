@@ -1,58 +1,93 @@
 <div class="container">
-    <div class="form-insertar">
-      <h1>{{edicion ? "Editar Ticket" : "Añadir Ticket"}} </h1>
+  <div class="form-insertar">
+    <h1>{{ edicion ? "Editar Ticket" : "Añadir Ticket" }}</h1>
 
-      <mat-form-field>
-        <mat-label>Estado del ticket</mat-label>
-        <input matInput required placeholder="Estado" type="text" [(ngModel)]="ticket.estado"/>
-      </mat-form-field>
+<!--     <mat-form-field>
 
-      <br />
-      <mat-form-field>
-        <mat-label>Descripcion del reclamo</mat-label>
-        <input type="text" matInput required placeholder="text" [(ngModel)]="ticket.descripcionReclamo"/>
-      </mat-form-field>
+      
+      <mat-label>Estado del ticket</mat-label>
+      <input
+        matInput
+        required
+        placeholder="Estado"
+        type="text"
+        [(ngModel)]="ticket.estado"
+      />
+    </mat-form-field>
+ -->
+    <br/>
+    <mat-form-field>
+      <mat-select required matNativeControl [(value)]="ticket.estado " >
+        <mat-option value="Abierto" selected>Abierto</mat-option>
+        <mat-option value="Cerrado" >Cerrado</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <br />
-      <mat-form-field appearance="fill">
-        <mat-label>Fecha del ticket</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" [max]="maxFecha">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Descripcion del reclamo</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        placeholder="text"
+        [(ngModel)]="ticket.descripcionReclamo"
+      />
+    </mat-form-field>
 
-      <br />
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha del ticket</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="fechaSeleccionada"
+        [max]="maxFecha"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br />
 
     <mat-form-field>
-        <mat-label>Seleccione Usuario</mat-label>
-        <mat-select [(value)]="idUsuarioSeleccionado" required>
-            <mat-option *ngFor="let u of listaUsuarios" [value]="u.id">
-                {{u.nombre + " " + u.apellido }}
-            </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-label>Seleccione Usuario</mat-label>
+      <mat-select [(value)]="idUsuarioSeleccionado" required>
+        <mat-option *ngFor="let u of listaUsuarios" [value]="u.id">
+          {{ u.nombre + " " + u.apellido }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <br />
+    <br />
 
-      <mat-form-field>
-        <mat-label>Seleccione Tipo de ticket</mat-label>
-        <mat-select [(value)]="idTipoTicketSeleccionado" required>
-            <mat-option *ngFor="let u of listaTipoTickets" [value]="u.id">
-                {{u.categoria}}
-            </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field>
+      <mat-label>Seleccione Tipo de ticket</mat-label>
+      <mat-select [(value)]="idTipoTicketSeleccionado" required>
+        <mat-option *ngFor="let u of listaTipoTickets" [value]="u.id">
+          {{ u.categoria }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-
-      <div class="form-controls">
-        <button mat-raised-button id="button-action" color="primary" (click)="aceptar()">
-          Aceptar
-        </button>
-        <button mat-raised-button id="button-action" color="warn" routerLink="/ListarTickets">
-          Cancelar
-        </button>
-      </div>
-      <p>{{ mensaje }}</p>
+    <div class="form-controls">
+      <button
+        mat-raised-button
+        id="button-action"
+        color="primary"
+        (click)="aceptar()"
+      >
+        Aceptar
+      </button>
+      <button
+        mat-raised-button
+        id="button-action"
+        color="warn"
+        routerLink="/ListarTickets"
+      >
+        Cancelar
+      </button>
     </div>
+    <p>{{ mensaje }}</p>
   </div>
-
+</div>

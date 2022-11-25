@@ -30,6 +30,7 @@ export class InsertarTicketComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   mensaje1: string = '';
 
+
   constructor(
     private ticketService: TicketService,
     private ttsService: TipoDeTicketService,
