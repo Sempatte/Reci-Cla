@@ -58,4 +58,9 @@ export class RewardService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+  getRewardCelulares(){
+    return this.http.get<Reward[]>(`${this.url}/RewardsCelulares`, {
+      headers: this.headers,
+    });
+  }
 }

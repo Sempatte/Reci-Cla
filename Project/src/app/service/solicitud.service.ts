@@ -1,3 +1,4 @@
+import { RespuestaSolicitud } from './../model/RespuestaSolicitud';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -57,5 +58,10 @@ export class SolicitudService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+  cantidadsolicitudes(){
+    return this.http.get<RespuestaSolicitud[]>(`${this.url}/cantidades`, {
+      headers: this.headers,
+    });
   }
 }

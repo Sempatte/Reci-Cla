@@ -66,6 +66,8 @@ import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/
 import { DialogoSolicitudComponent } from './page/solicitud/dialogo-solicitud/dialogo-solicitud.component';
 import { ListarUsuariosDestacadosComponent } from './components/listar-usuarios-destacados/listar-usuarios-destacados.component';
 import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-importantes/listar-tickets-importantes.component';
+import { CantidadSolicitudComponent } from './page/solicitud/cantidad-solicitud/cantidad-solicitud.component';
+import { RewardCelularComponent } from './page/reward/reward-celular/reward-celular.component';
 
 //import {MatLabelModule} from '@angular/material/label'
 
@@ -111,6 +113,8 @@ import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-
     DialogoSolicitudComponent,
     ListarUsuariosDestacadosComponent,
     ListarTicketsImportantesComponent,
+    CantidadSolicitudComponent,
+    RewardCelularComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+import { RewardCelularComponent } from './page/reward/reward-celular/reward-celular.component';
+import { CantidadSolicitudComponent } from './page/solicitud/cantidad-solicitud/cantidad-solicitud.component';
 import { ListarTicketsImportantesComponent } from './page/ticket/listar-tickets-importantes/listar-tickets-importantes.component';
 import { InsertarSolicitudComponent } from './page/solicitud/insertar-solicitud/insertar-solicitud.component';
 import { SolicitudComponent } from './page/solicitud/solicitud.component';
@@ -62,6 +64,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarRewardComponent },
       { path: 'editar/:id', component: InsertarRewardComponent },
+      { path: 'celulares', component: RewardCelularComponent },
     ],
   },
   {
@@ -122,6 +125,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarSolicitudComponent },
       { path: 'editar/:id', component: InsertarSolicitudComponent },
+      { path: 'SolicitudesDistrito', component: CantidadSolicitudComponent },
     ],
   },
 ];
