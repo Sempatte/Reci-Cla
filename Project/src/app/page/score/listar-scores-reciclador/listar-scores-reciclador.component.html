@@ -45,13 +45,14 @@
 
       <ng-container matColumnDef="nEstrellas">
         <th mat-header-cell *matHeaderCellDef><strong>N° Estrellas</strong></th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element" >
           {{ element.nEstrellas }}
           <mat-icon
             aria-hidden="false"
             inline="{{ true }}"
             class="icon-star"
             fontIcon="star"
+
           ></mat-icon>
         </td>
       </ng-container>

@@ -1,5 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
 @Component({
@@ -42,8 +43,9 @@ export class SidenavComponent implements OnInit {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
+    private snackBar: MatSnackBar,
     private router: Router,
-    
+
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -59,8 +61,12 @@ export class SidenavComponent implements OnInit {
   }
 
   closeSession(): void {
+    this.snackBar.open('Session closed', 'OK', {
+      duration: 3000, // 2 seconds
+      });
     sessionStorage.clear();
     this.router.navigate(['login']);
+
   }
 
   toggleDarkTheme(): void {
